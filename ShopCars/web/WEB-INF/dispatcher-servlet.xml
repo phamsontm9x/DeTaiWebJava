@@ -19,14 +19,14 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="index.htm">indexController</prop>
+                <prop key="index">indexController</prop>
             </props>
         </property>
     </bean>
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          p:prefix="/WEB-INF/jsp/"
+          p:prefix="/WEB-INF/Pages/"
           p:suffix=".jsp" />
 
     <!--
