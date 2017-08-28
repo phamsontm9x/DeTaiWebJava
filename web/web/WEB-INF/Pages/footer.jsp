@@ -11,11 +11,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+
+
         <link href="<c:url value="/Resources/css/style.css" />" rel="stylesheet">
         <link href="<c:url value="/Resources/css/bootstrap.min.css" />" rel="stylesheet">
         <link href="<c:url value="/Resources/css/jquery.nouislider.min.css" />" rel="stylesheet">
         <link href="<c:url value="/Resources/css/owl.carousel.css" />" rel="stylesheet">
         <link href="<c:url value="/Resources/css/owl.theme.default.css" />" rel="stylesheet">
+
+        <link href="<c:url value="/Resources/scripts/FlexSlider/images/flexslider.css" />" rel="stylesheet"
+
+        <script src="<c:url value="=/Resources/scripts/FlexSlider/images/jquery.flexslider.js"/>" type="text/javascript"></script>
+        <script src="<c:url value="=/Resources/scripts/FlexSlider/images/jquery.flexslider-min.js"/>" type="text/javascript"></script>
 
         <script src="<c:url value="/Resources/js/bootstrap.min.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/Resources/js/imagesloaded.pkgd.min.js"/>" type="text/javascript"></script>
@@ -25,6 +32,8 @@
         <script src="<c:url value="/Resources/js/jquery.nouislider.all.min.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/Resources/js/owl.carousel.min.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/Resources/js/scripts.js"/>" type="text/javascript"></script>
+
+
 
     </head>
     <body>

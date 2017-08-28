@@ -12,9 +12,15 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <div class="responsive-menu">
+            <a href="" class="responsive-menu-close"><i class="ion-android-close"></i></a>
+            <nav class="responsive-nav"></nav> <!-- end .responsive-nav -->
+        </div> <!-- end .responsive-menu -->
+
         <div class="flexslider welcome">
             <div class="slides">
                 <div class="slide" style="background-image: url('images/background01.jpg');">
+                    
                     <div class="inner">
                         <div class="container">
                             <div class="banner-wrapper">
