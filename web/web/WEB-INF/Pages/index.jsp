@@ -9,10 +9,12 @@
     </head>
 
     <body>
-        
-        <jsp:include page="header.jsp"></jsp:include>
-        <jsp:include page="slider.jsp"></jsp:include>
-        <jsp:include page="content.jsp"></jsp:include>
-        <jsp:include page="footer.jsp"></jsp:include>
+         <img src="C:\Users\ThanhSon\Desktop\DoAnWeb\web\web\WEB-INF\Pages\background01.jpg" alt="Mountain View" style="width:354px;height:228px;">
+                
+        <%--<jsp:include page="header.jsp"></jsp:include>--%>
+        <%--<jsp:include page="slider.jsp"></jsp:include>--%>
+        <jsp:include page="SliderTest.jsp"></jsp:include>
+        <%--<jsp:include page="content.jsp"></jsp:include>--%>
+        <%--<jsp:include page="footer.jsp"></jsp:include>--%>
     </body>
 </html>

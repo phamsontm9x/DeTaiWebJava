@@ -27,7 +27,7 @@
         <script src="<c:url value="/Resources/js/bootstrap.min.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/Resources/js/imagesloaded.pkgd.min.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/Resources/js/isotope.pkgd.min.js"/>" type="text/javascript"></script>
-        <script src="<c:url value="/Resources/js/jquery-1.11.2.min.js"/>" type="text/javascript"></script>
+        <script src="<c:url value="/Resources/js/jquery-1Resources/js.11.2.min.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/Resources/js/jquery.inview.min.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/Resources/js/jquery.nouislider.all.min.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/Resources/js/owl.carousel.min.js"/>" type="text/javascript"></script>
