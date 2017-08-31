@@ -122,13 +122,6 @@
                     <div class="clr"></div>
                 </div>
             </div>
-            <div class="footer">
-                <div class="footer_resize">
-                    <p class="lf">Đề tài nhóm 3 môn Phát triển hệ thống thương mại điện tử</p>
-                    
-                    <div style="clear:both;"></div>
-                </div>
-            </div>
         </div>
     </body>
 </html>

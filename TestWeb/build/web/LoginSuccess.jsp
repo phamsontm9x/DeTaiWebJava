@@ -13,10 +13,10 @@
     </head>
     <body>
         <%
-            String ten="";
-            ten= (String)session.getAttribute("ten");
-         %>   
-        Chào mừng  <%=ten %> đã đăng nhập thành công
+            String ten = "";
+            ten = (String) session.getAttribute("ten");
+        %>   
+        Chào mừng  <%=ten%> đã đăng nhập thành công
         <p><a href="index.jsp">Bấm vào đây để về trang chủ</a></p>
     </body>
 </html>

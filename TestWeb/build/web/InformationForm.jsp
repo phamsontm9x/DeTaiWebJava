@@ -19,8 +19,6 @@
             String macb = "";
             macb = request.getParameter("macb");
 
-            
-            
             String type = "";
             type = request.getParameter("type");
             String tb = "";
@@ -52,9 +50,9 @@
 
 
             function checkElementINF() {
-                
+
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                
+
 
 
 
@@ -71,8 +69,8 @@
 
 
 
-            
-                
+
+
 
                 //Check khach hanh phu
             <% for (int i = 1; i < soluong; i++) {%>
@@ -99,12 +97,12 @@
                 }
 
 
-                
-                
-                }
+
+
+            }
 
             <%}%>
-       
+
 
             }
 
@@ -114,128 +112,128 @@
 
     <body>
         <div class="body">
-        <div class="main">
-            <div class="header">
-                <div class="header_resize">
-                    <div class="menu_nav">
-                        <ul>
-                            <li class="active"><a href="index.jsp"><span>Trang chính</span></a></li>
-                            <li><a href="News.jsp"><span>Thông tin</span></a></li>
-                            <li><a href="about.jsp"><span>Chúng tôi</span></a></li>
-                        </ul>
+            <div class="main">
+                <div class="header">
+                    <div class="header_resize">
+                        <div class="menu_nav">
+                            <ul>
+                                <li class="active"><a href="index.jsp"><span>Trang chính</span></a></li>
+                                <li><a href="News.jsp"><span>Thông tin</span></a></li>
+                                <li><a href="about.jsp"><span>Chúng tôi</span></a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="clr"></div>
-                 
-                <div class="content">
+                    <div class="clr"></div>
+
+                    <div class="content">
                         <div class="InformationForm">
                             <div class="IFbg">
-                            <h2>Thông tin người nhận vé</h2>
-                            <form id="frm" >
-                                <% String mail = (String)session.getAttribute("email");
-                                TaiKhoanUserDAO tkuser = new TaiKhoanUserDAO();
-                                 TaiKhoanUser tkus = tkuser.GetTKbyEmail(mail);
-                                %>
-                            <div ><font color="white" > Họ tên:</font>
-                                <input name="hotenkh" type="text" value="<%=tkus.getHoten()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
-                                </div>
+                                <h2>Thông tin người nhận vé</h2>
+                                <form id="frm" >
+                                    <% String mail = (String) session.getAttribute("email");
+                                        TaiKhoanUserDAO tkuser = new TaiKhoanUserDAO();
+                                        TaiKhoanUser tkus = tkuser.GetTKbyEmail(mail);
+                                    %>
+                                    <div ><font color="white" > Họ tên:</font>
+                                        <input name="hotenkh" type="text" value="<%=tkus.getHoten()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                    </div>
 
 
-                                <div ><font color="white"> CMND:</font>
-                                    <input name="cmndkh" type="text" id="cmnd" value="<%=tkus.getCMND()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                    <div ><font color="white"> CMND:</font>
+                                        <input name="cmndkh" type="text" id="cmnd" value="<%=tkus.getCMND()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
 
-                                </div>
-                                <div ><font color="white"> Số điện thoại:</font>
-                                    <input name="sdtkh" type="text" id="sdt" value="0<%=tkus.getSDT()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                    </div>
+                                    <div ><font color="white"> Số điện thoại:</font>
+                                        <input name="sdtkh" type="text" id="sdt" value="0<%=tkus.getSDT()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
 
-                                </div>
-                                <div > <font color="white"> Địa chỉ:</font>
-                                    <input name="dchikh" type="text" id="dchi" value="<%=tkus.getDiaChi()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                    </div>
+                                    <div > <font color="white"> Địa chỉ:</font>
+                                        <input name="dchikh" type="text" id="dchi" value="<%=tkus.getDiaChi()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
 
-                                </div>
-                                <div><font color="white"> Email:</font>
-                                    <input name="emailkh" type="text" id="email"value="<%=tkus.getEmail()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                    </div>
+                                    <div><font color="white"> Email:</font>
+                                        <input name="emailkh" type="text" id="email"value="<%=tkus.getEmail()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
 
-                                </div>
-                                       
+                                    </div>
 
-                            </form>
+
+                                </form>
                             </div>
+                        </div>
                     </div>
-                </div>
-                
-                            <form id="frm" method="POST" action="ThongTin_HK_CB_Servlet" onsubmit="return checkElementINF();">
-                                <input type="hidden" name="macb" value="<%=macb%>" />
-                                <input type="hidden" name="soluong" value="<%=soluong%>"/>
-                                <input type="hidden" name="loaivedi" value="<%=loaivedi%>">
-                                <input type="hidden" name="loaiveve" value="<%=loaiveve%>">
-                                <input type="hidden" name="type" value="<%= type%>">       
-                                <% for (int i = 1; i <= soluong; i++) {%>   
-                                
-                            <div class="content">
+
+                    <form id="frm" method="POST" action="ThongTin_HK_CB_Servlet" onsubmit="return checkElementINF();">
+                        <input type="hidden" name="macb" value="<%=macb%>" />
+                        <input type="hidden" name="soluong" value="<%=soluong%>"/>
+                        <input type="hidden" name="loaivedi" value="<%=loaivedi%>">
+                        <input type="hidden" name="loaiveve" value="<%=loaiveve%>">
+                        <input type="hidden" name="type" value="<%= type%>">       
+                        <% for (int i = 1; i <= soluong; i++) {%>   
+
+                        <div class="content">
                             <div class="InformationForm">
-                            <div class="IFbg">
-                                <% if(soluong == 1){%>
-                                <h2>Thông tin hành khách</h2>
-                                <%}else{%>
-                            <h2>Thông tin hành khách <%= i%> </h2>
-                            <%}%>
-                            <div ><font color="white"> Họ tên:</font>
-                                <input name="hoten<%=i%>" type="text" required style="font-family: Time New Roman; font-size: 20px;text-align: left;">
-                            </div>
+                                <div class="IFbg">
+                                    <% if (soluong == 1) {%>
+                                    <h2>Thông tin hành khách</h2>
+                                    <%} else {%>
+                                    <h2>Thông tin hành khách <%= i%> </h2>
+                                    <%}%>
+                                    <div ><font color="white"> Họ tên:</font>
+                                        <input name="hoten<%=i%>" type="text" required style="font-family: Time New Roman; font-size: 20px;text-align: left;">
+                                    </div>
 
 
-                            <div ><font color="white"> CMND:</font>
-                                <input name="cmnd<%=i%>" type="text" id="cmnd<%=i%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                    <div ><font color="white"> CMND:</font>
+                                        <input name="cmnd<%=i%>" type="text" id="cmnd<%=i%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
 
-                            </div>
-                            <div ><font color="white"> Số điện thoại:</font>
-                                <input name="sdt<%=i%>" type="text" id="sdt<%=i%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;" />
+                                    </div>
+                                    <div ><font color="white"> Số điện thoại:</font>
+                                        <input name="sdt<%=i%>" type="text" id="sdt<%=i%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;" />
 
-                            </div>
-                            <div > <font color="white"> Địa chỉ:</font>
-                                <input name="dchi<%=i%>" type="text"   required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                    </div>
+                                    <div > <font color="white"> Địa chỉ:</font>
+                                        <input name="dchi<%=i%>" type="text"   required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
 
-                            </div>
-                            <div><font color="white"> Hành lý:</font>
-                                    <select required name="hanhly<%=i%>" >
-                                        <option value="0">Không cảm ơn</option>
-                                        <option value="10">Gói 10kg</option>
-                                        <option value="20">Gói 20kg</option>
-                                        <option value="30">Gói 30kg</option>
-                                    </select>
-                                     </div >
-                                     <%if(request.getParameter("macbve") != null) {
-                                         
-                                    String macbve = (String) request.getParameter("macbve");
-                                   
-                                     %>
-                                     <input type="hidden" name="macbve" value="<%=macbve%>" />
-                                   
+                                    </div>
+                                    <div><font color="white"> Hành lý:</font>
+                                        <select required name="hanhly<%=i%>" >
+                                            <option value="0">Không cảm ơn</option>
+                                            <option value="10">Gói 10kg</option>
+                                            <option value="20">Gói 20kg</option>
+                                            <option value="30">Gói 30kg</option>
+                                        </select>
+                                    </div >
+                                    <%if (request.getParameter("macbve") != null) {
+
+                                            String macbve = (String) request.getParameter("macbve");
+
+                                    %>
+                                    <input type="hidden" name="macbve" value="<%=macbve%>" />
+
                                     <div><font color="white"> Hành lý chiều về:</font>
-                                    <select required name="hanhlyve<%=i%>" >
-                                        <option value="0">Không cảm ơn</option>
-                                        <option value="10">Gói 10kg</option>
-                                        <option value="20">Gói 20kg</option>
-                                        <option value="30">Gói 30kg</option>
-                                    </select>
-                                     </div >
-                                     <% }%>
+                                        <select required name="hanhlyve<%=i%>" >
+                                            <option value="0">Không cảm ơn</option>
+                                            <option value="10">Gói 10kg</option>
+                                            <option value="20">Gói 20kg</option>
+                                            <option value="30">Gói 30kg</option>
+                                        </select>
+                                    </div >
+                                    <% }%>
 
 
 
 
-                            <p style="color:red;"><%=tb%></p>
-                        </div>
-                    </div>
-                </div> 
-                <%}%>
-                <a href="index.jsp"><input class="AvailableFromBUTTON" type="button" value="Về trang chủ" /></a>        
-                <input class="AvailableFromBUTTON"  type="submit"   value="Hoàn tất" />        
-                </form>
+                                    <p style="color:red;"><%=tb%></p>
+                                </div>
+                            </div>
+                        </div> 
+                        <%}%>
+                        <a href="index.jsp"><input class="AvailableFromBUTTON" type="button" value="Về trang chủ" /></a>        
+                        <input class="AvailableFromBUTTON"  type="submit"   value="Hoàn tất" />        
+                    </form>
+                </div>
             </div>
-                        </div>
-                <div class="clr"></div>
-              </div>
+            <div class="clr"></div>
+        </div>
     </body>
 </html>

@@ -17,7 +17,7 @@
         <script type="text/javascript" src="js/coin-slider.min.js"></script>
     </head>
     <body>
-       
+
         <div class="main">
             <div class="header">
                 <div class="header_resize">
@@ -44,13 +44,13 @@
                     <div class="clr"></div>
                 </div>
             </div>
-            
+
 
             <div class="content">
                 <div class="content_resize">
                     <div class="mainbar">
                         <div class="article">
-                            
+
                             <div class="clr"></div>
                             <img src="./images/NewsIMG1.jpg"/>
                             <img src="./images/NewsIMG1a.jpg" width="872px"/>
@@ -60,8 +60,8 @@
                     </div>
                 </div>
             </div>
-                      
-                    
+
+
             <div class="fbg">
                 <div class="fbg_resize">
                     <div class="col c1">
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col c3">
                         <h2><span>Contact</span> us</h2>
-                        
+
                         <p class="contact_info"> <span>Address:</span>1051 Lũy Bán Bích, P.Tân Thành, Q.Tân Phú, Tp.HCM<br />
                             <span>Telephone:</span> +18006590<br />
                             <span>FAX:</span> +458 4578<br />
@@ -91,13 +91,6 @@
                             <span>E-mail:</span> <a href="mail.google.com">CheapAirline@hotmail.com</a> </p>
                     </div>
                     <div class="clr"></div>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer_resize">
-                    <p class="lf">Đề tài nhóm 3 môn Phát triển hệ thống thương mại điện tử</p>
-                    
-                    <div style="clear:both;"></div>
                 </div>
             </div>
         </div>

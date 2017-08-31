@@ -128,16 +128,13 @@
         <script src="js/newjavascript.js"></script>
 
 
-        
-           <% String tb = "";
-            if (request.getAttribute("tb") != null) {
-                tb = (String) request.getAttribute("tb");%>
+
+        <% String tb = "";
+               if (request.getAttribute("tb") != null) {
+                   tb = (String) request.getAttribute("tb");%>
         <script>
                     alert("<%=tb%>")
         </script>
         <%}%>
-
-
-
     </body>
 </html>

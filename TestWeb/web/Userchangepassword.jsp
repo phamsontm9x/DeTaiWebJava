@@ -26,28 +26,28 @@
             var oldpassword = document.getElementById('oldpassword');
             var newpassword = document.getElementById('newpassword');
             var newpassword1 = document.getElementById('newpassword1');
-            
-           
-            
-            
-            if(oldpassword.value !== "<%=tk.getPassword()%>"){
+
+
+
+
+            if (oldpassword.value !== "<%=tk.getPassword()%>") {
                 alert("Bạn điền sai mật khẩu cũ, xin bạn vui lòng điền lại");
                 document.getElementById('oldpassword').style.border = "solid 3px red";
 
                 return false;
             }
-            if(newpassword.value !== newpassword1.value){
-            alert("Mật khẩu xác thực sai, xin bạn vui lòng điền lại");
-            document.getElementById('newpassword1').style.border = "solid 3px red";
+            if (newpassword.value !== newpassword1.value) {
+                alert("Mật khẩu xác thực sai, xin bạn vui lòng điền lại");
+                document.getElementById('newpassword1').style.border = "solid 3px red";
 
-            return false;
+                return false;
             }
-            
-        return true;
-    }
-    
-   
-    
+
+            return true;
+        }
+
+
+
     </script>
 
     <body>
@@ -62,12 +62,12 @@
                                 <%  String ten = "";
                                     try {
                                         ten = (String) session.getAttribute("ten");
-                                    if (ten.equals("") || ten == null) { %>
+                                        if (ten.equals("") || ten == null) { %>
                             <li><a href="RegisterLogin.jsp">ĐĂNG NHẬP </a></li>
                                 <%} else {%>
-             
+
                             <li>
-                                    <a href="Logout.jsp">Đăng Xuất</a>
+                                <a href="Logout.jsp">Đăng Xuất</a>
                             </li>
                             <%}
 
@@ -93,15 +93,16 @@
 
                 <input  t type="submit" name="login" class="login login-submit" value="Xác nhận" >
             </form>
-            
+
 
         </div>
-        <%  String tbdoimk="";
-            if( request.getAttribute("tbdoimk")!= null){
-                tbdoimk=(String)request.getAttribute("tbdoimk");%>
-                <script> alert("<%=tbdoimk%>");</script>
-                
-        <%}else{}
+        <%  String tbdoimk = "";
+            if (request.getAttribute("tbdoimk") != null) {
+                tbdoimk = (String) request.getAttribute("tbdoimk");%>
+        <script> alert("<%=tbdoimk%>");</script>
+
+        <%} else {
+            }
         %>
 
 
