@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <link href="css/style.css" rel="stylesheet" type="text/css" />
-        <title>Trang đăng kí</title>
+        <title>Thông tin hành khách</title>
         <link href="../css/Style.css" rel="stylesheet" type="text/css"/>
         <link href="css/stylenew.css" rel="stylesheet" type="text/css"/>
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -66,12 +66,6 @@
                 var rsdt8 = /^\d{8}$/;
                 var rsdt7 = /^\d{7}$/;
 
-
-
-
-
-
-
                 //Check khach hanh phu
             <% for (int i = 1; i < soluong; i++) {%>
                 var hanhly = document.getElementById("hanhly<%=i%>").value;
@@ -95,21 +89,11 @@
                 } else {
                     document.getElementById("sdt<%=i%>").style.border = "solid 1px black";
                 }
-
-
-
-
             }
-
             <%}%>
-
-
             }
-
         </script>
-
     </head>
-
     <body>
         <div class="body">
             <div class="main">
