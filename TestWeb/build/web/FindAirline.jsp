@@ -48,17 +48,10 @@
 
                 } else
                     document.getElementById('check').style.display = 'none';
-
-
             }
-
-
-
         </script>  
-
         <%
             //soluong hanh khach
-
             String diadiemdi = "", diadiemden = "", soluong = "", type = "", ngaykhoihanh = "", ngayve = "";
             int sluong;
 
@@ -108,8 +101,6 @@
                 tb.getListTuyenBay(diadiemdi, diadiemden);
             }
         %>
-
-
         <form id="frm1" action="InformationForm.jsp" onsubmit=" return kiemtra()">
             >
             <table class="FormAvailable" border="3" style="margin-top:10px; margin-left:50px;margin-right: 20px; padding-left: 0px;">
@@ -143,7 +134,6 @@
                         <%} else {
                                 out.println(Tb.getMaHHKg());
                             }%>
-
                     </td>
                     <td>
                         <%=di%>

@@ -56,7 +56,7 @@ public class ChuyenBayDAOImpl implements ChuyenBayDAO {
         ArrayList<ChuyenBay> arr=new ArrayList();
         try{
             PreparedStatement pr=connect.prepareStatement(sql);
-            ResultSet rs=pr.executeQuery();
+            ResultSet rs = pr.executeQuery();
             while(rs.next()){
                 ChuyenBay cb=new ChuyenBay();
                 cb.setMaCB(rs.getString("MaCB"));
@@ -74,10 +74,10 @@ public class ChuyenBayDAOImpl implements ChuyenBayDAO {
     }
     
     @Override
-    public ArrayList<ChuyenBay> getListChuyenBaybyNgayDi(String NgayDi){
+        public ArrayList<ChuyenBay> getListChuyenBaybyNgayDi(String NgayDi){
         Connection connection=DBConnect.getConnection();
         String sql="SELECT * FROM ChuyenBay "
-                + "WHERE NgayDi='"+NgayDi+"';";
+                + "WHERE NgayDi='"+ NgayDi +"';";
         ArrayList<ChuyenBay> arr=new ArrayList<>();
         //arr=null;
         try{

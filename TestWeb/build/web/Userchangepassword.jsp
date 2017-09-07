@@ -6,18 +6,18 @@
     <head>
         <%@page contentType="text/html" pageEncoding="UTF-8"%>
         <meta charset="UTF-8">
-        <title>Log-in</title>
+        <title>Thay đổi mật khẩu</title>
         <link rel="stylesheet" href="css/csschangepassword.css">
         <link href="css/style.css" rel="stylesheet" type="text/css" />
 
     </head>
     <%
         String email = (String) session.getAttribute("email");
-        out.print(email);
+//        out.print(email);
         TaiKhoanUser tk = new TaiKhoanUser();
         TaiKhoanUserDAO tkd = new TaiKhoanUserDAO();
         tk = tkd.GetTKbyEmail(email);
-        out.print(tk.getPassword());
+//        out.print(tk.getPassword());
     %>
 
     <script>
@@ -26,9 +26,6 @@
             var oldpassword = document.getElementById('oldpassword');
             var newpassword = document.getElementById('newpassword');
             var newpassword1 = document.getElementById('newpassword1');
-
-
-
 
             if (oldpassword.value !== "<%=tk.getPassword()%>") {
                 alert("Bạn điền sai mật khẩu cũ, xin bạn vui lòng điền lại");
@@ -39,14 +36,10 @@
             if (newpassword.value !== newpassword1.value) {
                 alert("Mật khẩu xác thực sai, xin bạn vui lòng điền lại");
                 document.getElementById('newpassword1').style.border = "solid 3px red";
-
                 return false;
             }
-
             return true;
         }
-
-
 
     </script>
 
@@ -93,8 +86,6 @@
 
                 <input  t type="submit" name="login" class="login login-submit" value="Xác nhận" >
             </form>
-
-
         </div>
         <%  String tbdoimk = "";
             if (request.getAttribute("tbdoimk") != null) {
@@ -104,7 +95,5 @@
         <%} else {
             }
         %>
-
-
     </body>
 </html>
