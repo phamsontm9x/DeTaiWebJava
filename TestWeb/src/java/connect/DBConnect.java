@@ -11,7 +11,7 @@ public class DBConnect {
         Connection conn=null;
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String dbURL = "jdbc:sqlserver://HHUMOROUS-PC;databaseName=qlvemaybay;user=sa;password=hoanghoang";
+            String dbURL = "jdbc:sqlserver://THANHSONPC;databaseName=qlvemaybay;user=sa;password=root";
             conn = DriverManager.getConnection(dbURL);
         }
         catch(Exception ex){
