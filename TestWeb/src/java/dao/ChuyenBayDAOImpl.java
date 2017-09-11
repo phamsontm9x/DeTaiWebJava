@@ -29,6 +29,7 @@ public class ChuyenBayDAOImpl implements ChuyenBayDAO {
             while(rs.next()){
                 ChuyenBay  cb=new ChuyenBay();
                 cb.setMaCB(rs.getString("MaCB"));
+                cb.setNgayDi(rs.getString("NgayDi"));
                 cb.setNgayDen(rs.getString("NgayDen"));
                 cb.setSLHKHT(rs.getInt("SLHKHT"));
                 cb.setSLHKTD(rs.getInt("SLHKTD"));
@@ -60,6 +61,7 @@ public class ChuyenBayDAOImpl implements ChuyenBayDAO {
             while(rs.next()){
                 ChuyenBay cb=new ChuyenBay();
                 cb.setMaCB(rs.getString("MaCB"));
+                cb.setNgayDi(rs.getString("NgayDi"));
                 cb.setNgayDen(rs.getString("NgayDen"));
                 cb.setSLHKHT(rs.getInt("SLHKHT"));
                 cb.setSLHKTD(rs.getInt("SLHKTD"));
@@ -86,6 +88,7 @@ public class ChuyenBayDAOImpl implements ChuyenBayDAO {
             while(rs.next()){
                 ChuyenBay cb=new ChuyenBay();
                 cb.setMaCB(rs.getString("MaCB"));
+                cb.setNgayDi(rs.getString("NgayDi"));
                 cb.setNgayDen(rs.getString("NgayDen"));
                 cb.setSLHKHT(rs.getInt("SLHKHT"));
                 cb.setSLHKTD(rs.getInt("SLHKTD"));
@@ -111,6 +114,7 @@ public class ChuyenBayDAOImpl implements ChuyenBayDAO {
             ResultSet rs=pr.executeQuery();
             while(rs.next()){
                 cb.setMaCB(rs.getString("MaCB"));
+                cb.setNgayDi(rs.getString("NgayDi"));
                 cb.setNgayDi(rs.getString("NgayDi"));
                 cb.setNgayDen(rs.getString("NgayDen"));
                 cb.setSLHKHT(rs.getInt("SLHKHT"));

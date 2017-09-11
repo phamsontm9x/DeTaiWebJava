@@ -124,6 +124,7 @@
                 <input type="hidden" name="type" value="<%=type%>">
                 <tr>
                     <td><input type="radio" name="macb" value="<%= Cb.getMaCB()%>"></td>
+                    <!--Hang hang khong-->
                     <td>
                         <%if (Tb.getMaHHKg().equals("VA")) {%>
                         <img src="./images/VietNamAirline.jpg " height="40px" >
@@ -139,8 +140,8 @@
                         <%=di%>
                     </td>
                     <td>
-                        <%=ngaykhoihanh%><br>
-                        <%=Tb.getGioDi()%>
+                        <%=Cb.getNgayDi()%><br>
+                        <%=Tb.getGioDi()%><br>
                     </td>
                     <td>
                         <%=den%>
