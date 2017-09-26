@@ -49,25 +49,11 @@
                 <div class="header_resize">
                     <div class="menu_nav">
                         <ul>
-                            <li class="active"><a href="index.jsp"><span>Trang chính</span></a></li>
-                            <li><a href="News.jsp"><span>Thông tin</span></a></li>
-                            <li><a href="about.jsp"><span>Chúng tôi</span></a></li>
-                                <%  String ten = "";
-                                    try {
-                                        ten = (String) session.getAttribute("ten");
-                                        if (ten.equals("") || ten == null) { %>
-                            <li><a href="RegisterLogin.jsp">ĐĂNG NHẬP </a></li>
-                                <%} else {%>
-
+                            <li class="active"><a href="index.jsp"><span>Trang chủ</span></a></li>
+                            <li><a href="UserInformation.jsp"><span>Thông Tin Tài Khoản</span></a></li>
                             <li>
                                 <a href="Logout.jsp">Đăng Xuất</a>
                             </li>
-                            <%}
-
-                            } catch (Exception e) { %>
-                            <li><a href="RegisterLogin.jsp">ĐĂNG NHẬP </a></li>
-                                <%}%>
-
                         </ul>
                     </div>
                 </div>

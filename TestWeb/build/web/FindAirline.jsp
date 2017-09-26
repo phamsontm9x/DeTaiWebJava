@@ -111,10 +111,10 @@
                     <th>Ngày đi</th>
                     <th>Đến</th>
                     <th>Ngày đến</th>
-                    <th>Giá Vé Thường</th>
-                    <th>Tổng tiền</th>
+                    <th>Giá vé thường</th>
+                    <th>Tổng tiền vé thường</th>
                     <th>Giá vé VIP</th>
-                    <th>Tổng tiền</th>
+                    <th>Tổng tiền Vé VIP</th>
 
                 </tr>
                 <% for (TuyenBay Tb : tb_Arr) {%>

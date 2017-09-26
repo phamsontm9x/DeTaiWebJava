@@ -66,7 +66,8 @@
                 <%  String tencheck="";
                 if (session.getAttribute("ten")==null ){%>////////
                    alert("Bạn hãy dăng nhập trước khi mua vé và thanh toán");
-                   return false;
+                   // Check id_User when book ticket
+                   return YES;
                 <%}else{}%>
             }
         </script>
@@ -103,12 +104,12 @@
                                 <button cl<ass="dropbtn"><li><a><%=ten%></a></li></button>
                                 <div class="dropdown-content">
                                     <a href="#">Xem thông tin vé</a>
-                                    <a href="Userchangepassword.jsp">Đổi mật khẩu</a>
+                                    <a href="Userchangepassword.jsp">Tài khoản</a>
                                     <a href="Logout.jsp">Đăng Xuất</a>
                                 </div>
                             </div>-->
                           <li><a href="DonHang.jsp"style="margin-bottom: 20px;">Xem Đơn Hàng</a></li>
-                          <li><a href="Userchangepassword.jsp"style="margin-bottom: 20px;">Đổi Mật Khấu</a></li>
+                          <li><a href="UserInformation.jsp"style="margin-bottom: 20px;">Tài Khoản</a></li>
                           <li> <a href="Logout.jsp" style="margin-bottom: 20px;" >ĐĂNG XUẤT</a>
                        
                             </li>
