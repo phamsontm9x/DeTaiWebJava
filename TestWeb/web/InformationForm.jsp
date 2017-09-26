@@ -213,7 +213,7 @@
                         </div> 
                         <%}%>
                         <a href="index.jsp"><input class="AvailableFromBUTTON" type="button" value="Về trang chủ" /></a>        
-                        <input class="AvailableFromBUTTON"  type="submit"   value="Hoàn tất" />        
+                        <a href="index.jsp"><input class="AvailableFromBUTTON"  type="submit"   value="Hoàn tất" /></a>        
                     </form>
                 </div>
             </div>

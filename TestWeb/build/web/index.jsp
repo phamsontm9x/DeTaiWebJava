@@ -66,7 +66,7 @@
                 <%  String tencheck="";
                 if (session.getAttribute("ten")==null ){%>////////
                    alert("Bạn hãy dăng nhập trước khi mua vé và thanh toán");
-                   return false;
+                   return true;
                 <%}else{}%>
             }
         </script>

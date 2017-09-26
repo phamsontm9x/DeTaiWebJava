@@ -83,6 +83,7 @@
                 <input type="text" name="oldpassword" placeholder="Mật khẩu cũ" required id="oldpassword">
                 <input type="text" name="newpassword" placeholder="Mật khẩu mới" required id="newpassword">
                 <input type="text" name="newpassword1" placeholder="Xác nhận mật khẩu mới" id="newpassword1" required>
+                <input type="text" name="abc" placeholder="fjdfdjf" id="kfdkfdkf">
 
                 <input  t type="submit" name="login" class="login login-submit" value="Xác nhận" >
             </form>
