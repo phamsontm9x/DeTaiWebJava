@@ -26,12 +26,14 @@
         %>
         
         function isEditInfo() {
-
+            // save Data xuống database
             var name = document.getElementById('Hoten');
             var cmnd = document.getElementById('Cmnd');
             var phoneNumber = document.getElementById('Dienthoai');
             var address = document.getElementById('Diachi');
             var email = document.getElementById('Email');
+            
+            
 
             return true;
         }
@@ -81,7 +83,7 @@
 
                                     </div>
                                         
-                                     <input   type="submit" name="login" class="login login-submit" value="Xác nhận" >   
+                                     <input  t type="submit" name="login" class="login login-submit" value="Xác nhận" >   
                                         
                                 </form>
                             </div>
