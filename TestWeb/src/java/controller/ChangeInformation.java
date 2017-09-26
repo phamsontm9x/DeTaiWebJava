@@ -5,6 +5,7 @@
  */
 package controller;
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import dao.TaiKhoanUserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,8 +22,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Hieu
  */
-@WebServlet(name = "Doipassword", urlPatterns = {"/Doipassword"})
-public class Doipassword extends HttpServlet {
+@WebServlet(name = "ChangeInformation", urlPatterns = {"/ChangeInformation"})
+public class ChangeInformation extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +42,10 @@ public class Doipassword extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Doipassword</title>");            
+            out.println("<title>Servlet ChangeInformation</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Doipassword at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ChangeInformation at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -76,26 +77,32 @@ public class Doipassword extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            String newpassword= request.getParameter("newpassword");
+            String newHoTen= request.getParameter("Hoten");
+            String newCMND= request.getParameter("Cmnd");
+            int newCMNDInt = Integer.parseInt(newCMND);
+            String newSDT= request.getParameter("Dienthoai");
+            int newSDTInt = Integer.parseInt(newSDT);
+            String newDiaChi= request.getParameter("Diachi");
             HttpSession session= request.getSession();
             String email =(String) session.getAttribute("email") ;
-           
+            
             TaiKhoanUserDAO tkd= new TaiKhoanUserDAO();
             
-            boolean flag= tkd.UpdateUserpw(email, newpassword);
+            boolean flag= tkd.UpdateUserInfo(email, newSDTInt, newCMNDInt, newHoTen, newDiaChi);
             String tbdoimk="";
             if(flag==true){
-                tbdoimk="Đổi mật khẩu thành công";
+                tbdoimk="Đổi thông tin thành công";
                 request.setAttribute("tbdoimk",tbdoimk );
-                RequestDispatcher rs = getServletContext().getRequestDispatcher("/Userchangepassword.jsp");
+                RequestDispatcher rs = getServletContext().getRequestDispatcher("/UserInformation.jsp");
                 rs.forward(request, response);
             }else{
-                tbdoimk="Đổi mật khẩu thất bại";
+                tbdoimk="Đổi thông tin thất bại";
                 request.setAttribute("tbdoimk", tbdoimk);
-                RequestDispatcher rs = getServletContext().getRequestDispatcher("/Userchangepassword.jsp");
+                RequestDispatcher rs = getServletContext().getRequestDispatcher("/UserInformation.jsp");
                 rs.forward(request, response);
             }
     }
+
     @Override
     public String getServletInfo() {
         return "Short description";

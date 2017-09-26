@@ -111,10 +111,10 @@
                     <th>Ngày đi</th>
                     <th>Đến</th>
                     <th>Ngày đến</th>
-                    <th>Giá Vé Thường</th>
-                    <th>Tổng tiền</th>
+                    <th>Giá vé thường</th>
+                    <th>Tổng tiền vé thường</th>
                     <th>Giá vé VIP</th>
-                    <th>Tổng tiền</th>
+                    <th>Tổng tiền Vé VIP</th>
 
                 </tr>
                 <% for (TuyenBay Tb : tb_Arr) {%>
@@ -124,6 +124,7 @@
                 <input type="hidden" name="type" value="<%=type%>">
                 <tr>
                     <td><input type="radio" name="macb" value="<%= Cb.getMaCB()%>"></td>
+                    <!--Hang hang khong-->
                     <td>
                         <%if (Tb.getMaHHKg().equals("VA")) {%>
                         <img src="./images/VietNamAirline.jpg " height="40px" >
@@ -139,8 +140,8 @@
                         <%=di%>
                     </td>
                     <td>
-                        <%=ngaykhoihanh%><br>
-                        <%=Tb.getGioDi()%>
+                        <%=Cb.getNgayDi()%><br>
+                        <%=Tb.getGioDi()%><br>
                     </td>
                     <td>
                         <%=den%>

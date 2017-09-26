@@ -101,4 +101,4 @@
                         <div id="coin-slider"> </div>
                            
              
-                       <h1 class="EditAccount">Chỉnh sửa thông tin cá nhân</h1>
+  h1 class=                     <"EditAccount">Chỉnh sửa thông tin cá nhân</h1>

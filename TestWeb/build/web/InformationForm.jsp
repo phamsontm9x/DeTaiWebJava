@@ -112,7 +112,7 @@
                     <div class="content">
                         <div class="InformationForm">
                             <div class="IFbg">
-                                <h2>Thông tin người nhận vé</h2>
+                                <h2>Thông tin người đ</h2>
                                 <form id="frm" >
                                     <% String mail = (String) session.getAttribute("email");
                                         TaiKhoanUserDAO tkuser = new TaiKhoanUserDAO();

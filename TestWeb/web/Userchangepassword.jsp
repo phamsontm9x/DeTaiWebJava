@@ -13,11 +13,9 @@
     </head>
     <%
         String email = (String) session.getAttribute("email");
-//        out.print(email);
         TaiKhoanUser tk = new TaiKhoanUser();
         TaiKhoanUserDAO tkd = new TaiKhoanUserDAO();
         tk = tkd.GetTKbyEmail(email);
-//        out.print(tk.getPassword());
     %>
 
     <script>
@@ -49,25 +47,11 @@
                 <div class="header_resize">
                     <div class="menu_nav">
                         <ul>
-                            <li class="active"><a href="index.jsp"><span>Trang chính</span></a></li>
-                            <li><a href="News.jsp"><span>Thông tin</span></a></li>
-                            <li><a href="about.jsp"><span>Chúng tôi</span></a></li>
-                                <%  String ten = "";
-                                    try {
-                                        ten = (String) session.getAttribute("ten");
-                                        if (ten.equals("") || ten == null) { %>
-                            <li><a href="RegisterLogin.jsp">ĐĂNG NHẬP </a></li>
-                                <%} else {%>
-
+                            <li class="active"><a href="index.jsp"><span>Trang chủ</span></a></li>
+                            <li><a href="UserInformation.jsp"><span>Thông Tin Tài Khoản</span></a></li>
                             <li>
                                 <a href="Logout.jsp">Đăng Xuất</a>
                             </li>
-                            <%}
-
-                            } catch (Exception e) { %>
-                            <li><a href="RegisterLogin.jsp">ĐĂNG NHẬP </a></li>
-                                <%}%>
-
                         </ul>
                     </div>
                 </div>
@@ -83,7 +67,6 @@
                 <input type="text" name="oldpassword" placeholder="Mật khẩu cũ" required id="oldpassword">
                 <input type="text" name="newpassword" placeholder="Mật khẩu mới" required id="newpassword">
                 <input type="text" name="newpassword1" placeholder="Xác nhận mật khẩu mới" id="newpassword1" required>
-                <input type="text" name="abc" placeholder="fjdfdjf" id="kfdkfdkf">
 
                 <input  t type="submit" name="login" class="login login-submit" value="Xác nhận" >
             </form>

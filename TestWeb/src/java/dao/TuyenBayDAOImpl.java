@@ -34,7 +34,7 @@ public class TuyenBayDAOImpl implements TuyenBayDAO{
                 tb.setMaTB(rs.getString("MaTB"));
                 tb.setMaDi( rs.getString("MaDi"));
                 tb.setMaDen(rs.getString("MaDen"));
-                tb.setGioDi(rs.getString("GioDen"));
+                tb.setGioDi(rs.getString("GioDi"));
                 tb.setGioDen(rs.getString("GioDen"));
                 tb.setMaHHKg(rs.getString("MaHHKg"));
                 tb.setGiaThuong(rs.getInt("GiaThuong"));
@@ -94,7 +94,7 @@ public class TuyenBayDAOImpl implements TuyenBayDAO{
                 tb.setMaTB(rs.getString("MaTB"));
                 tb.setMaDi(rs.getString("MaDi"));
                 tb.setMaDen(rs.getString("MaDen"));
-                tb.setGioDi(rs.getString("GioDen"));
+                tb.setGioDi(rs.getString("GioDi"));
                 tb.setGioDen(rs.getString("GioDen"));
                 tb.setMaHHKg(rs.getString("MaHHKg"));
                 tb.setGiaThuong(rs.getInt("GiaThuong"));

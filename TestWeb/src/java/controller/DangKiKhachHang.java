@@ -61,8 +61,4 @@ public class DangKiKhachHang extends HttpServlet {
         }
         
     }
-
-    
-   
-
 }
