@@ -89,7 +89,6 @@
                             <ul>
                                 <li><a href="index.jsp" style="margin-bottom: 20px;">TRANG CHỦ </a></li>
                                 <li><a href="News.jsp" style="margin-bottom: 20px;">THÔNG TIN </a></li>
-                                <li><a href="about.jsp"style="margin-bottom: 20px;">CHÚNG TÔI </a></li>
                                     <%  String ten = "";
                                         try {
                                             ten = (String) session.getAttribute("ten");

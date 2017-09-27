@@ -77,12 +77,13 @@ public class ChangeInformation extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            String newHoTen= request.getParameter("Hoten");
-            String newCMND= request.getParameter("Cmnd");
+            request.setCharacterEncoding("UTF-8");
+            String newHoTen= request.getParameter("hoten");
+            String newCMND= request.getParameter("cmnd");
             int newCMNDInt = Integer.parseInt(newCMND);
-            String newSDT= request.getParameter("Dienthoai");
+            String newSDT= request.getParameter("sdt");
             int newSDTInt = Integer.parseInt(newSDT);
-            String newDiaChi= request.getParameter("Diachi");
+            String newDiaChi= request.getParameter("DiaChi");
             HttpSession session= request.getSession();
             String email =(String) session.getAttribute("email") ;
             

@@ -87,12 +87,12 @@ public class Doipassword extends HttpServlet {
             if(flag==true){
                 tbdoimk="Đổi mật khẩu thành công";
                 request.setAttribute("tbdoimk",tbdoimk );
-                RequestDispatcher rs = getServletContext().getRequestDispatcher("/Userchangepassword.jsp");
+                RequestDispatcher rs = getServletContext().getRequestDispatcher("/UserPassword.jsp");
                 rs.forward(request, response);
             }else{
                 tbdoimk="Đổi mật khẩu thất bại";
                 request.setAttribute("tbdoimk", tbdoimk);
-                RequestDispatcher rs = getServletContext().getRequestDispatcher("/Userchangepassword.jsp");
+                RequestDispatcher rs = getServletContext().getRequestDispatcher("/UserPassword.jsp");
                 rs.forward(request, response);
             }
     }
