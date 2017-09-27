@@ -46,7 +46,7 @@
                         <div class="menu_nav">
                             <ul>
                                 <li class="active"><a href="index.jsp"><span>Trang Chủ</span></a></li>
-                                <li><a href="Userchangepassword.jsp"><span>Đổi Mật Khẩu</span></a></li>
+                                <li><a href="UserPassword.jsp"><span>Đổi Mật Khẩu</span></a></li>
                                 <li><a href="Logout.jsp"><span>Đăng Xuất</span></a></li>
                             </ul>
                         </div>
