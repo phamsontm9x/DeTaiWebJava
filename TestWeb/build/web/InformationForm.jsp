@@ -109,43 +109,6 @@
                     </div>
                     <div class="clr"></div>
 
-                    <div class="content">
-                        <div class="InformationForm">
-                            <div class="IFbg">
-                                <h2>Thông tin người đ</h2>
-                                <form id="frm" >
-                                    <% String mail = (String) session.getAttribute("email");
-                                        TaiKhoanUserDAO tkuser = new TaiKhoanUserDAO();
-                                        TaiKhoanUser tkus = tkuser.GetTKbyEmail(mail);
-                                    %>
-                                    <div ><font color="white" > Họ tên:</font>
-                                        <input name="hotenkh" type="text" value="<%=tkus.getHoten()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
-                                    </div>
-
-
-                                    <div ><font color="white"> CMND:</font>
-                                        <input name="cmndkh" type="text" id="cmnd" value="<%=tkus.getCMND()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
-
-                                    </div>
-                                    <div ><font color="white"> Số điện thoại:</font>
-                                        <input name="sdtkh" type="text" id="sdt" value="0<%=tkus.getSDT()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
-
-                                    </div>
-                                    <div > <font color="white"> Địa chỉ:</font>
-                                        <input name="dchikh" type="text" id="dchi" value="<%=tkus.getDiaChi()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
-
-                                    </div>
-                                    <div><font color="white"> Email:</font>
-                                        <input name="emailkh" type="text" id="email"value="<%=tkus.getEmail()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
-
-                                    </div>
-
-
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
                     <form id="frm" method="POST" action="ThongTin_HK_CB_Servlet" onsubmit="return checkElementINF();">
                         <input type="hidden" name="macb" value="<%=macb%>" />
                         <input type="hidden" name="soluong" value="<%=soluong%>"/>
@@ -205,19 +168,25 @@
                                     <% }%>
 
 
-
+                                    <button type="submit" >Xác Nhận</button>
 
                                     <p style="color:red;"><%=tb%></p>
                                 </div>
                             </div>
                         </div> 
-                        <%}%>
-                        <a href="index.jsp"><input class="AvailableFromBUTTON" type="button" value="Về trang chủ" /></a>        
-                        <a href="index.jsp"><input class="AvailableFromBUTTON"  type="submit"   value="Hoàn tất" /></a>        
+                        <%}%>       
                     </form>
                 </div>
             </div>
             <div class="clr"></div>
         </div>
+        <%  String alertUpdateUser = "";
+            if (request.getAttribute("updateUserInformation") != null) {
+                alertUpdateUser = (String) request.getAttribute("updateUserInformation");%>
+        <script> alert("<%=alertUpdateUser%>");</script>
+
+        <%} else {
+            }
+        %>
     </body>
 </html>

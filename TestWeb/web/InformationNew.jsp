@@ -43,6 +43,7 @@
                 int TongTien = 0;
                 int soluong = Integer.parseInt(session.getAttribute("soluong").toString());
                 int giavedi = 0, giaveve = 0;
+                //String email = request.getAttribute("email").toString();
                 String macb = request.getAttribute("macb").toString();
 
                 if (type.equals("oneway")) {
@@ -384,6 +385,7 @@
 
             <%}%>
             <form class="SigninIFtb"   method="POST" action="LuuThongTinHanhKhach_Servlet">
+                <input type="hidden" name="email" value="email" >
                 <input type="hidden" name="flag" value="tra" >
                 <input type="hidden" name="total" value="<%=TongTien%>" >
                 <input type="hidden" name="soluong" value="<%=soluong%>">

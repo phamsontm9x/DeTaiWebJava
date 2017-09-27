@@ -77,8 +77,7 @@
                                     </div>
                                     
                                      <div><input  t type="submit" name="login" class="login login-submit" value="Xác nhận" >  </div>
-                                      
-                                        
+                                          
                                 </form>
                             </div>
                         </div>
@@ -87,7 +86,7 @@
             </div>
             <div class="clr"></div>
         </div>
-                                                <%  String alertUpdateUser = "";
+        <%  String alertUpdateUser = "";
             if (request.getAttribute("updateUserInformation") != null) {
                 alertUpdateUser = (String) request.getAttribute("updateUserInformation");%>
         <script> alert("<%=alertUpdateUser%>");</script>
