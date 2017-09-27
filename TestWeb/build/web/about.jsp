@@ -20,9 +20,9 @@
                 <div class="header_resize">
                     <div class="menu_nav">
                         <ul>
-                            <li class="active"><a href="index.jsp"><span>Trang chính</span></a></li>
-                            <li><a href="News.jsp"><span>Thông tin</span></a></li>
-                            <li><a href="about.jsp"><span>Chúng tôi</span></a></li>
+                            <li class="active"><a href="index.jsp"><span>Trang Chủ</span></a></li>
+                            <li><a href="News.jsp"><span>Tin tức</span></a></li>
+                            <li> <a href="Logout.jsp" style="margin-bottom: 20px;" >ĐĂNG XUẤT</a>
                         </ul>
                     </div>
                     <div class="logo">
