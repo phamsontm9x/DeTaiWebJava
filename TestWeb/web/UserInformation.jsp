@@ -59,24 +59,25 @@
                                 <h2>Thông Tin Tài Khoản</h2>
                                 <form method="post" action="ChangeInformation" onsubmit="return isEditInfo()" id="frm">
                                     <div ><font color="white" > Họ tên:</font>
-                                        <input name="Hoten" type="text" disabled value="<%=tkus.getHoten()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                        <input name="Hoten" type="text" value="<%=tkus.getHoten()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
                                     </div>
 
 
                                     <div ><font color="white"> CMND:</font>
-                                        <input name="Cmnd" type="text" disabled id="cmnd" value="<%=tkus.getCMND()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                        <input name="Cmnd" type="text" id="cmnd" value="<%=tkus.getCMND()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
 
                                     </div>
                                     <div ><font color="white"> SĐT:</font>
-                                        <input name="DienThoai" type="text" disabled id="sdt" value="0<%=tkus.getSDT()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                        <input name="Dienthoai" type="text" id="sdt" value="0<%=tkus.getSDT()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
 
                                     </div>
                                     <div > <font color="white"> Địa chỉ:</font>
-                                        <input name="DiaChi" type="text" disabled id="dchi" value="<%=tkus.getDiaChi()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                        <input name="Diachi" type="text" id="dchi" value="<%=tkus.getDiaChi()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
 
                                     </div>
-                                        
-                                     <input  t type="submit" name="login" class="login login-submit" value="Xác nhận" >   
+                                    
+                                     <div><input  t type="submit" name="login" class="login login-submit" value="Xác nhận" >  </div>
+                                      
                                         
                                 </form>
                             </div>
@@ -86,5 +87,13 @@
             </div>
             <div class="clr"></div>
         </div>
+                                                <%  String alertUpdateUser = "";
+            if (request.getAttribute("updateUserInformation") != null) {
+                alertUpdateUser = (String) request.getAttribute("updateUserInformation");%>
+        <script> alert("<%=alertUpdateUser%>");</script>
+
+        <%} else {
+            }
+        %>
     </body>
 </html>

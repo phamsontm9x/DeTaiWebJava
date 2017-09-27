@@ -38,7 +38,7 @@ public class TaiKhoanUserDAO {
     }
     public boolean UpdateUserInfo(String email,int sdt, int cmnd, String hoTen, String diachi ){
         Connection con = DBConnect.getConnection();
-        String sql = "Update TaiKhoanUser Set SDT = '"+sdt+"', CMND = '"+cmnd+"', HoTen = '"+hoTen+"', DiaChi = '"+diachi+"', Where Email ='"+email+"';";
+        String sql = "Update TaiKhoanUser Set SDT = '"+sdt+"', CMND = '"+cmnd+"', HoTen = '"+hoTen+"', DiaChi = '"+diachi+"' Where Email ='"+email+"';";
         try{
         PreparedStatement ps= con.prepareStatement(sql);
         boolean a=ps.execute();

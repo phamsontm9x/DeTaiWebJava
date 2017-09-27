@@ -89,15 +89,15 @@ public class ChangeInformation extends HttpServlet {
             TaiKhoanUserDAO tkd= new TaiKhoanUserDAO();
             
             boolean flag= tkd.UpdateUserInfo(email, newSDTInt, newCMNDInt, newHoTen, newDiaChi);
-            String tbdoimk="";
+            String alertUpdateUser="";
             if(flag==true){
-                tbdoimk="Đổi thông tin thành công";
-                request.setAttribute("tbdoimk",tbdoimk );
+                alertUpdateUser="Đổi thông tin thành công";
+                request.setAttribute("updateUserInformation",alertUpdateUser );
                 RequestDispatcher rs = getServletContext().getRequestDispatcher("/UserInformation.jsp");
                 rs.forward(request, response);
             }else{
-                tbdoimk="Đổi thông tin thất bại";
-                request.setAttribute("tbdoimk", tbdoimk);
+                alertUpdateUser="Đổi thông tin thất bại";
+                request.setAttribute("updateUserInformation", alertUpdateUser);
                 RequestDispatcher rs = getServletContext().getRequestDispatcher("/UserInformation.jsp");
                 rs.forward(request, response);
             }
