@@ -57,7 +57,7 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
         int hanhly = 0;
         int hanhlyve = 0;
 
-        int sdt = 0;
+        String sdt = null;
         String email = request.getParameter("email");
         String macb = request.getParameter("macb");
         String type = request.getParameter("type");
@@ -118,8 +118,7 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
                 try {
                     cmnd = cmndstr;
                     hanhly = Integer.parseInt(hanhly_str);
-                    sdt = Integer.parseInt(sdt_str);
-                    HanhKhach hkdi = new HanhKhach(hoten, cmnd, sdt, hanhly, loaive, dichvu, macb, diachi);
+                    HanhKhach hkdi = new HanhKhach(hoten, cmnd, sdt_str, hanhly, loaive, dichvu, macb, diachi);
                     session.setAttribute("tthkdi" + x, hkdi);
                 } catch (Exception ex) {
                     System.out.println(ex);
@@ -154,7 +153,7 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
                     String hanhly_str = request.getParameter("hanhly" + x);
                     try {
                         hanhly = Integer.parseInt(hanhly_str);
-                        sdt = Integer.parseInt(sdt_str);
+                        sdt = sdt_str;
                         cmnd = cmnd_str;
                     } catch (Exception ex) {
                         System.out.println(ex);
@@ -171,9 +170,9 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
                         }
                     }
 
-                    HanhKhach hkdi = new HanhKhach(hoten, cmnd, sdt, hanhly, vedi, dichvu, macb, diachi);
+                    HanhKhach hkdi = new HanhKhach(hoten, cmnd, sdt_str, hanhly, vedi, dichvu, macb, diachi);
                     session.setAttribute("tthkdi" + x, hkdi);
-                    HanhKhach hkve = new HanhKhach(hoten, cmnd, sdt, hanhly, veve, dichvu, macb, diachi);;
+                    HanhKhach hkve = new HanhKhach(hoten, cmnd, sdt_str, hanhly, veve, dichvu, macb, diachi);;
                     session.setAttribute("tthkve" + x, hkve);
 
                 }

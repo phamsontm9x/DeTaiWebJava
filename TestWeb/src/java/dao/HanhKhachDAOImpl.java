@@ -19,7 +19,7 @@ public class HanhKhachDAOImpl {
             PreparedStatement pr = connect.prepareStatement(sql);
             ResultSet rs = pr.executeQuery();
             while (rs.next()) {
-                HanhKhach hk = new HanhKhach( rs.getString("HoTen"), rs.getString("CMND"), rs.getInt("SoDT"), rs.getInt("HanhLy"),rs.getString("LoaiVe"),rs.getString("DichVu"),rs.getString("MaCB"),rs.getString("DChi"));
+                HanhKhach hk = new HanhKhach( rs.getString("HoTen"), rs.getString("CMND"), rs.getString("SoDT"), rs.getInt("HanhLy"),rs.getString("LoaiVe"),rs.getString("DichVu"),rs.getString("MaCB"),rs.getString("DChi"));
                 arr.add(hk);
             }
             connect.close();
@@ -41,7 +41,7 @@ public class HanhKhachDAOImpl {
             if (rs.next()) {
                 hk.setHoTen(rs.getString("HoTen"));
                 hk.setCMND(rs.getString("CMND"));
-                hk.setSoDT(rs.getInt("SoDT"));
+                hk.setSoDT(rs.getString("SoDT"));
                 hk.setHanhLy(rs.getInt("HanhLy"));
                 hk.setLoaiVe(rs.getString("LoaiVe"));
                 hk.setDichVu(rs.getString("DichVu"));
@@ -70,7 +70,7 @@ public class HanhKhachDAOImpl {
                 //hk=null;
                 hk.setHoTen(rs.getString("HoTen"));
                 hk.setCMND(rs.getString("CMND"));
-                hk.setSoDT(rs.getInt("SoDT"));
+                hk.setSoDT(rs.getString("SoDT"));
                 hk.setHanhLy(rs.getInt("HanhLy"));
                 hk.setLoaiVe(rs.getString("LoaiVe"));
                 hk.setDichVu(rs.getString("DichVu"));
@@ -99,7 +99,7 @@ public class HanhKhachDAOImpl {
                 HanhKhach hk = new HanhKhach();
                 hk.setHoTen(rs.getString("HoTen"));
                 hk.setCMND(rs.getString("CMND"));
-                hk.setSoDT(rs.getInt("SoDT"));
+                hk.setSoDT(rs.getString("SoDT"));
                 hk.setHanhLy(rs.getInt("HanhLy"));
                 hk.setLoaiVe(rs.getString("LoaiVe"));
                 hk.setDichVu(rs.getString("DichVu"));
@@ -126,7 +126,7 @@ public class HanhKhachDAOImpl {
                 HanhKhach hk = new HanhKhach();
                 hk.setHoTen(rs.getString("HoTen"));
                 hk.setCMND(rs.getString("CMND"));
-                hk.setSoDT(rs.getInt("SoDT"));
+                hk.setSoDT(rs.getString("SoDT"));
                 hk.setHanhLy(rs.getInt("HanhLy"));
                 hk.setLoaiVe(rs.getString("LoaiVe"));
                 hk.setDichVu(rs.getString("DichVu"));
@@ -142,7 +142,7 @@ public class HanhKhachDAOImpl {
         return arr;
     }
 
-    public boolean AddHK( String macb, String hoten, String cmnd, int sdt, int hanhly,String loaive,String dichvu, String dchi) {
+    public boolean AddHK( String macb, String hoten, String cmnd, String sdt, int hanhly,String loaive,String dichvu, String dchi) {
 
         Connection connect = DBConnect.getConnection();
         String sql = "INSERT INTO ThongTinHanhKhach (HoTen,CMND,SDT,HanhLy,LoaiVe,DichVu,MaCB,DiaChi) VALUES (N'" + hoten + "', '" + cmnd+ "', '" + sdt + "','" + hanhly + "', '" + loaive+ "','" +dichvu+ "', '" + macb+ "',N'" + dchi + "');";
@@ -175,7 +175,7 @@ public class HanhKhachDAOImpl {
             ResultSet rs = pr.executeQuery();
             if (rs.next()) {
                hk.setHoTen(rs.getString("HoTen"));
-               hk.setSoDT(rs.getInt("SDT"));
+               hk.setSoDT(rs.getString("SDT"));
                hk.setHanhLy(rs.getInt("HanhLy"));
                hk.setLoaiVe(rs.getString("LoaiVe"));
                hk.setDichVu(rs.getString("DichVu"));

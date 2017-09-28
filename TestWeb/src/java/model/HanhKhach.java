@@ -5,14 +5,14 @@ package model;
 public class HanhKhach {
     private String HoTen;
     private String CMND;
-    private int SoDT;
+    private String SoDT;
     private String DChi;
     private int HanhLy;
     private String LoaiVe;
     private String MaCB;
     private String DichVu;
 
-    public HanhKhach(String HoTen, String CMND, int SoDT,int HanhLy, String LoaiVe, String DichVu, String MaCB,String DChi) {
+    public HanhKhach(String HoTen, String CMND, String SoDT,int HanhLy, String LoaiVe, String DichVu, String MaCB,String DChi) {
         this.HoTen = HoTen;
         this.CMND = CMND;
         this.SoDT = SoDT;
@@ -46,7 +46,7 @@ public class HanhKhach {
         return SoDT;
     }
 
-    public void setSoDT(int SoDT) {
+    public void setSoDT(String SoDT) {
         this.SoDT = SoDT;
     }
 
