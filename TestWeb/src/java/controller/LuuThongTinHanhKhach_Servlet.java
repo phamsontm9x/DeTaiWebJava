@@ -86,7 +86,7 @@ public class LuuThongTinHanhKhach_Servlet extends HttpServlet {
         HttpSession session= req.getSession();
         String email =(String) session.getAttribute("email") ;
         String hoten;
-        int sdt;
+        String sdt;
         String cmnd;
         int hanhly;
         String loaive;
@@ -112,7 +112,7 @@ public class LuuThongTinHanhKhach_Servlet extends HttpServlet {
         for(int i=1; i<=soluong; i++){
             hoten = req.getParameter("hoten"+i);
             cmnd = req.getParameter("cmnd"+i);
-            sdt = Integer.parseInt(req.getParameter("sdt"+i));
+            sdt = req.getParameter("sdt"+i);
             hanhly = Integer.parseInt(req.getParameter("hanhly"+i));
             loaive = req.getParameter("loaivedi"+i);
             dichvu = "";
