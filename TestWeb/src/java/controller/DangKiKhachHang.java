@@ -28,10 +28,6 @@ public class DangKiKhachHang extends HttpServlet {
         String sdt= req.getParameter("sdt");
         String cmnd= req.getParameter("cmnd");
         String diachi= req.getParameter("DiaChi");
-
-        
-        int sdt1= Integer.parseInt(sdt);
-        int cmnd1= Integer.parseInt(cmnd);
         
         String tb="";
         DangKiDAO dk = new DangKiDAO();
@@ -43,7 +39,7 @@ public class DangKiKhachHang extends HttpServlet {
             rd.forward(req, resp);
         }
         else{
-            boolean kq=dk.AddTKUser(email, password, gioitinh, hoten, cmnd1, sdt1,diachi);
+            boolean kq=dk.AddTKUser(email, password, gioitinh, hoten, cmnd, sdt,diachi);
             if(kq){
                 tb="Đăng Kí Thành Công";
                 req.setAttribute("tb", tb);

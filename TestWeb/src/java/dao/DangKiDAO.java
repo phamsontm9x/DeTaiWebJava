@@ -157,7 +157,7 @@ public class DangKiDAO {
         return null;
     }
 
-    public boolean AddTKUser(String email, String password, String gioitinh, String hoten, String diachi, int cmnd1, int sdt1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public boolean AddTKUser(String email, String password, String gioitinh, String hoten, String diachi, int cmnd1, int sdt1) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 }

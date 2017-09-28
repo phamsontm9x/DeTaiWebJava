@@ -66,5 +66,5 @@ public class TaiKhoanUserDAO {
     public boolean UpdateUserInfo(String email, String diachi, String cmnd, String diachi0) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    }
+}
 

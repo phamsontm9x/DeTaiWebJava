@@ -89,7 +89,7 @@ public class ChangeInformation extends HttpServlet {
             
             TaiKhoanUserDAO tkd= new TaiKhoanUserDAO();
             
-            boolean flag= tkd.UpdateUserInfo(email, newSDTInt, newCMNDInt, newHoTen, newDiaChi);
+            boolean flag= tkd.UpdateUserInfo(email, newSDT, newCMND, newHoTen, newDiaChi);
             String alertUpdateUser="";
             if(flag==true){
                 alertUpdateUser="Đổi thông tin thành công";
