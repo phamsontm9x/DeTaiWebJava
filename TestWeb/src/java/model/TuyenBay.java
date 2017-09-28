@@ -15,20 +15,20 @@ public class TuyenBay {
     private String MaDen;
     private String GioDi;
     private String GioDen;
-    private String MaHHKg;
+    private String MaHHK;
     private int GiaThuong;
     private int GiaVIP;
 
     public TuyenBay() {
     }
 
-    public TuyenBay(String MaTB, String MaDi, String MaDen, String GioDi, String GioDen, String MaHHKg, int GiaThuong, int GiaVIP) {
+    public TuyenBay(String MaTB, String MaDi, String MaDen, String GioDi, String GioDen, String MaHHK, int GiaThuong, int GiaVIP) {
         this.MaTB = MaTB;
         this.MaDi = MaDi;
         this.MaDen = MaDen;
         this.GioDi = GioDi;
         this.GioDen = GioDen;
-        this.MaHHKg = MaHHKg;
+        this.MaHHK = MaHHK;
         this.GiaThuong = GiaThuong;
         this.GiaVIP = GiaVIP;
     }
@@ -74,12 +74,12 @@ public class TuyenBay {
         this.GioDen = GioDen;
     }
 
-    public String getMaHHKg() {
-        return MaHHKg;
+    public String getMaHHK() {
+        return MaHHK;
     }
 
-    public void setMaHHKg(String MaHHKg) {
-        this.MaHHKg = MaHHKg;
+    public void setMaHHK(String MaHHK) {
+        this.MaHHK = MaHHK;
     }
 
     public int getGiaThuong() {

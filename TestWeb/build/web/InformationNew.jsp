@@ -27,10 +27,9 @@
                     <div class="header_resize">
                         <div class="menu_nav">
                             <ul>
-                                <li class="active"><a href="index.jsp"><span>Trang chính</span></a></li>
+                                <li class="active"><a href="index.jsp"><span>Trang chủ</span></a></li>
                                 <li><a href="News.jsp"><span>Thông tin</span></a></li>
-                                <li><a href="about.jsp"><span>Chúng tôi</span></a></li>
-
+                                <li> <a href="Logout.jsp" style="margin-bottom: 20px;" >ĐĂNG XUẤT</a></li>
 
                             </ul>
                         </div>
@@ -90,7 +89,7 @@
                     </tr>
                     <% tb.setGioDen(tb.getGioDen().substring(0, tb.getGioDen().length() - 8));%>
                     <td><%=cb.getMaCB()%></td>
-                    <td><%=hhk.getTenHHK(tb.getMaHHKg())%></td>
+                    <td><%=hhk.getTenHHK(tb.getMaHHK())%></td>
                     <td><%=DD.getTenDD(tb.getMaDi())%></td>
                     <td><%=cb.getNgayDi()%></td>
                     <td><%=tb.getGioDi()%></td>
@@ -138,22 +137,22 @@
                         <% }%>
                         <%
                             if (temp.getLoaiVe().equals("Eco")) {
-                                if (tb.getMaHHKg().equals("VA")) {
+                                if (tb.getMaHHK().equals("VNA")) {
                                     giavedi = (tb.getGiaThuong() + tb.getGiaThuong() * 10 / 100 + 50000 + 70000 + 10000);
-                                } else if (tb.getMaHHKg().equals("VJ")) {
+                                } else if (tb.getMaHHK().equals("VJ")) {
                                     giavedi = (tb.getGiaThuong() + tb.getGiaThuong() * 10 / 100 + 60000 + 75000 + 33000);
-                                } else if (tb.getMaHHKg().equals("JT")) {
+                                } else if (tb.getMaHHK().equals("BL")) {
 
                                     giavedi = (tb.getGiaThuong() + tb.getGiaThuong() * 10 / 100 + 60000 + 33000 + 50000);
                                 }
                         %>
                         <td>Eco</td>
                         <%} else {
-                            if (tb.getMaHHKg().equals("VA")) {
+                            if (tb.getMaHHK().equals("VNA")) {
                                 giavedi = (tb.getGiaVIP() + tb.getGiaVIP() * 10 / 100 + 50000 + 70000 + 10000);
-                            } else if (tb.getMaHHKg().equals("VJ")) {
+                            } else if (tb.getMaHHK().equals("VJ")) {
                                 giavedi = (tb.getGiaVIP() + tb.getGiaVIP() * 10 / 100 + 60000 + 75000 + 33000);
-                            } else if (tb.getMaHHKg().equals("JT")) {
+                            } else if (tb.getMaHHK().equals("BL")) {
 
                                 giavedi = (tb.getGiaVIP() + tb.getGiaVIP() * 10 / 100 + 60000 + 33000 + 50000);
                             }
@@ -215,7 +214,7 @@
                     </tr>
 
                     <td><%=cb.getMaCB()%></td>
-                    <td><%=hhk.getTenHHK(tb.getMaHHKg())%></td>
+                    <td><%=hhk.getTenHHK(tb.getMaHHK())%></td>
                     <td><%=DD.getTenDD(tb.getMaDi())%></td>
                     <td><%=cb.getNgayDi()%></td>
                     <td><%=tb.getGioDi()%></td>
@@ -250,7 +249,7 @@
                     </tr>
 
                     <td><%=cbve.getMaCB()%></td>
-                    <td><%=hhk.getTenHHK(tbve.getMaHHKg())%></td>
+                    <td><%=hhk.getTenHHK(tbve.getMaHHK())%></td>
                     <td><%=DD.getTenDD(tbve.getMaDi())%></td>
                     <td><%=cbve.getNgayDi()%></td>
                     <td><%=tbve.getGioDi()%></td>
@@ -314,11 +313,11 @@
 
                         <%
                             if (temp.getLoaiVe().equals("Eco")) {
-                                if (tb.getMaHHKg().equals("VA")) {
+                                if (tb.getMaHHK().equals("VNA")) {
                                     giavedi = (tb.getGiaThuong() + tb.getGiaThuong() * 10 / 100 + 50000 + 70000 + 10000);
-                                } else if (tb.getMaHHKg().equals("VJ")) {
+                                } else if (tb.getMaHHK().equals("VJ")) {
                                     giavedi = (tb.getGiaThuong() + tb.getGiaThuong() * 10 / 100 + 60000 + 75000 + 33000);
-                                } else if (tb.getMaHHKg().equals("JT")) {
+                                } else if (tb.getMaHHK().equals("BL")) {
 
                                     giavedi = (tb.getGiaThuong() + tb.getGiaThuong() * 10 / 100 + 60000 + 33000 + 50000);
                                 }
@@ -326,11 +325,11 @@
                         <td>Eco</td>
                         <%} else {
                             if (temp.getLoaiVe().equals("Eco")) {
-                                if (tb.getMaHHKg().equals("VA")) {
+                                if (tb.getMaHHK().equals("VNA")) {
                                     giavedi = (tb.getGiaVIP() + tb.getGiaVIP() * 10 / 100 + 50000 + 70000 + 10000);
-                                } else if (tb.getMaHHKg().equals("VJ")) {
+                                } else if (tb.getMaHHK().equals("VJ")) {
                                     giavedi = (tb.getGiaVIP() + tb.getGiaVIP() * 10 / 100 + 60000 + 75000 + 33000);
-                                } else if (tb.getMaHHKg().equals("JT")) {
+                                } else if (tb.getMaHHK().equals("BL")) {
 
                                     giavedi = (tb.getGiaVIP() + tb.getGiaVIP() * 10 / 100 + 60000 + 33000 + 50000);
                                 }
@@ -339,11 +338,11 @@
                         <%}
                             }
                             if (tempve.getLoaiVe().equals("Eco")) {
-                                if (tbve.getMaHHKg().equals("VA")) {
+                                if (tbve.getMaHHK().equals("VNA")) {
                                     giaveve = (tbve.getGiaThuong() + tbve.getGiaThuong() * 10 / 100 + 50000 + 70000 + 10000);
-                                } else if (tbve.getMaHHKg().equals("VJ")) {
+                                } else if (tbve.getMaHHK().equals("VJ")) {
                                     giaveve = (tbve.getGiaThuong() + tbve.getGiaThuong() * 10 / 100 + 60000 + 75000 + 33000);
-                                } else if (tbve.getMaHHKg().equals("JT")) {
+                                } else if (tbve.getMaHHK().equals("BL")) {
 
                                     giaveve = (tbve.getGiaThuong() + tbve.getGiaThuong() * 10 / 100 + 60000 + 33000 + 50000);
                                 }
@@ -351,11 +350,11 @@
                         <td>Eco</td>
                         <%} else {
                             if (tempve.getLoaiVe().equals("Eco")) {
-                                if (tbve.getMaHHKg().equals("VA")) {
+                                if (tbve.getMaHHK().equals("VNA")) {
                                     giaveve = (tbve.getGiaVIP() + tbve.getGiaVIP() * 10 / 100 + 50000 + 70000 + 10000);
-                                } else if (tbve.getMaHHKg().equals("VJ")) {
+                                } else if (tbve.getMaHHK().equals("VJ")) {
                                     giaveve = (tbve.getGiaVIP() + tbve.getGiaVIP() * 10 / 100 + 60000 + 75000 + 33000);
-                                } else if (tbve.getMaHHKg().equals("JT")) {
+                                } else if (tbve.getMaHHK().equals("BL")) {
 
                                     giaveve = (tbve.getGiaVIP() + tbve.getGiaVIP() * 10 / 100 + 60000 + 33000 + 50000);
                                 }

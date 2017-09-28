@@ -36,7 +36,7 @@ public class TuyenBayDAOImpl implements TuyenBayDAO{
                 tb.setMaDen(rs.getString("MaDen"));
                 tb.setGioDi(rs.getString("GioDi"));
                 tb.setGioDen(rs.getString("GioDen"));
-                tb.setMaHHKg(rs.getString("MaHHKg"));
+                tb.setMaHHK(rs.getString("MaHHK"));
                 tb.setGiaThuong(rs.getInt("GiaThuong"));
                 tb.setGiaVIP(rs.getInt("GiaVIP"));
                 arr.add(tb);
@@ -63,7 +63,7 @@ public class TuyenBayDAOImpl implements TuyenBayDAO{
                 tb.setMaDen(rs.getString("MaDen"));
                 tb.setGioDi(rs.getString("GioDi"));
                 tb.setGioDen(rs.getString("GioDen"));
-                tb.setMaHHKg(rs.getString("MaHHKg"));
+                tb.setMaHHK(rs.getString("MaHHK"));
                 tb.setGiaThuong(rs.getInt("GiaThuong"));
                 tb.setGiaVIP(rs.getInt("GiaVIP"));
                 arr.add(tb);
@@ -84,7 +84,7 @@ public class TuyenBayDAOImpl implements TuyenBayDAO{
     @Override
     public ArrayList<TuyenBay> getListTuyenBay(String MaDi, String MaDen, String HangHK) {
         Connection connect = DBConnect.getConnection();
-        String sql = "Select * from TuyenBay where MaDi = '" + MaDi+"' AND MaDen = '"+MaDen +"' AND MaHHKg = '"+HangHK+"';";
+        String sql = "Select * from TuyenBay where MaDi = '" + MaDi+"' AND MaDen = '"+MaDen +"' AND MaHHK = '"+HangHK+"';";
         ArrayList<TuyenBay> arr = new ArrayList<>();
         try{
            PreparedStatement ps = connect.prepareStatement(sql);
@@ -96,7 +96,7 @@ public class TuyenBayDAOImpl implements TuyenBayDAO{
                 tb.setMaDen(rs.getString("MaDen"));
                 tb.setGioDi(rs.getString("GioDi"));
                 tb.setGioDen(rs.getString("GioDen"));
-                tb.setMaHHKg(rs.getString("MaHHKg"));
+                tb.setMaHHK(rs.getString("MaHHK"));
                 tb.setGiaThuong(rs.getInt("GiaThuong"));
                 tb.setGiaVIP(rs.getInt("GiaVIP"));
                 arr.add(tb);
@@ -123,7 +123,7 @@ public class TuyenBayDAOImpl implements TuyenBayDAO{
                 tb.setMaDen(rs.getString("MaDen"));
                 tb.setGioDi(rs.getString("GioDi"));
                 tb.setGioDen(rs.getString("GioDen"));
-                tb.setMaHHKg(rs.getString("MaHHKg"));
+                tb.setMaHHK(rs.getString("MaHHK"));
                 tb.setGiaThuong(rs.getInt("GiaThuong"));
                 tb.setGiaVIP(rs.getInt("GiaVIP"));
                 

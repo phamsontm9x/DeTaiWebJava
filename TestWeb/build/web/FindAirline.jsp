@@ -126,14 +126,14 @@
                     <td><input type="radio" name="macb" value="<%= Cb.getMaCB()%>"></td>
                     <!--Hang hang khong-->
                     <td>
-                        <%if (Tb.getMaHHKg().equals("VA")) {%>
+                        <%if (Tb.getMaHHK().equals("VNA")) {%>
                         <img src="./images/VietNamAirline.jpg " height="40px" >
-                        <%} else if (Tb.getMaHHKg().equals("VJ")) {%>
+                        <%} else if (Tb.getMaHHK().equals("VJ")) {%>
                         <img src="./images/VietJet.jpg " height="40px" >
-                        <%} else if (Tb.getMaHHKg().equals("JT")) {%>
+                        <%} else if (Tb.getMaHHK().equals("BL")) {%>
                         <img src="./images/JetStar.jpg " height="40px" >
                         <%} else {
-                                out.println(Tb.getMaHHKg());
+                                out.println(Tb.getMaHHK());
                             }%>
                     </td>
                     <td>
@@ -154,13 +154,13 @@
                         <%=Tb.getGiaThuong()%><br>
                     </td>
                     <td>
-                        <%if (Tb.getMaHHKg().equals("VA")) {%>
+                        <%if (Tb.getMaHHK().equals("VNA")) {%>
                         <% tien = (Tb.getGiaThuong() + Tb.getGiaThuong() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
                         <%=tien%>
-                        <%} else if (Tb.getMaHHKg().equals("VJ")) {%>
+                        <%} else if (Tb.getMaHHK().equals("VJ")) {%>
                         <% tien = (Tb.getGiaThuong() + Tb.getGiaThuong() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
                         <%=tien%>
-                        <%} else if (Tb.getMaHHKg().equals("JT")) {%>
+                        <%} else if (Tb.getMaHHK().equals("BL")) {%>
 
                         <% tien = (Tb.getGiaThuong() + Tb.getGiaThuong() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
                         <%=tien%>
@@ -171,13 +171,13 @@
                         <%=Tb.getGiaVIP()%><br>
                     </td>
                     <td>
-                        <%if (Tb.getMaHHKg().equals("VA")) {%>
+                        <%if (Tb.getMaHHK().equals("VNA")) {%>
                         <% tien = (Tb.getGiaVIP() + Tb.getGiaVIP() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
                         <%=tien%>
-                        <%} else if (Tb.getMaHHKg().equals("VJ")) {%>
+                        <%} else if (Tb.getMaHHK().equals("VJ")) {%>
                         <% tien = (Tb.getGiaVIP() + Tb.getGiaVIP() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
                         <%=tien%>
-                        <%} else if (Tb.getMaHHKg().equals("JT")) {%>
+                        <%} else if (Tb.getMaHHK().equals("BL")) {%>
 
                         <% tien = (Tb.getGiaVIP() + Tb.getGiaVIP() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
                         <%=tien%>
@@ -232,14 +232,14 @@
                 <%if (Cbve.getMaTB().equals(Tbve.getMaTB())) {%>
                 <input type="hidden" name="macbve" value="<%= Cbve.getMaCB()%>">
                 <td>
-                    <%if (Tbve.getMaHHKg().equals("VA")) {%>
+                    <%if (Tbve.getMaHHK().equals("VNA")) {%>
                     <img src="./images/VietNamAirline.jpg " height="40px" >
-                    <%} else if (Tbve.getMaHHKg().equals("VJ")) {%>
+                    <%} else if (Tbve.getMaHHK().equals("VJ")) {%>
                     <img src="./images/VietJet.jpg " height="40px" >
-                    <%} else if (Tbve.getMaHHKg().equals("JT")) {%>
+                    <%} else if (Tbve.getMaHHK().equals("BL")) {%>
                     <img src="./images/JetStar.jpg " height="40px" >
                     <%} else {
-                            out.println(Tbve.getMaHHKg());
+                            out.println(Tbve.getMaHHK());
                         }%>
 
                 </td>
@@ -261,13 +261,13 @@
                     <%=Tbve.getGiaThuong()%><br>
                 </td>
                 <td>
-                    <%if (Tbve.getMaHHKg().equals("VA")) {%>
+                    <%if (Tbve.getMaHHK().equals("VNA")) {%>
                     <% tien = (Tbve.getGiaThuong() + Tbve.getGiaThuong() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
                     <%=tien%>
-                    <%} else if (Tbve.getMaHHKg().equals("VJ")) {%>
+                    <%} else if (Tbve.getMaHHK().equals("VJ")) {%>
                     <% tien = (Tbve.getGiaThuong() + Tbve.getGiaThuong() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
                     <%=tien%>
-                    <%} else if (Tbve.getMaHHKg().equals("JT")) {%>
+                    <%} else if (Tbve.getMaHHK().equals("BL")) {%>
 
                     <% tien = (Tbve.getGiaThuong() + Tbve.getGiaThuong() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
                     <%=tien%>
@@ -278,13 +278,13 @@
                     <%=Tbve.getGiaVIP()%><br>
                 </td>
                 <td>
-                    <%if (Tbve.getMaHHKg().equals("VA")) {%>
+                    <%if (Tbve.getMaHHK().equals("VNA")) {%>
                     <% tien = (Tbve.getGiaVIP() + Tbve.getGiaVIP() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
                     <%=tien%>
-                    <%} else if (Tbve.getMaHHKg().equals("VJ")) {%>
+                    <%} else if (Tbve.getMaHHK().equals("VJ")) {%>
                     <% tien = (Tbve.getGiaVIP() + Tbve.getGiaVIP() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
                     <%=tien%>
-                    <%} else if (Tbve.getMaHHKg().equals("JT")) {%>
+                    <%} else if (Tbve.getMaHHK().equals("BL")) {%>
 
                     <% tien = (Tbve.getGiaVIP() + Tbve.getGiaVIP() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
                     <%=tien%>
