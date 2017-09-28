@@ -6,15 +6,15 @@ public class TaiKhoanUser {
     private String password;
     private String hoten;
     private String gioitinh;
-    private int CMND;
-    private int SDT;
+    private String CMND;
+    private String SDT;
     private String DiaChi;
 
     
     public TaiKhoanUser(){
         
     }
-    public TaiKhoanUser(String email, String password, String hoten, String gioitinh, int CMND, int SDT, String diaChi){
+    public TaiKhoanUser(String email, String password, String hoten, String gioitinh, String CMND, String SDT, String diaChi){
         this.email=email;
         this.CMND=CMND;
         this.SDT=SDT;
@@ -55,19 +55,19 @@ public class TaiKhoanUser {
         this.gioitinh = gioitinh;
     }
 
-    public int getCMND() {
+    public String getCMND() {
         return CMND;
     }
 
-    public void setCMND(int CMND) {
+    public void setCMND(String CMND) {
         this.CMND = CMND;
     }
 
-    public int getSDT() {
+    public String getSDT() {
         return SDT;
     }
 
-    public void setSDT(int SDT) {
+    public void setSDT(String SDT) {
         this.SDT = SDT;
     }
 

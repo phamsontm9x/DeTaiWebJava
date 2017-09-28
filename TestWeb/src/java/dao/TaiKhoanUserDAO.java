@@ -26,8 +26,8 @@ public class TaiKhoanUserDAO {
                 tkus.setPassword(rs.getString("Password"));
                 tkus.setHoten(rs.getString("HoTen"));
                 tkus.setGioitinh(rs.getString("GioiTinh"));
-                tkus.setCMND(rs.getInt("CMND"));
-                tkus.setSDT(rs.getInt("SDT"));
+                tkus.setCMND(rs.getString("CMND"));
+                tkus.setSDT(rs.getString("SDT"));
                 tkus.setDiaChi(rs.getString("DiaChi"));
                 
             }
@@ -36,7 +36,7 @@ public class TaiKhoanUserDAO {
        }catch(Exception ex){}
         return tkus;
     }
-    public boolean UpdateUserInfo(String email,int sdt, int cmnd, String hoTen, String diachi ){
+    public boolean UpdateUserInfo(String email,String sdt, String cmnd, String hoTen, String diachi ){
         Connection con = DBConnect.getConnection();
         String sql = "Update TaiKhoanUser Set SDT = '"+sdt+"', CMND = '"+cmnd+"', HoTen = N'"+hoTen+"', DiaChi = N'"+diachi+"' Where Email ='"+email+"';";
         try{
@@ -66,5 +66,5 @@ public class TaiKhoanUserDAO {
     public boolean UpdateUserInfo(String email, String diachi, String cmnd, String diachi0) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    }
+}
 

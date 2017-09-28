@@ -36,8 +36,8 @@ public class DangKiDAO {
                 String password = (rs.getString("Password"));
                 String hoten = (rs.getString("HoTen"));
                 String gioitinh = (rs.getString("GioiTinh"));
-                int cmnd = rs.getInt("CMND");
-                int sdt = rs.getInt("SDT");
+                String cmnd = rs.getString("CMND");
+                String sdt = rs.getString("SDT");
                 String diachi = rs.getString("DiaChi");
                 TaiKhoanUser tk = new TaiKhoanUser(email, password, hoten, gioitinh, cmnd, sdt,diachi);
                 arr.add(tk);
@@ -63,8 +63,8 @@ public class DangKiDAO {
                 tk.setPassword(rs.getString("Password"));
                 tk.setHoten(rs.getString("HoTen"));
                 tk.setGioitinh(rs.getString("GioiTinh"));
-                tk.setCMND(rs.getInt("CMND"));
-                tk.setSDT(rs.getInt("SDT"));
+                tk.setCMND(rs.getString("CMND"));
+                tk.setSDT(rs.getString("SDT"));
             }
 
         } catch (SQLException ex) {
@@ -73,7 +73,7 @@ public class DangKiDAO {
         return tk;
     }
 
-    public boolean AddTKUser(String email, String password, String gioitinh, String hoten, int CMND, int SDT, String DiaChi) {
+    public boolean AddTKUser(String email, String password, String gioitinh, String hoten, String CMND, String SDT, String DiaChi) {
         Connection con = DBConnect.getConnection();
         String sql = "Insert into TaiKhoanUser " + "(Email,Password,HoTen,GioiTinh,CMND,SDT,DiaChi) "
                 + "values(N'" + email + "',N'" + password + "',N'" + hoten + "',N'" + gioitinh + "',N'" + CMND + "',N'" + SDT + "',N'" + DiaChi + "');";
@@ -91,7 +91,7 @@ public class DangKiDAO {
         return false;
     }
 
-    public boolean UpdateTKUser(String emailcu, String email, String password, String gioitinh, String hoten, int CMND, int SDT,String DiaChi) {
+    public boolean UpdateTKUser(String emailcu, String email, String password, String gioitinh, String hoten, String CMND, String SDT,String DiaChi) {
         Connection con = DBConnect.getConnection();
         String sql = "Update TaiKhoanUser Set Email='" + email + "', Password='" + password + "',GioiTinh='" + gioitinh + "',HoTen='" + hoten + "',CMND='" + CMND + "',SDT='" + SDT + "' ,DiaChi='" + DiaChi + "'Where Email='" + emailcu + "' ";
 
@@ -157,7 +157,7 @@ public class DangKiDAO {
         return null;
     }
 
-    public boolean AddTKUser(String email, String password, String gioitinh, String hoten, String diachi, int cmnd1, int sdt1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public boolean AddTKUser(String email, String password, String gioitinh, String hoten, String diachi, int cmnd1, int sdt1) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 }
