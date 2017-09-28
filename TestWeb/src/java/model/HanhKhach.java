@@ -42,7 +42,7 @@ public class HanhKhach {
         this.CMND = CMND;
     }
 
-    public int getSoDT() {
+    public String getSoDT() {
         return SoDT;
     }
 
