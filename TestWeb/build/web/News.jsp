@@ -106,17 +106,17 @@
                         <ul class="fbg_ul">
                             <li><a >CheapAirline Pty Ltd., số GPĐKKD: 33069720243.</a></li>
                             <li><a >CheapAirline Regional Services Pte Ltd, số GPĐKKD: 201229688K. Số Giấy phép kinh doanh đại lý du lịch của Singapore: 02495</a></li>
-                            <li><a >CheapAirline Japan Co., Ltd., số Giấy phép kinh doanh đại lý du lịch của Công ty Jetstar Holidays K.K.: 1829</a></li>
+                            <li><a >CheapAirline Japan Co., Ltd., số Giấy phép kinh doanh đại lý du lịch của Công ty CheapAirline Holidays K.K.: 1829</a></li>
                         </ul>
                     </div>
                     <div class="col c3">
                         <h2><span>Contact</span> us</h2>
-                        
-                        <p class="contact_info"> <span>Address:</span>1051 Lũy Bán Bích, P.Tân Thành, Q.Tân Phú, Tp.HCM<br />
-                            <span>Telephone:</span> +18006590<br />
+
+                        <p class="contact_info"> <span>Address:</span>97 Man Thiện, Phường Hiệp Phú Q9 TP.HCM<br />
+                            <span>Telephone:</span> +18001000<br />
                             <span>FAX:</span> +458 4578<br />
                             <span>Others:</span> +301  0125  01258<br />
-                            <span>E-mail:</span> <a href="mail.google.com">CheapAirline@hotmail.com</a> </p>
+                            <span>E-mail:</span> <a href="mail.google.com">vemaybay@gmail.com</a> </p>
                     </div>
                     <div class="clr"></div>
                 </div>
