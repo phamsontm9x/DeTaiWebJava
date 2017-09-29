@@ -10,9 +10,8 @@ public class HanhKhach {
     private int HanhLy;
     private String LoaiVe;
     private String MaCB;
-    private String DichVu;
 
-    public HanhKhach(String HoTen, String CMND, String SoDT,int HanhLy, String LoaiVe, String DichVu, String MaCB,String DChi) {
+    public HanhKhach(String HoTen, String CMND, String SoDT,int HanhLy, String LoaiVe, String MaCB,String DChi) {
         this.HoTen = HoTen;
         this.CMND = CMND;
         this.SoDT = SoDT;
@@ -20,7 +19,6 @@ public class HanhKhach {
         this.HanhLy = HanhLy;
         this.LoaiVe = LoaiVe;
         this.MaCB = MaCB;
-        this.DichVu = DichVu;
     }
 
     public HanhKhach() {
@@ -81,16 +79,4 @@ public class HanhKhach {
     public void setMaCB(String MaCB) {
         this.MaCB = MaCB;
     }
-
-    public String getDichVu() {
-        return DichVu;
-    }
-
-    public void setDichVu(String DichVu) {
-        this.DichVu = DichVu;
-    }
-
-
-    
-
 }

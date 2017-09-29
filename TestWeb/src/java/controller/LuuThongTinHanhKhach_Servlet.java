@@ -48,7 +48,7 @@ public class LuuThongTinHanhKhach_Servlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LuuThongTinHanhKhach_Servlet</title>");            
+            out.println("<title>Servlet LuuThongTinHanhKhach_Servlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet LuuThongTinHanhKhach_Servlet at " + request.getContextPath() + "</h1>");
@@ -81,121 +81,89 @@ public class LuuThongTinHanhKhach_Servlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        HttpSession session= req.getSession();
-        String email =(String) session.getAttribute("email") ;
+        HttpSession session = req.getSession();
+        String email = (String) session.getAttribute("email");
         String hoten;
         String sdt;
         String cmnd;
         int hanhly;
         String loaive;
-        String dichvu;
         String dchi;
-        String trangThai ="Chưa thanh toán";
+        String trangThai = "Chưa thanh toán";
         int soluong = Integer.parseInt(req.getParameter("soluong").toString());
-        String type=req.getParameter("type").toString();
+        String type = req.getParameter("type").toString();
         String macb = req.getParameter("macb").toString();
-        String flag=req.getParameter("flag").toString();
+        String flag = req.getParameter("flag").toString();
         String macbve = "";
         HanhKhachDAOImpl hk = new HanhKhachDAOImpl();
         ChuyenBayDAOImpl cb = new ChuyenBayDAOImpl();
         ChuyenBay Cb = cb.getEleChuyenBay(macb);
-        boolean kq1 = false, kq2 =false;
-        String ngayTao="";
-        int gia=0, co = 0;
+        boolean kq1 = false, kq2 = false;
+        String ngayTao = "";
+        int gia = 0, co = 0;
         DonHangDAOImpl dh = new DonHangDAOImpl();
-       
-        if(type.equals("roundtrip")){
+
+        if (type.equals("roundtrip")) {
             macbve = (String) req.getParameter("macbve");
         }
-        for(int i=1; i<=soluong; i++){
-            hoten = req.getParameter("hoten"+i);
-            cmnd = req.getParameter("cmnd"+i);
-            sdt = req.getParameter("sdt"+i);
-            hanhly = Integer.parseInt(req.getParameter("hanhly"+i));
-            loaive = req.getParameter("loaivedi"+i);
-            dichvu = "";
-            dchi =req.getParameter("diachi"+i);
-            kq1 = hk.AddHK(macb, hoten, cmnd, sdt, hanhly, loaive, dichvu, dchi);
+        for (int i = 1; i <= soluong; i++) {
+            hoten = req.getParameter("hoten" + i);
+            cmnd = req.getParameter("cmnd" + i);
+            sdt = req.getParameter("sdt" + i);
+            hanhly = Integer.parseInt(req.getParameter("hanhly" + i));
+            loaive = req.getParameter("loaivedi" + i);
+            dchi = req.getParameter("diachi" + i);
+            kq1 = hk.AddHK(macb, hoten, cmnd, sdt, hanhly, loaive, dchi);
             gia = Integer.parseInt(req.getParameter("giavedi"));
-            Date ngay=new Date(System.currentTimeMillis());
+            Date ngay = new Date(System.currentTimeMillis());
             SimpleDateFormat dinhdang = new SimpleDateFormat("hh:mm:ss MM-dd-yyyy");
             ngayTao = dinhdang.format(ngay.getTime());
             kq2 = dh.addListDonHang(email, ngayTao, trangThai, cmnd, macb, gia);
-            if(loaive.equals("Eco")){
+            if (loaive.equals("Eco")) {
                 boolean kq = cb.updateSLHKCB1(Cb.getSLHKHT(), macb);
-            }
-            else{
+            } else {
                 boolean kq = cb.updateSLHKCB2(Cb.getSLHKTD(), macb);
             }
-        if(!kq2){
-            co =1;
-        }
-        if(type.equals("roundtrip")){
-               hanhly = Integer.parseInt(req.getParameter("hanhlyve"+i));
-               loaive = req.getParameter("loaiveve"+i);
-               gia = Integer.parseInt(req.getParameter("giaveve"));
-               kq1 = hk.AddHK(macbve, hoten, cmnd, sdt, hanhly, loaive, dichvu, dchi);
-               kq2 = dh.addListDonHang(email, ngayTao, trangThai, cmnd, macbve, gia);
-               if(loaive.equals("Eco")){
-                boolean kq = cb.updateSLHKCB1(Cb.getSLHKHT(), macb);
+            if (!kq2) {
+                co = 1;
             }
-            else{
-                boolean kq = cb.updateSLHKCB2(Cb.getSLHKTD(), macb);
+            if (type.equals("roundtrip")) {
+                hanhly = Integer.parseInt(req.getParameter("hanhlyve" + i));
+                loaive = req.getParameter("loaiveve" + i);
+                gia = Integer.parseInt(req.getParameter("giaveve"));
+                kq1 = hk.AddHK(macbve, hoten, cmnd, sdt, hanhly, loaive, dchi);
+                kq2 = dh.addListDonHang(email, ngayTao, trangThai, cmnd, macbve, gia);
+                if (loaive.equals("Eco")) {
+                    boolean kq = cb.updateSLHKCB1(Cb.getSLHKHT(), macb);
+                } else {
+                    boolean kq = cb.updateSLHKCB2(Cb.getSLHKTD(), macb);
+                }
             }
-           }
-        if(!(kq1&&kq2)){
-            co =1;
-        }
-        }
-        if(co==0&& flag.equals("tra")){
-            
-                String thbao ="Đặt vé Thành Công";
-                req.setAttribute("tbao",thbao);
-                RequestDispatcher rd= getServletContext().getRequestDispatcher("/payment.jsp");
-                rd.forward(req, resp);
-            }else if(co==0&& flag.equals("no")){
-                String thbao ="Đặt vé Thành Công";
-                req.setAttribute("tbao",thbao);
-                RequestDispatcher rd= getServletContext().getRequestDispatcher("/index.jsp");
-                rd.forward(req, resp);
-            }else{
-                String thbao ="Đặt vé thất bại. Xin Đặt lại";
-                req.setAttribute("thbao",thbao);
-                RequestDispatcher rd= getServletContext().getRequestDispatcher("/InformationNew.jsp");
-                rd.forward(req, resp);
+            if (!(kq1 && kq2)) {
+                co = 1;
             }
-//        if(email.trim().length()==0 || password.trim().length()==0|| hoten.trim().length()==0 || gioitinh.trim().length()==0 || sdt.trim().length()==0 || cmnd.trim().length()==0|| diachi.trim().length()==0 ){
-//            tb="Bạn chưa điền đầy đủ thông tin";
-//            req.setAttribute("tb", tb);
-//            RequestDispatcher rd= getServletContext().getRequestDispatcher("/RegisterLogin.jsp");
-//            rd.forward(req, resp);
-//        }
-//        else{
-//            boolean kq=dk.AddTKUser(email, password, gioitinh, hoten, cmnd1, sdt1,diachi);
-//            if(kq){
-//                tb="Đăng Kí Thành Công";
-//                req.setAttribute("tb", tb);
-//                RequestDispatcher rd= getServletContext().getRequestDispatcher("/RegisterLogin.jsp");
-//                rd.forward(req, resp);
-//                
-//            }
-//            else{
-//                tb="Email của bạn đã được đăng kí";
-//                req.setAttribute("tb", tb);
-//                RequestDispatcher rd= getServletContext().getRequestDispatcher("/RegisterLogin.jsp");
-//                rd.forward(req, resp);
-//                
-//            }
-//    }
+        }
+        if (co == 0 && flag.equals("tra")) {
+
+            String thbao = "Đặt vé Thành Công";
+            req.setAttribute("tbao", thbao);
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/payment.jsp");
+            rd.forward(req, resp);
+        } else if (co == 0 && flag.equals("no")) {
+            String thbao = "Đặt vé Thành Công";
+            req.setAttribute("tbao", thbao);
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
+            rd.forward(req, resp);
+        } else {
+            String thbao = "Đặt vé thất bại. Xin Đặt lại";
+            req.setAttribute("thbao", thbao);
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/InformationNew.jsp");
+            rd.forward(req, resp);
+        }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

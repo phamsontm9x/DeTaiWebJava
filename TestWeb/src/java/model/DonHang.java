@@ -11,15 +11,15 @@ package model;
  */
 public class DonHang {
     
-    private String KhachHang;
+    private String Email;
     private String NgayTao;
     private String TrangThai;
     private String CMND;
     private String MaCB;
     private int Gia;
     
-    public DonHang(String khachHang, String ngayTao, String trangThai, String cmnd, String maCB, int gia) {
-        this.KhachHang = khachHang;
+    public DonHang(String email, String ngayTao, String trangThai, String cmnd, String maCB, int gia) {
+        this.Email = email;
         this.NgayTao = ngayTao;
         this.TrangThai = trangThai;
         this.CMND = cmnd;
@@ -31,12 +31,12 @@ public class DonHang {
     }
     
 
-    public String getKhachHang() {
-        return KhachHang;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setKhachHang(String khachHang) {
-        this.KhachHang = khachHang;
+    public void setEmail(String khachHang) {
+        this.Email = khachHang;
     }
 
     public String getNgayTao() {

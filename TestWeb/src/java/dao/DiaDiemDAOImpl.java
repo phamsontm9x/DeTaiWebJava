@@ -106,25 +106,4 @@ public class DiaDiemDAOImpl  {
         }
         return tenDD;
     }
-   
-    
-    
-//    public int getMaDD(String TenDD){
-//        Connection con= DBConnect.getConnection();
-//        String sql= "Select * from DiaDiem where TenDD='"+TenDD+"';";
-//        int madd = 0;
-//        try{
-//        PreparedStatement pr= con.prepareStatement(sql);
-//        ResultSet rs= pr.executeQuery();
-//        
-//        if(rs.next()){
-//            madd= rs.getInt("MaDD");
-//        }
-//            con.close();
-//            
-//        } catch (SQLException ex) {
-//           
-//        }
-//        return madd;
-//    }
 }

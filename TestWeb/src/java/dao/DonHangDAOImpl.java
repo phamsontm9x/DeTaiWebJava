@@ -31,7 +31,7 @@ public class DonHangDAOImpl implements DonHangDAO{
            
             while(rs.next()){
                 DonHang  dh =new DonHang();
-                dh.setKhachHang(rs.getString("KhachHang"));
+                dh.setEmail(rs.getString("Email"));
                 dh.setNgayTao(rs.getString("NgayTao"));
                 dh.setTrangThai(rs.getString("TrangThai"));
                 dh.setCMND(rs.getString("CMND"));
@@ -50,7 +50,7 @@ public class DonHangDAOImpl implements DonHangDAO{
     @Override
     public ArrayList<DonHang> getListDonHang(String khachHang) {
         Connection connection=DBConnect.getConnection();
-        String sql="SELECT * FROM DonHang where KhachHang = '"+khachHang+"';";
+        String sql="SELECT * FROM DonHang where Email = '"+khachHang+"';";
         ArrayList<DonHang> arr = new ArrayList<>();
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -76,7 +76,7 @@ public class DonHangDAOImpl implements DonHangDAO{
     @Override
     public boolean addListDonHang(String khachHang, String ngayTao, String trangThai, String cmnd, String macb, int gia) {
         Connection connection=DBConnect.getConnection();
-        String sql="INSERT INTO DonHang (KhachHang,NgayTao,TrangThai,CMND,MaCB,Gia) VALUES ('"+khachHang+"','"+ngayTao+"',N'"+trangThai+"','"+cmnd+"','"+macb+"','"+gia+"');";
+        String sql="INSERT INTO DonHang (Email,NgayTao,TrangThai,CMND,MaCB,Gia) VALUES ('"+khachHang+"','"+ngayTao+"',N'"+trangThai+"','"+cmnd+"','"+macb+"','"+gia+"');";
          try {
             PreparedStatement ps = connection.prepareStatement(sql);
             boolean kq = ps.execute();
@@ -108,7 +108,7 @@ public class DonHangDAOImpl implements DonHangDAO{
     }
     public ArrayList<String> getNgayHD(String mail) throws SQLException{
        Connection con = DBConnect.getConnection();
-       String sql ="select distinct CONVERT(varchar(10), NgayTao,126) as Ngay from DonHang where KhachHang ='"+mail+"' order by Ngay Desc  ";
+       String sql ="select distinct CONVERT(varchar(10), NgayTao,126) as Ngay from DonHang where Email ='"+mail+"' order by Ngay Desc  ";
        ArrayList<String> arr = new ArrayList<>();
        try{
            PreparedStatement ps = con.prepareStatement(sql);

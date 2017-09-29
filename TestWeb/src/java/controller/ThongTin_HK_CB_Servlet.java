@@ -118,7 +118,7 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
                 try {
                     cmnd = cmndstr;
                     hanhly = Integer.parseInt(hanhly_str);
-                    HanhKhach hkdi = new HanhKhach(hoten, cmnd, sdt_str, hanhly, loaive, dichvu, macb, diachi);
+                    HanhKhach hkdi = new HanhKhach(hoten, cmnd, sdt_str, hanhly, loaive, macb, diachi);
                     session.setAttribute("tthkdi" + x, hkdi);
                 } catch (Exception ex) {
                     System.out.println(ex);
@@ -170,9 +170,9 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
                         }
                     }
 
-                    HanhKhach hkdi = new HanhKhach(hoten, cmnd, sdt_str, hanhly, vedi, dichvu, macb, diachi);
+                    HanhKhach hkdi = new HanhKhach(hoten, cmnd, sdt_str, hanhly, vedi, macb, diachi);
                     session.setAttribute("tthkdi" + x, hkdi);
-                    HanhKhach hkve = new HanhKhach(hoten, cmnd, sdt_str, hanhly, veve, dichvu, macb, diachi);;
+                    HanhKhach hkve = new HanhKhach(hoten, cmnd, sdt_str, hanhly, veve, macb, diachi);;
                     session.setAttribute("tthkve" + x, hkve);
 
                 }

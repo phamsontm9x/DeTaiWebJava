@@ -62,12 +62,7 @@
             <%  String tencheck = "";
                     if (session.getAttribute("ten") == null) {%>////////
             alert("Bạn hãy dăng nhập trước khi mua vé và thanh toán");
-            << << << < HEAD
             return true;
-            =======
-            // Check id_User when book ticket
-            return YES;
-            >>>>>>> 874d7feda2aa10526b66b23342e69073db348d3c
             <%} else {
                     }%>
             }
