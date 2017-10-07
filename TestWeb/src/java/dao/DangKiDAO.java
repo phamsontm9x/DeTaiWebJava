@@ -107,20 +107,6 @@ public class DangKiDAO {
         return false;
     }
 
-    public boolean DeleteTKUser(String email) {
-        Connection con = DBConnect.getConnection();
-        String sql = "Delete from TaiKhoanUser Where Email='" + email + "'";
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            boolean kq = ps.execute();
-            con.close();
-            return true;
-        } catch (SQLException ex) {
-
-        }
-        return false;
-    }
-
     public boolean CheckLogin(String email, String password) {
         Connection con = DBConnect.getConnection();
         String sql = "Select * from TaiKhoanUser where Email='" + email + "' and Password='" + password + "'";
