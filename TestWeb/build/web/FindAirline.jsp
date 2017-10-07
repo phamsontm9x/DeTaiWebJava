@@ -74,32 +74,41 @@
             if ((request.getParameter("ngayve").trim()) != null) {
                 ngayve = request.getParameter("ngayve");
             }
-            ArrayList<TuyenBay> tb_Arr = new ArrayList();
-
-            TuyenBayDAOImpl tb = new TuyenBayDAOImpl();
-            tb_Arr = tb.getListTuyenBay(diadiemdi, diadiemden);
-
-            ArrayList<ChuyenBay> cb_Arr = new ArrayList();
-
-            ChuyenBayDAOImpl cb = new ChuyenBayDAOImpl();
-            cb_Arr = cb.getListChuyenBaybyNgayDi(ngaykhoihanh);
-
+            // Tao mang Tuyen bay
+            ArrayList<TuyenBay> arrTuyenBay = new ArrayList();
+            // de getdata Tuyen Bay
+            TuyenBayDAOImpl apiTuyenBay = new TuyenBayDAOImpl();
+            arrTuyenBay = apiTuyenBay.getListTuyenBay(diadiemdi, diadiemden);
+            // get list can dia diem ngay gio cu the? -> API thieu
+            // Co the co nhieu hang hang khong o day phu thuoc vao tuyen bay
+            
+            // Tao mang Chuyen bay
+            ArrayList<ChuyenBay> arrChuyenBay = new ArrayList();
+            // getData Chuyen Bay
+            ChuyenBayDAOImpl apiChuyenBay = new ChuyenBayDAOImpl();
+            arrChuyenBay = apiChuyenBay.getListChuyenBaybyNgayDi(ngaykhoihanh);
+            // get list dua vao tuyen bay  va ngay.
+            
             DiaDiemDAOImpl cd = new DiaDiemDAOImpl();
             String di = cd.getTenDD(diadiemdi);
             String den = cd.getTenDD(diadiemden);
             sluong = Integer.parseInt(soluong);
             int tien = 0;
-            if (cb.getListChuyenBaybyNgayDi(ngaykhoihanh).size() == 0 || tb.getListTuyenBay(diadiemdi, diadiemden).size() == 0) {
-                out.println("<br><font family = 'Time New Romen' size='5' >");
-                out.println("Danh sách tất cả mọi Chuyến Bay từ " + di + " đến " + den + "</font>");
-                out.println("<br>");
-                out.println("<br>");
-                tb_Arr = tb.getListTuyenBay(diadiemdi, diadiemden);
-                cb_Arr = cb.getListChuyenBay();
-            } else {
-                cb.getListChuyenBaybyNgayDi(ngaykhoihanh);
-                tb.getListTuyenBay(diadiemdi, diadiemden);
-            }
+            
+            // chuyen bay va ngay toi == 0
+            //if (apiChuyenBay.getListChuyenBaybyNgayDi(ngaykhoihanh va ngay toi).size() == 0)
+//           
+//            if (apiChuyenBay.getListChuyenBaybyNgayDi(ngaykhoihanh).size() == 0 || apiTuyenBayi.getListTuyenBay(diadiemdi, diadiemden).size() == 0) {
+//                out.println("<br><font family = 'Time New Romen' size='5' >");
+//                out.println("Danh sách tất cả mọi Chuyến Bay từ " + di + " đến " + den + "</font>");
+//                out.println("<br>");
+//                out.println("<br>");
+//                arrTuyenBay = tb.getListTuyenBay(diadiemdi, diadiemden);
+//                arrChuyenBay = cb.getListChuyenBay();
+//            } else {
+//                cb.getListChuyenBaybyNgayDi(ngaykhoihanh);
+//                tb.getListTuyenBay(diadiemdi, diadiemden);
+//            }
         %>
         <form id="frm1" action="InformationForm.jsp" onsubmit=" return kiemtra()">
             >
@@ -117,8 +126,8 @@
                     <th>Tổng tiền Vé VIP</th>
 
                 </tr>
-                <% for (TuyenBay Tb : tb_Arr) {%>
-                <% for (ChuyenBay Cb : cb_Arr) {%>
+                <% for (TuyenBay Tb : arrTuyenBay) {%>
+                <% for (ChuyenBay Cb : arrChuyenBay) {%>
                 <%if (Cb.getMaTB().equals(Tb.getMaTB())) {%>
 
                 <input type="hidden" name="type" value="<%=type%>">
@@ -191,27 +200,27 @@
                 <%}%>
             </table>
             <% if (type.equals("roundtrip")) {
-                    ArrayList<TuyenBay> tb_Arrve = new ArrayList();
+                
+                    ArrayList<TuyenBay> arrTuyenBayVe = new ArrayList();
+                    TuyenBayDAOImpl apiTuyenBayVe = new TuyenBayDAOImpl();
+                    arrTuyenBayVe = apiTuyenBayVe.getListTuyenBay(diadiemden, diadiemdi);
 
-                    TuyenBayDAOImpl tbve = new TuyenBayDAOImpl();
-                    tb_Arr = tb.getListTuyenBay(diadiemden, diadiemdi);
-
-                    ArrayList<ChuyenBay> cb_Arrve = new ArrayList();
-
-                    ChuyenBayDAOImpl cbve = new ChuyenBayDAOImpl();
-                    cb_Arrve = cbve.getListChuyenBaybyNgayDi(ngayve);
-                    if (cb.getListChuyenBaybyNgayDi(ngaykhoihanh).size() == 0) {
-                        out.println("<br><font family = 'Time New Romen' size='5' >");
-                        out.println("Không có chuyến bay trong ngày này");
-                        out.println("Danh sách tất cả mọi Chuyến Bay từ " + di + " đến " + den + "</font>");
-                        out.println("<br>");
-                        out.println("<br>");
-                        tb_Arrve = tb.getListTuyenBay(diadiemdi, diadiemden);
-                        cb_Arrve = cb.getListChuyenBay();
-                    } else {
-                        cb_Arrve = cb.getListChuyenBaybyNgayDi(ngayve);
-                        tb_Arrve = tb.getListTuyenBay(diadiemdi, diadiemden);
-                    }
+                    ArrayList<ChuyenBay> arrChuyenBayVe = new ArrayList();
+                    ChuyenBayDAOImpl apiChuyenBayVe = new ChuyenBayDAOImpl();
+                    arrChuyenBayVe = apiChuyenBayVe.getListChuyenBaybyNgayDi(ngayve); // ngay ve + ma chuyen bay ->
+                    
+//                    if (cb.getListChuyenBaybyNgayDi(ngaykhoihanh).size() == 0) {
+//                        out.println("<br><font family = 'Time New Romen' size='5' >");
+//                        out.println("Không có chuyến bay trong ngày này");
+//                        out.println("Danh sách tất cả mọi Chuyến Bay từ " + di + " đến " + den + "</font>");
+//                        out.println("<br>");
+//                        out.println("<br>");
+//                        arrTuyenBayve = tb.getListTuyenBay(diadiemdi, diadiemden);
+//                        arrChuyenBayve = cb.getListChuyenBay();
+//                    } else {
+//                        arrChuyenBayve = cb.getListChuyenBaybyNgayDi(ngayve);
+//                        arrTuyenBayve = tb.getListTuyenBay(diadiemdi, diadiemden);
+//                    }
             %>
             <h2 style="font-family: Times New Roman; margin-left: 50px; font-size: 50px;">Chuyến Bay Về</h2>
             <table class="FormAvailable" border="3" style="margin-top:10px; margin-left:50px;margin-right: 20px; padding-left: 0px;">
@@ -227,8 +236,8 @@
                     <th>Tổng tiền</th>
 
                 </tr>
-                <% for (TuyenBay Tbve : tb_Arrve) {%>
-                <% for (ChuyenBay Cbve : cb_Arrve) {%>
+                <% for (TuyenBay Tbve : arrTuyenBayVe) {%>
+                <% for (ChuyenBay Cbve : arrChuyenBayVe) {%>
                 <%if (Cbve.getMaTB().equals(Tbve.getMaTB())) {%>
                 <input type="hidden" name="macbve" value="<%= Cbve.getMaCB()%>">
                 <td>
