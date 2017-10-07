@@ -15,10 +15,10 @@ public class DonHang {
     private String NgayTao;
     private String TrangThai;
     private String CMND;
-    private String MaCB;
+    private int MaCB;
     private int Gia;
     
-    public DonHang(String email, String ngayTao, String trangThai, String cmnd, String maCB, int gia) {
+    public DonHang(String email, String ngayTao, String trangThai, String cmnd, int maCB, int gia) {
         this.Email = email;
         this.NgayTao = ngayTao;
         this.TrangThai = trangThai;
@@ -63,11 +63,11 @@ public class DonHang {
         this.CMND = cmnd;
     }
 
-    public String getMaCB() {
+    public int getMaCB() {
         return MaCB;
     }
 
-    public void setMaCB(String MaCB) {
+    public void setMaCB(int MaCB) {
         this.MaCB = MaCB;
     }
 

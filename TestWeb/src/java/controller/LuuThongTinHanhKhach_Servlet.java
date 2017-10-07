@@ -94,9 +94,12 @@ public class LuuThongTinHanhKhach_Servlet extends HttpServlet {
         String trangThai = "Chưa thanh toán";
         int soluong = Integer.parseInt(req.getParameter("soluong").toString());
         String type = req.getParameter("type").toString();
-        String macb = req.getParameter("macb").toString();
+        String macbStr = req.getParameter("macb").toString();
+        int macb = Integer.parseInt(macbStr);
         String flag = req.getParameter("flag").toString();
-        String macbve = "";
+        String macbveStr = "";
+       
+        int macbve = 0;
         HanhKhachDAOImpl hk = new HanhKhachDAOImpl();
         ChuyenBayDAOImpl cb = new ChuyenBayDAOImpl();
         ChuyenBay Cb = cb.getEleChuyenBay(macb);
@@ -106,7 +109,8 @@ public class LuuThongTinHanhKhach_Servlet extends HttpServlet {
         DonHangDAOImpl dh = new DonHangDAOImpl();
 
         if (type.equals("roundtrip")) {
-            macbve = (String) req.getParameter("macbve");
+            macbveStr = (String) req.getParameter("macbve");
+            macbve = Integer.parseInt(macbveStr);
         }
         for (int i = 1; i <= soluong; i++) {
             hoten = req.getParameter("hoten" + i);

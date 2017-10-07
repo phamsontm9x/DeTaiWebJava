@@ -35,7 +35,7 @@ public class DonHangDAOImpl implements DonHangDAO{
                 dh.setNgayTao(rs.getString("NgayTao"));
                 dh.setTrangThai(rs.getString("TrangThai"));
                 dh.setCMND(rs.getString("CMND"));
-                dh.setMaCB(rs.getString("MaCB"));
+                dh.setMaCB(rs.getInt("MaCB"));
                 dh.setGia(rs.getInt("Gia"));
                 //if(cb!=null)
                     arr.add(dh);
@@ -61,7 +61,7 @@ public class DonHangDAOImpl implements DonHangDAO{
                 dh.setNgayTao(rs.getString("NgayTao"));
                 dh.setTrangThai(rs.getString("TrangThai"));
                 dh.setCMND(rs.getString("CMND"));
-                dh.setMaCB(rs.getString("MaCB"));
+                dh.setMaCB(rs.getInt("MaCB"));
                 dh.setGia(rs.getInt("Gia"));
                 //if(cb!=null)
                     arr.add(dh);
@@ -74,7 +74,7 @@ public class DonHangDAOImpl implements DonHangDAO{
     }
 
     @Override
-    public boolean addListDonHang(String khachHang, String ngayTao, String trangThai, String cmnd, String macb, int gia) {
+    public boolean addListDonHang(String khachHang, String ngayTao, String trangThai, String cmnd, int macb, int gia) {
         Connection connection=DBConnect.getConnection();
         String sql="INSERT INTO DonHang (Email,NgayTao,TrangThai,CMND,MaCB,Gia) VALUES ('"+khachHang+"','"+ngayTao+"',N'"+trangThai+"','"+cmnd+"','"+macb+"','"+gia+"');";
          try {
@@ -91,7 +91,7 @@ public class DonHangDAOImpl implements DonHangDAO{
     }
 
     @Override
-    public boolean updateListDonHang(String cmnd, String maCB, String trangThai) {
+    public boolean updateListDonHang(String cmnd, int maCB, String trangThai) {
         Connection con = DBConnect.getConnection();
         String sql ="Update DonHang Set TrangThai =N'" + trangThai + "' Where CMND='" + cmnd + "' AND MaCB ='" +maCB+"'";
 

@@ -4,6 +4,7 @@
     Author     : My PC
 --%>
 
+<%@page import="java.lang.Integer.parseInt(String)"%>
 <%@page import="dao.HangHangKhongDAOImpl"%>
 <%@page import="dao.DiaDiemDAOImpl"%>
 <%@page import="model.TuyenBay"%>
@@ -43,7 +44,8 @@
                 int soluong = Integer.parseInt(session.getAttribute("soluong").toString());
                 int giavedi = 0, giaveve = 0;
                 //String email = request.getAttribute("email").toString();
-                String macb = request.getAttribute("macb").toString();
+                String maStr = request.getAttribute("macb").toString();
+                int macb = Integer.parseInt(maStr);
 
                 if (type.equals("oneway")) {
                     ChuyenBayDAOImpl CB = new ChuyenBayDAOImpl();

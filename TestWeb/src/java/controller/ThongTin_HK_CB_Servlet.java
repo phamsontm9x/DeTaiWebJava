@@ -59,7 +59,8 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
 
         String sdt = null;
         String email = request.getParameter("email");
-        String macb = request.getParameter("macb");
+        String macbStr = request.getParameter("macb");
+        int macb = Integer.parseInt(macbStr);
         String type = request.getParameter("type");
         int soluong = 0;
         String soluong_str = request.getParameter("soluong");
@@ -83,12 +84,13 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
             }
         }
 
-        String macbve = "";
+        String macbveStr = "";
         ChuyenBayDAOImpl cbd = new ChuyenBayDAOImpl();
         ChuyenBay cb = cbd.getEleChuyenBay(macb);
         ChuyenBay cbve = new ChuyenBay();
         if (request.getParameter("macbve") != null) {
-            macbve = request.getParameter("macbve");
+            macbveStr = request.getParameter("macbve");
+            int macbve = Integer.parseInt(macbveStr);
             cbve = cbd.getEleChuyenBay(macbve);
         }
 
@@ -136,14 +138,14 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
                 } else {
                     vedi = "Vip";
                 }
-                request.setAttribute("macb", macb);
+                request.setAttribute("macb", macbStr);
                 //if(giaveve==cbve.getGiaVeThuong()){
                 if (loaiveve.equals("0")) {
                     veve = "Eco";
                 } else {
                     veve = "Vip";
                 }
-                request.setAttribute("macbve", macbve);
+                request.setAttribute("macbve", macbveStr);
                 for (int x = 1; x <= soluong; x++) {
 
                     String hoten = request.getParameter("hoten" + x);

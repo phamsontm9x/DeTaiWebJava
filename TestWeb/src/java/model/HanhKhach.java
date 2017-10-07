@@ -9,9 +9,9 @@ public class HanhKhach {
     private String DChi;
     private int HanhLy;
     private String LoaiVe;
-    private String MaCB;
+    private int MaCB;
 
-    public HanhKhach(String HoTen, String CMND, String SoDT,int HanhLy, String LoaiVe, String MaCB,String DChi) {
+    public HanhKhach(String HoTen, String CMND, String SoDT,int HanhLy, String LoaiVe, int MaCB, String DChi) {
         this.HoTen = HoTen;
         this.CMND = CMND;
         this.SoDT = SoDT;
@@ -72,11 +72,11 @@ public class HanhKhach {
         this.LoaiVe = LoaiVe;
     }
 
-    public String getMaCB() {
+    public int getMaCB() {
         return MaCB;
     }
 
-    public void setMaCB(String MaCB) {
+    public void setMaCB(int MaCB) {
         this.MaCB = MaCB;
     }
 }

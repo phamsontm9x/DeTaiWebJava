@@ -15,6 +15,6 @@ import model.DonHang;
 public interface DonHangDAO {
     public ArrayList<DonHang> getListDonHang();
     public ArrayList<DonHang> getListDonHang(String khachHang);
-    public boolean addListDonHang(String khachHang,String ngayTao,String trangThai,String cmnd, String macb,int gia);
-    public boolean updateListDonHang(String cmnd, String maCB, String trangThai);
+    public boolean addListDonHang(String khachHang,String ngayTao,String trangThai,String cmnd, int macb,int gia);
+    public boolean updateListDonHang(String cmnd, int maCB, String trangThai);
 }

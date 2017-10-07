@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 public class ChuyenBay {
-    private String MaCB;
+    private int MaCB;
     private String NgayDi;
     private String NgayDen;
     private int SLHKHT;
@@ -14,7 +14,7 @@ public class ChuyenBay {
   
    
 
-    public ChuyenBay(String MaCB, String NgayDi, String NgayDen,int SLHKHT,int SLHKTD, String MaTB) {
+    public ChuyenBay(int MaCB, String NgayDi, String NgayDen,int SLHKHT,int SLHKTD, String MaTB) {
         this.MaCB = MaCB;
         this.NgayDi = NgayDi;
         this.NgayDen = NgayDen;
@@ -35,12 +35,12 @@ public class ChuyenBay {
     }
 
     
-    public String getMaCB() {
+    public int getMaCB() {
         return MaCB;
     }
 
     
-    public void setMaCB(String MaCB) {
+    public void setMaCB(int MaCB) {
         this.MaCB = MaCB;
     }
     
