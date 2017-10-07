@@ -110,9 +110,11 @@ public class LuuHoaDon_Servlet extends HttpServlet {
         //String macbve = "";
         String mail = (String)session.getAttribute("email");
        int soluong=(Integer)session.getAttribute("soluong");
-       String macb = request.getParameter("macb");
+       String macbStr = request.getParameter("macb");
+       int macb = Integer.parseInt(macbStr);
        String type =request.getParameter("type");
-       String macbve;
+       String macbveStr;
+       int macbve;
        String trangThai = "Đã thanh toán";
         DonHangDAOImpl dh= new DonHangDAOImpl();
         String MaHD= request.getParameter("orderID");
@@ -125,7 +127,8 @@ public class LuuHoaDon_Servlet extends HttpServlet {
            HanhKhach hk= (HanhKhach)session.getAttribute("tthkdi"+i);
            boolean kq = dh.updateListDonHang(hk.getCMND(), macb, trangThai);
            if(type.equals("roundtrip")){
-               macbve = request.getParameter("macbve");
+               macbveStr = request.getParameter("macbve");
+               macbve = Integer.parseInt(macbveStr);
                boolean kq1 = dh.updateListDonHang(hk.getCMND(), macbve, trangThai);
            }
        }

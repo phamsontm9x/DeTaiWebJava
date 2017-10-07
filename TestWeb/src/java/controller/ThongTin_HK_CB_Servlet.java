@@ -85,12 +85,13 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
         }
 
         String macbveStr = "";
+        int macbve;
         ChuyenBayDAOImpl cbd = new ChuyenBayDAOImpl();
         ChuyenBay cb = cbd.getEleChuyenBay(macb);
         ChuyenBay cbve = new ChuyenBay();
         if (request.getParameter("macbve") != null) {
             macbveStr = request.getParameter("macbve");
-            int macbve = Integer.parseInt(macbveStr);
+            macbve = Integer.parseInt(macbveStr);
             cbve = cbd.getEleChuyenBay(macbve);
         }
 

@@ -76,7 +76,8 @@ public class HuyDonHang_Servlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        String macb = request.getParameter("macb");
+        String macbStr = request.getParameter("macb");
+        int macb = Integer.parseInt(macbStr);
         String cmnd = request.getParameter("cmnd");
         String trangThai ="Đã Hủy";
         DonHangDAOImpl dh = new DonHangDAOImpl();

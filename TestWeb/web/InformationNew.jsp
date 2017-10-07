@@ -4,7 +4,6 @@
     Author     : My PC
 --%>
 
-<%@page import="java.lang.Integer.parseInt(String)"%>
 <%@page import="dao.HangHangKhongDAOImpl"%>
 <%@page import="dao.DiaDiemDAOImpl"%>
 <%@page import="model.TuyenBay"%>
@@ -225,7 +224,8 @@
                     <td><%=tb.getGioDen()%></td>
                 </table>
                 <%
-                    String macbve = request.getAttribute("macbve").toString();
+                    String macbveStr = request.getAttribute("macbve").toString();
+                    int macbve = Integer.parseInt(macbveStr);
                     ChuyenBay cbve = new ChuyenBay();
                     cbve = CB.getEleChuyenBay(macbve);
                     TuyenBay tbve = new TuyenBay();
