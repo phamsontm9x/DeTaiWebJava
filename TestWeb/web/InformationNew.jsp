@@ -326,7 +326,7 @@
                         %>
                         <td>Eco</td>
                         <%} else {
-                            if (temp.getLoaiVe().equals("Eco")) {
+                            if (temp.getLoaiVe().equals("Vip")) {
                                 if (tb.getMaHHK().equals("VNA")) {
                                     giavedi = (tb.getGiaVIP() + tb.getGiaVIP() * 10 / 100 + 50000 + 70000 + 10000);
                                 } else if (tb.getMaHHK().equals("VJ")) {
@@ -351,7 +351,7 @@
                         %>
                         <td>Eco</td>
                         <%} else {
-                            if (tempve.getLoaiVe().equals("Eco")) {
+                            if (tempve.getLoaiVe().equals("Vip")) {
                                 if (tbve.getMaHHK().equals("VNA")) {
                                     giaveve = (tbve.getGiaVIP() + tbve.getGiaVIP() * 10 / 100 + 50000 + 70000 + 10000);
                                 } else if (tbve.getMaHHK().equals("VJ")) {

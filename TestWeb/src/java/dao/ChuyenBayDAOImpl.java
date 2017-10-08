@@ -218,7 +218,7 @@ public class ChuyenBayDAOImpl implements ChuyenBayDAO {
         Connection connect = DBConnect.getConnection();
  
         for (int i = 0 ; i < MaTB.size() ; i ++) {
-            String sql = "INSERT INTO ChuyenBay (NgayDi,NgayDen,SLHKHT,SLHKTD,MaTB) VALUES (N'" + NgayDi + "', '" + NgayDen+ "', '" + 150 + "','" + 0 + "', '" + MaTB.get(i).getMaTB() + "')";
+            String sql = "INSERT INTO ChuyenBay (NgayDi,NgayDen,SLHKHT,SLHKTD,MaTB) VALUES (N'" + NgayDi + "', '" + NgayDen+ "', '" + 150 + "','" + 100 + "', '" + MaTB.get(i).getMaTB() + "')";
             PreparedStatement pr = null;
             try {
                 pr = connect.prepareStatement(sql);

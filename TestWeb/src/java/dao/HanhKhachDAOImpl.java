@@ -205,7 +205,7 @@ public class HanhKhachDAOImpl {
     
     
     
-    public boolean AddVeAndHK(HanhKhach hk, Ve ve, String macb) {
+    public boolean AddVeAndHK(HanhKhach hk, Ve ve, int macb) {
         Connection con = DBConnect.getConnection();
         String sql = "INSERT INTO ThongTinHanhKhach (HoTen,CMND,SDT,HanhLy,LoaiVe,MaCB,DiaChi) VALUES ('" + hk.getHoTen() + "', '" + hk.getCMND() + "', '" + hk.getSoDT() + "','" + hk.getHanhLy() + "', '" + hk.getLoaiVe()+ "', '" + hk.getMaCB()+ "','" + hk.getDChi() + "');";
         try {
