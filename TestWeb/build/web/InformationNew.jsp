@@ -179,7 +179,8 @@
             </div>
             <%}%>
 
-            <% if (type.equals("roundtrip")) {
+            <% 
+                if (type.equals("roundtrip")) {
 
                     ChuyenBayDAOImpl CB = new ChuyenBayDAOImpl();
                     ChuyenBay cb = new ChuyenBay();

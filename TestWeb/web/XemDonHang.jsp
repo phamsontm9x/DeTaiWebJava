@@ -132,7 +132,8 @@
                     <td><%=dh.getCMND()%></td>
                     <td><%=dh.getMaCB()%></td>
                     <th><%=dd.getTenDD(tb.getMaDi())%>-<%=dd.getTenDD(tb.getMaDen())%></th>
-                    <td><%=tb.getGioDi()%></td>
+                    <td><%=cb.getNgayDi()%><br>
+                        <%=tb.getGioDi()%></td>
                     <td><%=dh.getGia()%></td>
                     <td><%=dh.getTrangThai()%></td>
                     <% if(dh.getTrangThai().equals("Chưa thanh toán")){%>

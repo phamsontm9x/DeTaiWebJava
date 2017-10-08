@@ -180,7 +180,6 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
 
                 }
                 session.setAttribute("soluong", soluong);
-                session.setAttribute("email", email);
                 RequestDispatcher rd = getServletContext().getRequestDispatcher("/InformationNew.jsp");
                 rd.forward(request, response);
             }

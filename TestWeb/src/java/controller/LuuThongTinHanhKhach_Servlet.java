@@ -121,6 +121,7 @@ public class LuuThongTinHanhKhach_Servlet extends HttpServlet {
             dchi = req.getParameter("diachi" + i);
             kq1 = hk.AddHK(macb, hoten, cmnd, sdt, hanhly, loaive, dchi);
             gia = Integer.parseInt(req.getParameter("giavedi"));
+            /// loi time
             Date ngay = new Date(System.currentTimeMillis());
             SimpleDateFormat dinhdang = new SimpleDateFormat("hh:mm:ss MM-dd-yyyy");
             ngayTao = dinhdang.format(ngay.getTime());

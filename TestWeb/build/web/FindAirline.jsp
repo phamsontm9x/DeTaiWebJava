@@ -27,6 +27,7 @@
     </head>
     <body>
         <script>
+            var a = false;
             function kiemtra() {
                 var frm1 = document.getElementById("frm1");
                 var flg = false;
@@ -34,7 +35,7 @@
                     if (frm1[i].checked)
                         flg = true;
                 }
-                if (flg == false)
+                if (flg == false || a == true)
                 {
                     alert("Bạn chưa chọn Chuyến Bay cần đi");
                     return false;
@@ -48,6 +49,12 @@
 
                 } else
                     document.getElementById('check').style.display = 'none';
+            }
+
+            function showAlert() {
+                alert("Tuyến bay chưa hỗ trợ");
+                a= true;
+
             }
         </script>  
         <%
@@ -85,9 +92,10 @@
             ArrayList<ChuyenBay> arrChuyenBay = new ArrayList();
             // getData Chuyen Bay
             ChuyenBayDAOImpl apiChuyenBay = new ChuyenBayDAOImpl();
+            if (arrTuyenBay.size() != 0) {
             arrChuyenBay = apiChuyenBay.getListChuyenBaybyNgayDiVaMaTB(ngaykhoihanh, arrTuyenBay.get(0).getMaTB());
             // get list dua vao tuyen bay  va ngay.
-
+            }
             DiaDiemDAOImpl cd = new DiaDiemDAOImpl();
             String di = cd.getTenDD(diadiemdi);
             String den = cd.getTenDD(diadiemden);
@@ -96,33 +104,37 @@
 
             //chuyen bay va ngay toi == 0
             if (arrChuyenBay.size() == 0) {
-                // khoi tao
-                boolean khoitao = apiChuyenBay.AddChuyenBay(ngaykhoihanh, ngaykhoihanh, arrTuyenBay);
-                if (khoitao) {
-                    arrChuyenBay = apiChuyenBay.getListChuyenBaybyNgayDi(ngaykhoihanh);
-                                        out.println("<br><font family = 'Time New Romen' size='5' >");
-                    out.println("Chuyến bay từ " + di + " đến " + den + "</font>");
-                    out.println("<br>");
-                    out.println("<br>");
+                if (arrTuyenBay.size() == 0) {
+                    out.println("<script>alert('Chưa có tuyến bay hỗ trợ')</script>");
                 } else {
-                    // Thong Bao khong co chuyen bay
-                    out.println("<br><font family = 'Time New Romen' size='5' >");
-                    out.println("Không có chuyến bay từ " + di + " đến " + den + "</font>");
-                    out.println("<br>");
-                    out.println("<br>");
+                    // khoi tao
+                    boolean khoitao = apiChuyenBay.AddChuyenBay(ngaykhoihanh, ngaykhoihanh, arrTuyenBay);
+                    if (khoitao) {
+                        arrChuyenBay = apiChuyenBay.getListChuyenBaybyNgayDi(ngaykhoihanh);
+                        out.println("<br><font family = 'Time New Romen' size='5'>");
+                        out.println("Chuyến bay từ " + di + " đến " + den + "</font>");
+                        out.println("<br>");
+                        out.println("<br>");
+                    } else {
+                        // Thong Bao khong co chuyen bay
+                        out.println("<br><font family = 'Time New Romen' size='5' >");
+                        out.println("Không có chuyến bay từ " + di + " đến " + den + "</font>");
+                        out.println("<br>");
+                        out.println("<br>");
+                    }
                 }
 
             } else {
-                                    out.println("<br><font family = 'Time New Romen' size='5' >");
-                    out.println("Không có chuyến bay từ " + di + " đến " + den + "</font>");
-                    out.println("<br>");
-                    out.println("<br>");
+                out.println("<br><font family = 'Time New Romen' size='5' >");
+                out.println("Không có chuyến bay từ " + di + " đến " + den + "</font>");
+                out.println("<br>");
+                out.println("<br>");
                 arrChuyenBay = apiChuyenBay.getListChuyenBaybyNgayDi(ngaykhoihanh);
                 //show
             }
+            
         %>
-        <form id="frm1" action="InformationForm.jsp" onsubmit=" return kiemtra()">
-            >
+        <form id="frm1" action="InformationForm.jsp" onsubmit=" false">
             <table class="FormAvailable" border="3" style="margin-top:10px; margin-left:50px;margin-right: 20px; padding-left: 0px;">
                 <tr class="AFormHeader">
                     <th></th>
@@ -160,14 +172,14 @@
                         <%=di%>
                     </td>
                     <td>
-                        <%=Cb.getNgayDi()%><br>
+                        <%=ngaykhoihanh%><br>
                         <%=Tb.getGioDi()%><br>
                     </td>
                     <td>
                         <%=den%>
                     </td>
                     <td>
-                        <%=Cb.getNgayDen()%><br>
+                        <%=ngaykhoihanh%><br>
                         <%=Tb.getGioDen()%><br>
                     </td>
                     <td>
@@ -225,7 +237,7 @@
                         boolean khoitao = apiChuyenBay.AddChuyenBay(ngayve, ngayve, arrTuyenBayVe);
                         if (khoitao) {
                             arrChuyenBayVe = apiChuyenBay.getListChuyenBaybyNgayDi(ngayve);
-                                                        out.println("<br><font family = 'Time New Romen' size='5' >");
+                            out.println("<br><font family = 'Time New Romen' size='5' >");
                             out.println("Chuyến bay từ " + den + " đến " + di + "</font>");
                             out.println("<br>");
                             out.println("<br>");
@@ -239,10 +251,10 @@
 
                     } else {
                         arrChuyenBayVe = apiChuyenBay.getListChuyenBaybyNgayDi(ngayve);
-                                                    out.println("<br><font family = 'Time New Romen' size='5' >");
-                            out.println("Chuyến bay từ " + den + " đến " + di + "</font>");
-                            out.println("<br>");
-                            out.println("<br>");
+                        out.println("<br><font family = 'Time New Romen' size='5' >");
+                        out.println("Chuyến bay từ " + den + " đến " + di + "</font>");
+                        out.println("<br>");
+                        out.println("<br>");
                         //show
                     }
             %>
