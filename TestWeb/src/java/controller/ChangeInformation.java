@@ -80,9 +80,7 @@ public class ChangeInformation extends HttpServlet {
             request.setCharacterEncoding("UTF-8");
             String newHoTen= request.getParameter("hoten");
             String newCMND= request.getParameter("cmnd");
-            int newCMNDInt = Integer.parseInt(newCMND);
             String newSDT= request.getParameter("sdt");
-            int newSDTInt = Integer.parseInt(newSDT);
             String newDiaChi= request.getParameter("DiaChi");
             HttpSession session= request.getSession();
             String email =(String) session.getAttribute("email") ;

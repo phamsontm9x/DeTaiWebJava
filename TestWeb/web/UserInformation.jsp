@@ -61,7 +61,7 @@
                                         <input name="cmnd" type="text" id="cmnd" value="<%=tkus.getCMND()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
                                     </div>
                                     <div ><font color="white"> SĐT:</font>
-                                        <input name="sdt" type="text" id="sdt" value="0<%=tkus.getSDT()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                        <input name="sdt" type="text" id="sdt" value="<%=tkus.getSDT()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
                                     </div>
                                     <div > <font color="white"> Địa chỉ:</font>
                                         <input name="DiaChi" type="text" id="DiaChi" value="<%=tkus.getDiaChi()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>

@@ -18,7 +18,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Vi du</title>
+        <title>Thông tin vé</title>
     </head>
     <body>
         <div class="body">
@@ -58,7 +58,7 @@
             <div class="clr"></div>
             <div class="clr"></div>
             <div class="clr"></div>
-            <div class="" style="margin-bottom: 100px;">
+            <div class="" style="margin-bottom: 50px;">
                 <div class="clr"></div>
                 <div class="clr"></div>
                 <div class="clr"></div>
@@ -92,7 +92,7 @@
 
                 <h2 class="Confirmtb1h2" style="margin-left: 500px;margin-top: 100px;">Thông tin Hành khách</h2> 
                 <div class="clr"></div>
-                <table class="showtable" border="3" style="margin-top: -150px; margin-left: 250px;" >
+                <table class="showtable" border="3" style="margin-top: -150px; margin-left: 300px;" >
                     <tr>
                         <th>Họ Tên </th>
                         <th>CMND</th>
@@ -120,7 +120,7 @@
                     <tr>
                         <td><%=temp.getHoTen()%></td>
                         <td><%=temp.getCMND()%></td>
-                        <td>0<%=temp.getSoDT()%></td>
+                        <td><%=temp.getSoDT()%></td>
                         <%if (temp.getHanhLy() >= 10) {%>
                         <td>Gói: <%=temp.getHanhLy()%> kg</td>
                         <%} else { %>
@@ -401,7 +401,6 @@
                 <input type="hidden" name="loaiveve<%=i%>" value="<%=hkve.getLoaiVe()%>" >
                 <%}
                     }%>
-                <input class="SigninIF" type="submit" value="Thanh toán trực tuyến" />
             </form>
             <form  class="returnHomepageIFtb" method= "POST" action="LuuThongTinHanhKhach_Servlet">
                 <input type="hidden" name="flag" value="no" >
