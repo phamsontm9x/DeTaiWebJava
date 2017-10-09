@@ -4,7 +4,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html >
-
     <head>
         <title>Tin tức</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,7 +16,6 @@
         <script type="text/javascript" src="js/coin-slider.min.js"></script>
     </head>
     <body>
-
         <div class="main">
             <div class="header">
                 <div class="header_resize">
@@ -26,8 +24,6 @@
                             <li class="active"><a href="index.jsp"><span>Trang chính</span></a></li>
                             <li><a href="News.jsp"><span>Thông tin</span></a></li>
                             <li><a href="about.jsp"><span>Chúng tôi</span></a></li>
-
-
                         </ul>
                     </div>
                     <div class="logo">
@@ -45,12 +41,10 @@
                 </div>
             </div>
 
-
             <div class="content">
                 <div class="content_resize">
                     <div class="mainbar">
                         <div class="article">
-
                             <div class="clr"></div>
                             <img src="./images/NewsIMG1.jpg"/>
                             <img src="./images/NewsIMG1a.jpg" width="872px"/>

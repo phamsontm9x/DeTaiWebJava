@@ -18,9 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.ChuyenBay;
-import model.HanhKhach;
-import dao.TuyenBayDAOImpl;
-import model.TuyenBay;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -173,5 +170,4 @@ public class LuuThongTinHanhKhach_Servlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

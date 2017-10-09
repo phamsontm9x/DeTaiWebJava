@@ -47,18 +47,11 @@
             }
         %>
         <script>
-
-
             function checkElementINF() {
 
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-
-
-
                 var rcmnd9 = /^\d{9}$/;
                 var rcmnd12 = /^\d{12}$/;
-
 
                 var rsdt11 = /^\d{11}$/;
                 var rsdt10 = /^\d{10}$/;
@@ -129,7 +122,6 @@
                                         <input name="hoten<%=i%>" type="text" required style="font-family: Time New Roman; font-size: 20px;text-align: left;">
                                     </div>
 
-
                                     <div ><font color="white"> CMND:</font>
                                         <input name="cmnd<%=i%>" type="text" id="cmnd<%=i%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
 
@@ -153,7 +145,6 @@
                                     <%if (request.getParameter("macbve") != null) {
 
                                             String macbve = (String) request.getParameter("macbve");
-
                                     %>
                                     <input type="hidden" name="macbve" value="<%=macbve%>" />
 
@@ -166,10 +157,7 @@
                                         </select>
                                     </div >
                                     <% }%>
-
-
                                     <button type="submit" >Xác Nhận</button>
-
                                     <p style="color:red;"><%=tb%></p>
                                 </div>
                             </div>
@@ -184,7 +172,6 @@
             if (request.getAttribute("updateUserInformation") != null) {
                 alertUpdateUser = (String) request.getAttribute("updateUserInformation");%>
         <script> alert("<%=alertUpdateUser%>");</script>
-
         <%} else {
             }
         %>

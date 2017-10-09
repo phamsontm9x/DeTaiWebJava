@@ -54,7 +54,6 @@
             function showAlert() {
                 alert("Tuyến bay chưa hỗ trợ");
                 a= true;
-
             }
         </script>  
         <%
@@ -70,7 +69,6 @@
             }
             if (request.getParameter("soluong") != null) {
                 soluong = request.getParameter("soluong");
-
             }
             if ((request.getParameter("ngaykhoihanh").trim()) != null) {
                 ngaykhoihanh = request.getParameter("ngaykhoihanh");
@@ -101,7 +99,6 @@
             String den = cd.getTenDD(diadiemden);
             sluong = Integer.parseInt(soluong);
             int tien = 0;
-
             //chuyen bay va ngay toi == 0
             if (arrChuyenBay.size() == 0) {
                 if (arrTuyenBay.size() == 0) {
@@ -130,9 +127,7 @@
                 out.println("<br>");
                 out.println("<br>");
                 arrChuyenBay = apiChuyenBay.getListChuyenBaybyNgayDi(ngaykhoihanh);
-                //show
             }
-            
         %>
         <form id="frm1" action="InformationForm.jsp" onsubmit=" false">
             <table class="FormAvailable" border="3" style="margin-top:10px; margin-left:50px;margin-right: 20px; padding-left: 0px;">
@@ -147,7 +142,6 @@
                     <th>Tổng tiền vé thường</th>
                     <th>Giá vé VIP</th>
                     <th>Tổng tiền Vé VIP</th>
-
                 </tr>
                 <% for (TuyenBay Tb : arrTuyenBay) {%>
                 <% for (ChuyenBay Cb : arrChuyenBay) {%>
@@ -255,7 +249,6 @@
                         out.println("Chuyến bay từ " + den + " đến " + di + "</font>");
                         out.println("<br>");
                         out.println("<br>");
-                        //show
                     }
             %>
             <h2 style="font-family: Times New Roman; margin-left: 50px; font-size: 50px;">Chuyến Bay Về</h2>

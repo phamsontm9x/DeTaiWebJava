@@ -43,17 +43,6 @@ import model.Ve;
 @WebServlet(name = "LuuHoaDon_Servlet", urlPatterns = {"/LuuHoaDon_Servlet"})
 public class LuuHoaDon_Servlet extends HttpServlet {
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_52611/payServvice.asmx.wsdl")
-//    private PayServvice service;
-
-    
-
-    
-    
-
-    //@WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/Commie_Bank/Payment.wsdl")
-    //private Payment_Service service;
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -108,55 +97,29 @@ public class LuuHoaDon_Servlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         //String macbve = "";
-        String mail = (String)session.getAttribute("email");
-       int soluong=(Integer)session.getAttribute("soluong");
-       String macbStr = request.getParameter("macb");
-       int macb = Integer.parseInt(macbStr);
-       String type =request.getParameter("type");
-       String macbveStr;
-       int macbve;
-       String trangThai = "Đã thanh toán";
-        DonHangDAOImpl dh= new DonHangDAOImpl();
-        String MaHD= request.getParameter("orderID");
-        String nguoigui=request.getParameter("remitterID");
-        String matkhau=request.getParameter("password");
-        
+        String mail = (String) session.getAttribute("email");
+        int soluong = (Integer) session.getAttribute("soluong");
+        String macbStr = request.getParameter("macb");
+        int macb = Integer.parseInt(macbStr);
+        String type = request.getParameter("type");
+        String macbveStr;
+        int macbve;
+        String trangThai = "Đã thanh toán";
+        DonHangDAOImpl dh = new DonHangDAOImpl();
+        String MaHD = request.getParameter("orderID");
+        String nguoigui = request.getParameter("remitterID");
+        String matkhau = request.getParameter("password");
+
         int total = Integer.parseInt(request.getParameter("total"));
-        BigInteger amount = new BigInteger(total+"");
-       for(int i=1; i<=soluong; i++){
-           HanhKhach hk= (HanhKhach)session.getAttribute("tthkdi"+i);
-           boolean kq = dh.updateListDonHang(hk.getCMND(), macb, trangThai);
-           if(type.equals("roundtrip")){
-               macbveStr = request.getParameter("macbve");
-               macbve = Integer.parseInt(macbveStr);
-               boolean kq1 = dh.updateListDonHang(hk.getCMND(), macbve, trangThai);
-           }
-       }
-//       if(payment(nguoigui, matkhau, total)){
-//       String tb="Thanh toán thành công";
-//        request.setAttribute("tb", tb);
-//        RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
-//        rd.forward(request, response);
-//       }else{
-//           String tb="Thanh toán không thành công";
-//        request.setAttribute("tb", tb);
-//        RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
-//        rd.forward(request, response);
-//       }
-        //
-        
-        
+        BigInteger amount = new BigInteger(total + "");
+        for (int i = 1; i <= soluong; i++) {
+            HanhKhach hk = (HanhKhach) session.getAttribute("tthkdi" + i);
+            boolean kq = dh.updateListDonHang(hk.getCMND(), macb, trangThai);
+            if (type.equals("roundtrip")) {
+                macbveStr = request.getParameter("macbve");
+                macbve = Integer.parseInt(macbveStr);
+                boolean kq1 = dh.updateListDonHang(hk.getCMND(), macbve, trangThai);
+            }
+        }
     }
-
-//    private boolean payment(java.lang.String soTaiKhoan, java.lang.String matkhau, int sotien) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-//        payment.PayServviceSoap port = service.getPayServviceSoap12();
-//        return port.payment(soTaiKhoan, matkhau, sotien);
-//    }
-
-  
-   
-
-   }
-    
+}

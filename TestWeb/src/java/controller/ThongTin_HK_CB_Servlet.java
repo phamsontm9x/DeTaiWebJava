@@ -1,7 +1,6 @@
 package controller;
 
 import dao.ChuyenBayDAOImpl;
-import dao.HanhKhachDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,8 +13,8 @@ import model.ChuyenBay;
 import model.HanhKhach;
 
 public class ThongTin_HK_CB_Servlet extends HttpServlet {
-    
-     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -23,7 +22,7 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LuuThongTinHanhKhach_Servlet</title>");            
+            out.println("<title>Servlet LuuThongTinHanhKhach_Servlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet LuuThongTinHanhKhach_Servlet at " + request.getContextPath() + "</h1>");
@@ -102,7 +101,6 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
 
         //1 chieu
         if (type.equals("oneway")) {
-            // if( giavedi==cb.getGiaVeThuong()){
             if (loaivedi.equals("0")) {
                 loaive = "Eco";
             } else {
@@ -133,14 +131,12 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
         } else {
             session.setAttribute("type", "roundtrip");
             if (type.equals("roundtrip")) {
-                //if(giavedi==cb.getGiaVeThuong()){
                 if (loaivedi.equals("0")) {
                     vedi = "Eco";
                 } else {
                     vedi = "Vip";
                 }
                 request.setAttribute("macb", macbStr);
-                //if(giaveve==cbve.getGiaVeThuong()){
                 if (loaiveve.equals("0")) {
                     veve = "Eco";
                 } else {
@@ -167,17 +163,14 @@ public class ThongTin_HK_CB_Servlet extends HttpServlet {
                         String hanhlyphuve_str = request.getParameter("hanhlyve" + x);
                         try {
                             hanhlyve = Integer.parseInt(hanhlyphuve_str);
-
                         } catch (Exception ex) {
                             System.out.println(ex);
                         }
                     }
-
                     HanhKhach hkdi = new HanhKhach(hoten, cmnd, sdt_str, hanhly, vedi, macb, diachi);
                     session.setAttribute("tthkdi" + x, hkdi);
                     HanhKhach hkve = new HanhKhach(hoten, cmnd, sdt_str, hanhly, veve, macb, diachi);;
                     session.setAttribute("tthkve" + x, hkve);
-
                 }
                 session.setAttribute("soluong", soluong);
                 RequestDispatcher rd = getServletContext().getRequestDispatcher("/InformationNew.jsp");

@@ -39,14 +39,12 @@ public class DangKiDAO {
                 String cmnd = rs.getString("CMND");
                 String sdt = rs.getString("SDT");
                 String diachi = rs.getString("DiaChi");
-                TaiKhoanUser tk = new TaiKhoanUser(email, password, hoten, gioitinh, cmnd, sdt,diachi);
+                TaiKhoanUser tk = new TaiKhoanUser(email, password, hoten, gioitinh, cmnd, sdt, diachi);
                 arr.add(tk);
             }
             con.close();
         } catch (SQLException ex) {
-
         }
-
         return arr;
     }
 
@@ -66,9 +64,7 @@ public class DangKiDAO {
                 tk.setCMND(rs.getString("CMND"));
                 tk.setSDT(rs.getString("SDT"));
             }
-
         } catch (SQLException ex) {
-
         }
         return tk;
     }
@@ -77,21 +73,17 @@ public class DangKiDAO {
         Connection con = DBConnect.getConnection();
         String sql = "Insert into TaiKhoanUser " + "(Email,Password,HoTen,GioiTinh,CMND,SDT,DiaChi) "
                 + "values(N'" + email + "',N'" + password + "',N'" + hoten + "',N'" + gioitinh + "',N'" + CMND + "',N'" + SDT + "',N'" + DiaChi + "');";
-
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             boolean kq = ps.execute();
-
             con.close();
             return true;
         } catch (SQLException ex) {
-
         }
-
         return false;
     }
 
-    public boolean UpdateTKUser(String emailcu, String email, String password, String gioitinh, String hoten, String CMND, String SDT,String DiaChi) {
+    public boolean UpdateTKUser(String emailcu, String email, String password, String gioitinh, String hoten, String CMND, String SDT, String DiaChi) {
         Connection con = DBConnect.getConnection();
         String sql = "Update TaiKhoanUser Set Email='" + email + "', Password='" + password + "',GioiTinh='" + gioitinh + "',HoTen='" + hoten + "',CMND='" + CMND + "',SDT='" + SDT + "' ,DiaChi='" + DiaChi + "'Where Email='" + emailcu + "' ";
 
@@ -101,7 +93,6 @@ public class DangKiDAO {
             con.close();
             return true;
         } catch (SQLException ex) {
-
         }
 
         return false;
@@ -125,20 +116,19 @@ public class DangKiDAO {
         return false;
 
     }
-    
-    public String GetNameUser(String email){
-        Connection con= DBConnect.getConnection();
-        String sql="Select * from TaiKhoanUser where Email='"+email+"'";
-        String ten="";
+
+    public String GetNameUser(String email) {
+        Connection con = DBConnect.getConnection();
+        String sql = "Select * from TaiKhoanUser where Email='" + email + "'";
+        String ten = "";
         try {
-            PreparedStatement ps= con.prepareStatement(sql);
-            ResultSet rs= ps.executeQuery();
-            while(rs.next()){
-                ten=(rs.getString("HoTen"));
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                ten = (rs.getString("HoTen"));
                 return ten;
             }
         } catch (SQLException ex) {
-           
         }
         return null;
     }

@@ -19,7 +19,6 @@
     <body>
         <%
             DiaDiemDAOImpl DD = new DiaDiemDAOImpl();
-
         %>
         <div class="main">
             <div class="header">
@@ -29,16 +28,12 @@
                             <li class="active"><a href="index.jsp"><span>Trang chủ</span></a></li>
                             <li><a href="about.jsp"><span>Chúng tôi</span></a></li>
                             <li> <a href="Logout.jsp" style="margin-bottom: 20px;" >ĐĂNG XUẤT</a>
-
                         </ul>
                     </div>
-                    
                     <div class="clr"></div>
-                   
                     <div class="clr"></div>
                 </div>
          
-
             <div class="content">
                 <div class="content_resize">
                     <div class="mainbar">
@@ -53,17 +48,14 @@
                             <div class="clr"></div>
                         </div>
                         <div class="article">
-                           
                             <div class="clr"></div>
                             <div class="img"><img src="images/img2.jpg" width="200" height="210" alt="" class="fl" /></div>
                             <div class="post_content">
                                 Đáp ứng nhu cầu di chuyển tăng cao của người dân trên hành trình Sài Gòn – Thanh Hóa, hãng hàng không Vietnam Airlines đã quyết định tăng tần suất phục vụ cho hành trình này.  Ngay sau khi thông báo tăng tải hãng hàng không quốc gia đẽ triển khai ngay ưu đãi cực hấp dẫn cho đường bay Sài Gòn – Thanh Hóa...........
-                            
                                 <p class="spec"><a href="News2.jsp" class="rm">Read more</a></p>
                             </div>
                             <div class="clr"></div>
                         </div>
-                        
                     </div>
                     <div class="sidebar">
                         <div class="gadget">
@@ -79,10 +71,6 @@
                                 <li><a href="http://www.qatarairways.com/vn/en/homepage">Qatar Airways</a></li>
                                 <li><a href="https://www.koreanair.com/global/en.html">Korean Air</a></li>
                                 <li><a href="http://www.hongkongairlines.com/en_HK/homepage">Hongkong Airlines</a></li>
-                                
-                                
-
-
                             </ul>
                         </div>
                  

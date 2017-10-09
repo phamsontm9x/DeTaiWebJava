@@ -29,7 +29,6 @@ public class TaiKhoanUserDAO {
                 tkus.setCMND(rs.getString("CMND"));
                 tkus.setSDT(rs.getString("SDT"));
                 tkus.setDiaChi(rs.getString("DiaChi"));
-                
             }
             con.close();
            

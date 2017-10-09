@@ -9,7 +9,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="css/coin-slider.css" />
-        
+
         <script type="text/javascript" src="js/cufon-yui.js"></script>
         <script type="text/javascript" src="js/cufon-titillium-250.js"></script>
         <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
@@ -21,11 +21,8 @@
             function yesnoCheck() {
                 if (document.getElementById('roundtrip').checked) {
                     document.getElementById('ifYes').style.display = 'block';
-
-
                 } else
                     document.getElementById('ifYes').style.display = 'none';
-
             }
 
             function kiemtra() {
@@ -50,7 +47,6 @@
                         return false;
                     }
                 }
-
             }
         </script>
     </head>
@@ -58,11 +54,7 @@
 
         <%
             DiaDiemDAOImpl DD = new DiaDiemDAOImpl();
-
         %>
-
-
-
 
         <div class="main">
             <div class="header">
@@ -88,7 +80,6 @@
                             </div>
 
                             <%}
-
                             } catch (Exception e) { %>
                             <li><a href="RegisterLogin.jsp">ĐĂNG NHẬP </a></li>
                                 <%}%>
@@ -97,8 +88,6 @@
                 </div>
             </div>
         </div>
-                  
-                        <div id="coin-slider"> </div>
-                           
-             
-  h1 class=                     <"EditAccount">Chỉnh sửa thông tin cá nhân</h1>
+
+        <div id="coin-slider"> </div>
+        h1 class=                     <"EditAccount">Chỉnh sửa thông tin cá nhân</h1>

@@ -45,14 +45,12 @@ public class DangKiKhachHang extends HttpServlet {
                 req.setAttribute("tb", tb);
                 RequestDispatcher rd= getServletContext().getRequestDispatcher("/RegisterLogin.jsp");
                 rd.forward(req, resp);
-                
             }
             else{
                 tb="Email của bạn đã được đăng kí";
                 req.setAttribute("tb", tb);
                 RequestDispatcher rd= getServletContext().getRequestDispatcher("/RegisterLogin.jsp");
                 rd.forward(req, resp);
-                
             }
         }
         

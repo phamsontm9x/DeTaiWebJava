@@ -19,7 +19,7 @@ public class HanhKhachDAOImpl {
             PreparedStatement pr = connect.prepareStatement(sql);
             ResultSet rs = pr.executeQuery();
             while (rs.next()) {
-                HanhKhach hk = new HanhKhach( rs.getString("HoTen"), rs.getString("CMND"), rs.getString("SoDT"), rs.getInt("HanhLy"),rs.getString("LoaiVe"),rs.getInt("MaCB"),rs.getString("DChi"));
+                HanhKhach hk = new HanhKhach(rs.getString("HoTen"), rs.getString("CMND"), rs.getString("SoDT"), rs.getInt("HanhLy"), rs.getString("LoaiVe"), rs.getInt("MaCB"), rs.getString("DChi"));
                 arr.add(hk);
             }
             connect.close();
@@ -33,7 +33,6 @@ public class HanhKhachDAOImpl {
     public HanhKhach getHanhKhachbymahk(int mahk) {
         Connection connect = DBConnect.getConnection();
         HanhKhach hk = new HanhKhach();
-        //hk=null;
         String sql = "SELECT * FROM ThongTinHanhKhach where MaHK='" + mahk + "';";
         try {
             PreparedStatement pr = connect.prepareStatement(sql);
@@ -50,7 +49,6 @@ public class HanhKhachDAOImpl {
                 connect.close();
             }
         } catch (SQLException ex) {
-            //hk=null;
         }
 
         return hk;
@@ -66,7 +64,6 @@ public class HanhKhachDAOImpl {
             ResultSet rs = pr.executeQuery();
             while (rs.next()) {
                 HanhKhach hk = new HanhKhach();
-                //hk=null;
                 hk.setHoTen(rs.getString("HoTen"));
                 hk.setCMND(rs.getString("CMND"));
                 hk.setSoDT(rs.getString("SoDT"));
@@ -75,10 +72,8 @@ public class HanhKhachDAOImpl {
                 hk.setMaCB(rs.getInt("MaCB"));
                 hk.setDChi(rs.getString("DChi"));
 
-                //if(hk!=null)
                 arr.add(hk);
             }
-
             connect.close();
         } catch (SQLException ex) {
 
@@ -128,7 +123,6 @@ public class HanhKhachDAOImpl {
                 hk.setLoaiVe(rs.getString("LoaiVe"));
                 hk.setMaCB(rs.getInt("MaCB"));
                 hk.setDChi(rs.getString("DChi"));
-
                 arr.add(hk);
             }
             connect.close();
@@ -138,10 +132,10 @@ public class HanhKhachDAOImpl {
         return arr;
     }
 
-    public boolean AddHK( int macb, String hoten, String cmnd, String sdt, int hanhly, String loaive, String dchi) {
+    public boolean AddHK(int macb, String hoten, String cmnd, String sdt, int hanhly, String loaive, String dchi) {
 
         Connection connect = DBConnect.getConnection();
-        String sql = "INSERT INTO ThongTinHanhKhach (HoTen,CMND,SDT,HanhLy,LoaiVe,MaCB,DiaChi) VALUES (N'" + hoten + "', '" + cmnd+ "', '" + sdt + "','" + hanhly + "', '" + loaive+ "', '" + macb+ "',N'" + dchi + "');";
+        String sql = "INSERT INTO ThongTinHanhKhach (HoTen,CMND,SDT,HanhLy,LoaiVe,MaCB,DiaChi) VALUES (N'" + hoten + "', '" + cmnd + "', '" + sdt + "','" + hanhly + "', '" + loaive + "', '" + macb + "',N'" + dchi + "');";
 
         try {
             PreparedStatement pr = connect.prepareStatement(sql);
@@ -150,10 +144,6 @@ public class HanhKhachDAOImpl {
             sql = "UPDATE ChuyenBay SET SLHKHT=SLHKHT-1 WHERE MaCB='" + macb + "';";
             pr = connect.prepareStatement(sql);
             rs = pr.execute();
-
-            
-            
-
             connect.close();
             return true;
         } catch (SQLException ex) {
@@ -170,11 +160,11 @@ public class HanhKhachDAOImpl {
             PreparedStatement pr = connect.prepareStatement(sql);
             ResultSet rs = pr.executeQuery();
             if (rs.next()) {
-               hk.setHoTen(rs.getString("HoTen"));
-               hk.setSoDT(rs.getString("SDT"));
-               hk.setHanhLy(rs.getInt("HanhLy"));
-               hk.setLoaiVe(rs.getString("LoaiVe"));
-               hk.setDChi(rs.getString("DiaChi"));
+                hk.setHoTen(rs.getString("HoTen"));
+                hk.setSoDT(rs.getString("SDT"));
+                hk.setHanhLy(rs.getInt("HanhLy"));
+                hk.setLoaiVe(rs.getString("LoaiVe"));
+                hk.setDChi(rs.getString("DiaChi"));
             }
             connect.close();
         } catch (SQLException ex) {
@@ -200,14 +190,9 @@ public class HanhKhachDAOImpl {
         return mahk;
     }
 
-    
-    //thuc thi sau khi webservice
-    
-    
-    
     public boolean AddVeAndHK(HanhKhach hk, Ve ve, int macb) {
         Connection con = DBConnect.getConnection();
-        String sql = "INSERT INTO ThongTinHanhKhach (HoTen,CMND,SDT,HanhLy,LoaiVe,MaCB,DiaChi) VALUES ('" + hk.getHoTen() + "', '" + hk.getCMND() + "', '" + hk.getSoDT() + "','" + hk.getHanhLy() + "', '" + hk.getLoaiVe()+ "', '" + hk.getMaCB()+ "','" + hk.getDChi() + "');";
+        String sql = "INSERT INTO ThongTinHanhKhach (HoTen,CMND,SDT,HanhLy,LoaiVe,MaCB,DiaChi) VALUES ('" + hk.getHoTen() + "', '" + hk.getCMND() + "', '" + hk.getSoDT() + "','" + hk.getHanhLy() + "', '" + hk.getLoaiVe() + "', '" + hk.getMaCB() + "','" + hk.getDChi() + "');";
         try {
             PreparedStatement pr = con.prepareStatement(sql);
             boolean rs = pr.execute();
@@ -224,7 +209,6 @@ public class HanhKhachDAOImpl {
             return true;
         } catch (Exception ex) {
         }
-
         return false;
 
     }

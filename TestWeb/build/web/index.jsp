@@ -22,51 +22,49 @@
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script>
             //Check 1 chieu hay khu hoi 
-
             function yesnoCheck() {
-            if (document.getElementById('roundtrip').checked) {
-            document.getElementById('ifYes').style.display = 'block';
-            } else
+                if (document.getElementById('roundtrip').checked) {
+                    document.getElementById('ifYes').style.display = 'block';
+                } else
                     document.getElementById('ifYes').style.display = 'none';
             }
 
             function kiemtra() {
-            var diadiemdi = document.getElementById("diadiemdi");
-            var diadiemden = document.getElementById("diadiemden");
-            var ngaydi = document.getElementById("ngaykhoihanh");
-            if (diadiemdi.value == "Chọn điểm đi"){
-            alert("Chưa Chọn Địa điểm Đi");
-            return false;
-            }
-            if (diadiemden.value == "Chọn điểm đến"){
-            alert("Chưa Chọn Địa điểm Đến");
-            return false;
-            }
-            if (diadiemdi.value === diadiemden.value) {
-            alert("Địa điểm Đi và Đến không được phép trùng nhau.\n Xin bạn vui lòng chọn lại địa chỉ");
-            return false;
-            }
-
-            if (ngaydi.value === "") {
-            alert("Bạn chưa chọn ngày khởi hành");
-            return false;
-            }
-            if (document.getElementById('ifYes').style.display === "block")
-            {
-            var ngayve = document.getElementById("ngayve");
-            if (ngayve.value === "") {
-            alert("Bạn chưa chọn ngày về");
-            return false;
-            }
-            }
+                var diadiemdi = document.getElementById("diadiemdi");
+                var diadiemden = document.getElementById("diadiemden");
+                var ngaydi = document.getElementById("ngaykhoihanh");
+                if (diadiemdi.value == "Chọn điểm đi") {
+                    alert("Chưa Chọn Địa điểm Đi");
+                    return false;
+                }
+                if (diadiemden.value == "Chọn điểm đến") {
+                    alert("Chưa Chọn Địa điểm Đến");
+                    return false;
+                }
+                if (diadiemdi.value === diadiemden.value) {
+                    alert("Địa điểm Đi và Đến không được phép trùng nhau.\n Xin bạn vui lòng chọn lại địa chỉ");
+                    return false;
+                }
+                if (ngaydi.value === "") {
+                    alert("Bạn chưa chọn ngày khởi hành");
+                    return false;
+                }
+                if (document.getElementById('ifYes').style.display === "block")
+                {
+                    var ngayve = document.getElementById("ngayve");
+                    if (ngayve.value === "") {
+                        alert("Bạn chưa chọn ngày về");
+                        return false;
+                    }
+                }
             <%  String tencheck = "";
-                    if (session.getAttribute("ten") == null) {%>////////
-            alert("Bạn hãy dăng nhập trước khi mua vé và thanh toán");
-            return true;
+                if (session.getAttribute("ten") == null) {%>////////
+                alert("Bạn hãy dăng nhập trước khi mua vé và thanh toán");
+                return true;
             <%} else {
-                    }%>
+                }%>
             }
-            </script>
+        </script>
     </head>
     <body >
         <div class="body">
@@ -75,7 +73,6 @@
                 Date date = new Date();
                 String time = sdf.format(date);
                 DiaDiemDAOImpl DD = new DiaDiemDAOImpl();
-
             %>
             <div class="main">
                 <div class="header">
@@ -94,11 +91,8 @@
                                 <li><a href="DonHang.jsp"style="margin-bottom: 20px;">Xem Đơn Hàng</a></li>
                                 <li><a href="UserInformation.jsp"style="margin-bottom: 20px;">Tài Khoản</a></li>
                                 <li> <a href="Logout.jsp" style="margin-bottom: 20px;" >ĐĂNG XUẤT</a>
-
                                 </li>
-
                                 <%}
-
                                 } catch (Exception e) { %>
                                 <li><a href="RegisterLogin.jsp"style="margin-bottom: 20px;">ĐĂNG NHẬP </a></li>
                                     <%}%>
@@ -179,7 +173,6 @@
                     <div class="clr"></div>
                 </div>
             </div>
-
         </div>
     </body>
 </html>

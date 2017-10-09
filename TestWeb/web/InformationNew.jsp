@@ -30,7 +30,6 @@
                                 <li class="active"><a href="index.jsp"><span>Trang chủ</span></a></li>
                                 <li><a href="News.jsp"><span>Thông tin</span></a></li>
                                 <li> <a href="Logout.jsp" style="margin-bottom: 20px;" >ĐĂNG XUẤT</a></li>
-
                             </ul>
                         </div>
                     </div>
@@ -42,7 +41,6 @@
                 int TongTien = 0;
                 int soluong = Integer.parseInt(session.getAttribute("soluong").toString());
                 int giavedi = 0, giaveve = 0;
-                //String email = request.getAttribute("email").toString();
                 String maStr = request.getAttribute("macb").toString();
                 int macb = Integer.parseInt(maStr);
 
@@ -55,7 +53,6 @@
                     tb = TB.getEleTuyenBay(cb.getMaTB());
                     DiaDiemDAOImpl DD = new DiaDiemDAOImpl();
                     HangHangKhongDAOImpl hhk = new HangHangKhongDAOImpl();
-
             %>
 
             <div class="clr"></div>
@@ -68,10 +65,6 @@
                 <div class="clr"></div>
                 <h1 class="Confirmtb1h1" >Thông tin về Chuyến Bay</h1>
                 <h2 class="Confirmtb1h2" style="margin-left: 500px;">Thông tin về chuyến bay đi</h2>
-
-
-
-
                 <div class="clr"></div>
                 <div class="clr"></div>
                 <div class="clr"></div>
@@ -85,8 +78,6 @@
                         <th>Địa điểm Đến</th>
                         <th>Ngày Đến</th>
                         <th>Giờ Đến</th>
-
-
                     </tr>
                     <% tb.setGioDen(tb.getGioDen().substring(0, tb.getGioDen().length() - 8));%>
                     <td><%=cb.getMaCB()%></td>
@@ -125,7 +116,6 @@
                                 giahl = 300000;
                             }
                     %> 
-
 
                     <tr>
                         <td><%=temp.getHoTen()%></td>
@@ -179,9 +169,8 @@
             </div>
             <%}%>
 
-            <% 
+            <%
                 if (type.equals("roundtrip")) {
-
                     ChuyenBayDAOImpl CB = new ChuyenBayDAOImpl();
                     ChuyenBay cb = new ChuyenBay();
                     cb = CB.getEleChuyenBay(macb);
@@ -211,8 +200,6 @@
                         <th>Địa điểm Đến</th>
                         <th>Ngày Đến</th>
                         <th>Giờ Đến</th>
-
-
                     </tr>
 
                     <td><%=cb.getMaCB()%></td>
@@ -247,8 +234,6 @@
                         <th>Địa điểm Đến</th>
                         <th>Ngày Đến</th>
                         <th>Giờ Đến</th>
-
-
                     </tr>
 
                     <td><%=cbve.getMaCB()%></td>
@@ -298,8 +283,6 @@
                                 giahlve = 300000;
                             }
                     %> 
-
-
                     <tr>
                         <td><%=temp.getHoTen()%></td>
                         <td><%=temp.getCMND()%></td>
@@ -313,7 +296,6 @@
                         <%} else { %>
                         <td>Không đăng kí</td>
                         <% }%>
-
                         <%
                             if (temp.getLoaiVe().equals("Eco")) {
                                 if (tb.getMaHHK().equals("VNA")) {

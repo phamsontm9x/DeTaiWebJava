@@ -38,13 +38,9 @@
                             <h2><span>About to</span> Company Name</h2>
                             <div class="clr"></div>
                             Một hãng hàng không, trẻ trung, năng động, CheaoAirline đuợc nhiều hành khách tin dùng và trở thành hãng hàng không được yêu thích trong nước và khu vực.
-
                             CheapAirline đã phát triển mạng bay rộng khắp trong nước và đã có kế hoạch phát triển mạng đường bay</br> trong khu vực châu Á – Thái Bình Dương. Đáp ứng nhu cầu đi lại ngày càng tăng cao của người dân</br> trong nước và quốc tế với tỷ lệ các chuyến bay đúng giờ và chất lượng dịch vụ hàng không luôn dẫn đầu toàn ngành.</br></br></br>
-
                             Điểm nổi bậc của hãng là luôn mang đến nhiều sự lựa chọn về các chuyến bay, không chỉ là phuơng tiện</br> vận chuyển, VietJet luôn sáng tạo, mang đến cho hành khách nhiều điều thú vị, vui vẻ trên các chuyến bay. </br>
-
                             CheapAirline đã đuợc vinh danh qua các giải thưởng lớn trong nước và quốc tế. Đường bay CheapAirline</br được công nhận nằm trong “Top 5 đường bay mới khai trương thành công hàng đầu thế giới” năm cùng với các hãng hàng không hàng đầu quốc tế như  <b>SpiceJet (Ấn Độ)</b>, EasyJet (Anh Quốc), Southwest (Mỹ) và AirAsia X (Malaysia). Tổ chức kỷ lục Châu Á</br> đã công nhận VietJetAir là “Hãng hãng không có nhiều sáng tạo các dịch vụ giải trí trên tàu bay”. Giải thưởng </br>“ Sao vàng chất lượng dịch vụ” do do Tổ chức B.I.D (Business Initiative Directions) Thụy Sỹ trao tặng. </br></br></br>Hai năm liền liên tục nhận đuợc Bằng khen của Bộ giao thông vận tải vả Bộ văn hóa thể thao & du lịch</br> và đuợc Người tiêu dùng bình chọn qua Thời báo kinh tế Việt Nam là </br>“Hãng hàng không có Dịch vụ vận chuyển thân thiện và chế độ khuyến mại tốt nhất Việt Nam”.</br>
-
                             <br>
                             Điểm nổi bậc của hãng là luôn mang đến nhiều sự lựa chọn về các chuyến  bay, không chỉ là phuơng tiện vận chuyển, </br>CheapAirline luôn sáng tạo, mang  đến cho hành khách nhiều điều thú vị, vui vẻ trên các chuyến bay. </br>
                             </br></br>+ Tầm nhìn: Trở thành hãng hàng không uy tín và được yêu thích nhất tại Việt Nam và khu vực .</br>
@@ -70,7 +66,6 @@
                                 <li><a href="#">Web Templates</a></li>
                             </ul>
                         </div>
-
                     </div>
                     <div class="clr"></div>
                 </div>

@@ -16,16 +16,13 @@
         <link href="../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-
     </head>
 
     <script>
-        
         <% String mail = (String) session.getAttribute("email");
             TaiKhoanUserDAO tkuser = new TaiKhoanUserDAO();
             TaiKhoanUser tkus = tkuser.GetTKbyEmail(mail);
         %>
-        
         function isEditInfo() {
             // save Data xuống database
             var name = document.getElementById('hoten');
@@ -34,11 +31,10 @@
             var address = document.getElementById('DiaChi');
             return true;
         }
-
     </script>
 
     <body>
-          <body>
+    <body>
         <div class="body">
             <div class="main">
                 <div class="header">
@@ -61,23 +57,16 @@
                                     <div ><font color="white" > Họ tên:</font>
                                         <input name="hoten" type="text" value="<%=tkus.getHoten()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
                                     </div>
-
-
                                     <div ><font color="white"> CMND:</font>
                                         <input name="cmnd" type="text" id="cmnd" value="<%=tkus.getCMND()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
-
                                     </div>
                                     <div ><font color="white"> SĐT:</font>
                                         <input name="sdt" type="text" id="sdt" value="0<%=tkus.getSDT()%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
-
                                     </div>
                                     <div > <font color="white"> Địa chỉ:</font>
                                         <input name="DiaChi" type="text" id="DiaChi" value="<%=tkus.getDiaChi()%>"required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
-
                                     </div>
-                                    
-                                     <div><input  t type="submit" name="login" class="login login-submit" value="Xác nhận" >  </div>
-                                          
+                                    <div><input  t type="submit" name="login" class="login login-submit" value="Xác nhận" >  </div>
                                 </form>
                             </div>
                         </div>

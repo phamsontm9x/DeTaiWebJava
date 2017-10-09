@@ -17,81 +17,70 @@ import model.HangHangKhong;
  *
  * @author My PC
  */
-public class HangHangKhongDAOImpl implements HangHangKhongDAO{
+public class HangHangKhongDAOImpl implements HangHangKhongDAO {
 
     @Override
     public ArrayList<HangHangKhong> getListHangHangKhong() {
-        Connection connect=DBConnect.getConnection();
-        String sql="SELECT * FROM DiaDiem;";
+        Connection connect = DBConnect.getConnection();
+        String sql = "SELECT * FROM DiaDiem;";
         ArrayList<HangHangKhong> arr = new ArrayList<>();
-        
-        try{
+
+        try {
             PreparedStatement ps = connect.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){                
-                HangHangKhong hhk=new HangHangKhong();
+            while (rs.next()) {
+                HangHangKhong hhk = new HangHangKhong();
                 //dd=null;
                 hhk.setMaHHK(rs.getString("MaHHK"));
                 hhk.setTenHHK(rs.getString("TenHHK"));
-                
                 //if(dd!=null)
-                    arr.add(hhk);
+                arr.add(hhk);
             }
             connect.close();
+        } catch (SQLException ex) {
+            System.err.println(ex);
         }
-        catch(SQLException ex)
-        {
-            System.err.println(ex); 
-        }
-        
         return arr;
     }
 
     @Override
     public HangHangKhong getElebyMaHHK(String MaHHK) {
-        Connection connect=DBConnect.getConnection();
-        String sql="SELECT * FROM HangHangKhong where MaHHK = '"+MaHHK+"';";
+        Connection connect = DBConnect.getConnection();
+        String sql = "SELECT * FROM HangHangKhong where MaHHK = '" + MaHHK + "';";
         HangHangKhong hhk = new HangHangKhong();
-        
-        try{
+
+        try {
             PreparedStatement ps = connect.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){                
+            while (rs.next()) {
                 //dd=null;
                 hhk.setMaHHK(rs.getString("MaHHK"));
                 hhk.setTenHHK(rs.getString("TenHHK"));
-                
                 //if(dd!=null)
             }
             connect.close();
+        } catch (SQLException ex) {
+            System.err.println(ex);
         }
-        catch(SQLException ex)
-        {
-            System.err.println(ex); 
-        }
-        
         return hhk;
     }
 
     @Override
     public String getTenHHK(String MaHHK) {
-    Connection connect=DBConnect.getConnection();
+        Connection connect = DBConnect.getConnection();
         String tenHHK = null;
         //dd=null;
-        String sql="SELECT * FROM HangHangKhong where MaHHK= '"+MaHHK+"';";
-        try{
-            PreparedStatement pr=connect.prepareStatement(sql);
-            ResultSet rs=pr.executeQuery();
-            if(rs.next()){
-                tenHHK=rs.getString("TenHHK");
+        String sql = "SELECT * FROM HangHangKhong where MaHHK= '" + MaHHK + "';";
+        try {
+            PreparedStatement pr = connect.prepareStatement(sql);
+            ResultSet rs = pr.executeQuery();
+            if (rs.next()) {
+                tenHHK = rs.getString("TenHHK");
             }
             connect.close();
-        }
-        catch(SQLException ex)
-        {
+        } catch (SQLException ex) {
             //dd=null;
         }
         return tenHHK;
     }
-    
 }
