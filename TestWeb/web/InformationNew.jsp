@@ -92,7 +92,7 @@
 
                 <h2 class="Confirmtb1h2" style="margin-left: 500px;margin-top: 100px;">Thông tin Hành khách</h2> 
                 <div class="clr"></div>
-                <table class="showtable" border="3" style="margin-top: -150px; margin-left: 300px;" >
+                <table class="showtable" border="3" style="margin-top: -150px; margin:auto;" >
                     <tr>
                         <th>Họ Tên </th>
                         <th>CMND</th>

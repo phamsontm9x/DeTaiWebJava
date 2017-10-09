@@ -70,7 +70,6 @@
                 HangHangKhongDAOImpl HHK = new HangHangKhongDAOImpl();
                 DiaDiemDAOImpl dd = new DiaDiemDAOImpl();
                 ArrayList<String> listngay = DH.getNgayHD(mail);
-                String mailCT = request.getParameter("mail");
                 String ngayCT = request.getParameter("ngay");
 
             %>
@@ -114,10 +113,8 @@
                                 dh.setNgayTao(dh.getNgayTao().substring(0, dh.getNgayTao().length() - 10));
                                 String ngayTao = dh.getNgayTao().trim();
                                 HanhKhach hk = HK.getHanhKhachbymahk(dh.getCMND(), dh.getMaCB());
-
                         %>
                         <% if (ngayCT.equals(ngayTao)) {%>
-
                         <tr>
                             <td><%=i++%></td>
                             <td><%=hk.getHoTen()%></td>
@@ -132,9 +129,10 @@
                             <td><form  method="POST" action="HuyDonHang_Servlet">
                                     <input type="hidden" name="cmnd" value="<%=dh.getCMND()%>">
                                     <input type="hidden" name="macb" value="<%=dh.getMaCB()%>">
+                                    <input type="hidden" name="ngay" value="<%=ngayCT%>">
                                     <input class="buttomexit" type="submit" value="HỦY">
                                 </form></td>
-                                <%}%>
+                            <%}%>
                         </tr>
                         <%}
                         }

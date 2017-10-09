@@ -77,6 +77,7 @@ public class HuyDonHang_Servlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String macbStr = request.getParameter("macb");
+        String ngay = request.getParameter("ngay");
         int macb = Integer.parseInt(macbStr);
         String cmnd = request.getParameter("cmnd");
         String trangThai ="Đã Hủy";
@@ -86,9 +87,10 @@ public class HuyDonHang_Servlet extends HttpServlet {
         if(kq){
             String thbao ="Hủy Đơn Hàng Thành Công";
                 request.setAttribute("tbao",thbao);
+                request.setAttribute("ngay", ngay);   
                 RequestDispatcher rd= getServletContext().getRequestDispatcher("/XemDonHang.jsp");
                 rd.forward(request, response);
-        }else{
+        } else {
             String thbao ="Hủy đơn hàng thất bại";
                 request.setAttribute("tbao",thbao);
                 RequestDispatcher rd= getServletContext().getRequestDispatcher("/XemDonHang.jsp");

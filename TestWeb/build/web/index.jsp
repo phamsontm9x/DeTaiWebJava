@@ -69,7 +69,7 @@
     <body >
         <div class="body">
             <%
-                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 Date date = new Date();
                 String time = sdf.format(date);
                 DiaDiemDAOImpl DD = new DiaDiemDAOImpl();
