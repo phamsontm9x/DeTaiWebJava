@@ -95,7 +95,7 @@
                         </td>
                     </tr>
                     <% if (ngayCT.equals(ngay)) {%>
-                    <table class="Formtable" border="5" style="margin-left:100px">
+                    <table class="Formtable" border="5" style="margin-left:50px; margin-top: 10px">
                         <tr>
                             <th>STT</th>
                             <th>Tên Hành Khách</th>

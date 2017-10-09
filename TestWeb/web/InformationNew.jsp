@@ -79,7 +79,6 @@
                         <th>Ngày Đến</th>
                         <th>Giờ Đến</th>
                     </tr>
-                    <% tb.setGioDen(tb.getGioDen().substring(0, tb.getGioDen().length() - 8));%>
                     <td><%=cb.getMaCB()%></td>
                     <td><%=hhk.getTenHHK(tb.getMaHHK())%></td>
                     <td><%=DD.getTenDD(tb.getMaDi())%></td>
@@ -190,7 +189,7 @@
                 <div class="clr"></div>
                 <div class="clr"></div>
                 <div class="clr"></div>
-                <table class="Formtable" border="3" >
+                <table class="Formtable" border="3" style = "margin-left: 250px">
                     <tr>
                         <th>Mã Chuyến Bay</th>
                         <th>Hãng Hàng Không</th>
@@ -224,7 +223,7 @@
                 <div class="clr"></div>
                 <div class="clr"></div>
                 <div class="clr"></div>
-                <table class="Formtable" border="3" >
+                <table class="Formtable" border="3" style = "margin-left: 250px">
                     <tr>
                         <th>Mã Chuyến Bay</th>
                         <th>Hãng Hàng Không</th>
@@ -247,7 +246,7 @@
                 </table>
                 <h2 class="Confirmtb1h2">Thông tin Hành khách</h2> 
                 <div class="clr"></div>
-                <table class="Formtable" border="3">
+                <table class="Formtable" border="3" style = "margin-left: 230px">
                     <tr>
                         <th>Họ Tên </th>
                         <th>CMND</th>

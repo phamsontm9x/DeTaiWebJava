@@ -701,9 +701,6 @@ a {
 
 .FinishTable1{
     border: 0;
-
-
-
 }
 .Confirmtb1h1{
     text-align:center;
@@ -712,7 +709,7 @@ a {
     margin-bottom: 20px;
 }
 .Confirmtb1h2{
-    margin-left: 80px;
+    margin-left: 500px;
     margin-right:50px;
     float: left;
     color:white;
