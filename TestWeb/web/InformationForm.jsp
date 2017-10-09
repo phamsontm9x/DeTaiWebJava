@@ -157,7 +157,7 @@
                                         </select>
                                     </div >
                                     <% }%>
-                                    <button type="submit" >Xác Nhận</button>
+                                    <div><input  t type="submit" name="login" class="login login-submit" value="Xác nhận" >  </div>
                                     <p style="color:red;"><%=tb%></p>
                                 </div>
                             </div>
