@@ -123,11 +123,11 @@
                                     </div>
 
                                     <div ><font color="white"> CMND:</font>
-                                        <input name="cmnd<%=i%>" type="text" id="cmnd<%=i%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
+                                        <input name="cmnd<%=i%>" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="cmnd<%=i%>" maxlength="12" required style="font-family: Time New Roman; font-size: 20px;text-align: left;"/>
 
                                     </div>
                                     <div ><font color="white"> Số điện thoại:</font>
-                                        <input name="sdt<%=i%>" type="text" id="sdt<%=i%>" required style="font-family: Time New Roman; font-size: 20px;text-align: left;" />
+                                        <input name="sdt<%=i%>" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="sdt<%=i%>" maxlength="11" required style="font-family: Time New Roman; font-size: 20px;text-align: left;" />
 
                                     </div>
                                     <div > <font color="white"> Địa chỉ:</font>

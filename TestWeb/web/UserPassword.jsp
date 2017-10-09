@@ -82,11 +82,9 @@
                                     <input  t type="submit" name="login" class="login login-submit" value="Thay đổi" style=" background-color: #4CAF50; /* Green */
                                             border: none;
                                             color: white;
-                                            padding: 20px 30px;
                                             text-align: center;
                                             text-decoration: none;
-                                            display: inline-block;
-                                            font-size: 20px;">
+                                            display: inline-block;">
                                 </form>
                             </div>
                         </div>
