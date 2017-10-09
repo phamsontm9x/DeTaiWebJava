@@ -12,7 +12,7 @@ package model;
 public class ThongTinHoaDon {
       private String MaHD;
       private String MaVe;
-      private String MaCB;
+      private int MaCB;
       private String MaHK;
       private String Email;
       private String SDT;
@@ -23,7 +23,7 @@ public class ThongTinHoaDon {
     public ThongTinHoaDon(){}
     
       
-    public ThongTinHoaDon(String MaHD, String MaCB, String MaHK, String Email, String SDT, int Gia, int soluong) {
+    public ThongTinHoaDon(String MaHD, int MaCB, String MaHK, String Email, String SDT, int Gia, int soluong) {
         this.MaHD = MaHD;
         this.MaCB = MaCB;
         this.MaHK = MaHK;
@@ -41,11 +41,11 @@ public class ThongTinHoaDon {
         this.MaHD = MaHD;
     }
 
-    public String getMaCB() {
+    public int getMaCB() {
         return MaCB;
     }
 
-    public void setMaCB(String MaCB) {
+    public void setMaCB(int MaCB) {
         this.MaCB = MaCB;
     }
 

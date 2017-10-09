@@ -3,7 +3,7 @@ package model;
 
 
 public class Ve {
-    private String MaCB;
+    private int MaCB;
     private int MaHK;
     private int GiaVe;
     private String MaVe;
@@ -12,7 +12,7 @@ public class Ve {
     
     public Ve(){}
     
-    public Ve(String MaCB, int MaHK, int GiaVe, String MaVe, String MaHD) {
+    public Ve(int MaCB, int MaHK, int GiaVe, String MaVe, String MaHD) {
         this.MaCB = MaCB;
         this.MaHK = MaHK;
         this.GiaVe = GiaVe;
@@ -20,11 +20,11 @@ public class Ve {
         this.MaHD = MaHD;
     }
 
-    public String getMaCB() {
+    public int getMaCB() {
         return MaCB;
     }
 
-    public void setMaCB(String MaCB) {
+    public void setMaCB(int MaCB) {
         this.MaCB = MaCB;
     }
 
