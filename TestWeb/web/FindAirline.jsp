@@ -134,225 +134,260 @@
         %>
         <% if (arrTuyenBay.size() == 0 || arrChuyenBay.size() == 0) {%>
         <form id="frm1" action="index.jsp" onsubmit=" true">
-            <input class="AvailableFromBUTTON" type="submit"  value="Quay lại" /></form>
-        <% } else { %>
-        <form id="frm1" action="InformationForm.jsp" onsubmit=" return kiemtra()">
-            <table class="FormAvailable" border="3" style="margin-top:10px; margin-left:50px;margin-right: 20px; padding-left: 0px;">
-                <tr class="AFormHeader">
-                    <th></th>
-                    <th>Hãng</th>
-                    <th>Khởi hành</th>
-                    <th>Ngày đi</th>
-                    <th>Đến</th>
-                    <th>Ngày đến</th>
-                    <th>Giá vé thường</th>
-                    <th>Tổng tiền vé thường</th>
-                    <th>Giá vé VIP</th>
-                    <th>Tổng tiền Vé VIP</th>
-                </tr>
-                <% for (TuyenBay Tb : arrTuyenBay) {%>
-                <% for (ChuyenBay Cb : arrChuyenBay) {%>
-                <%if (Cb.getMaTB().equals(Tb.getMaTB())) {%>
+            <tr class="AFormHeader"></tr>
+            <input class="AvailableFromBUTTON" type="submit"  value="Quay lại" />
+            <div class="clr"></div>
+            <div class="fbg">
+                <div class="fbg_resize">
+                    <div class="col c1">
+                        <h2>Theme</h2>
+                        <a href="#"><img src="images/gal1.jpg" width="100" height="75" alt="" class="gal" /></a> 
+                        <a href="#"><img src="images/gal2.jpg" width="100" height="75" alt="" class="gal" /></a>
+                        <a href="#"><img src="images/gal3.jpg" width="100" height="75" alt="" class="gal" /></a> 
+                        <a href="#"><img src="images/gal4.jpg" width="100" height="75" alt="" class="gal" /></a> 
+                        <a href="#"><img src="images/gal5.jpg" width="100" height="75" alt="" class="gal" /></a> 
+                        <a href="#"><img src="images/gal6.jpg" width="100" height="75" alt="" class="gal" /></a> </div>
+                    <div class="col c2">
+                        <h2>Overview</h2>
+                        <p>Thông tin bản quyền</p>
+                        <ul class="fbg_ul">
+                            <li><a >CheapAirline Pty Ltd., số GPĐKKD: 33069720243.</a></li>
+                            <li><a >CheapAirline Regional Services Pte Ltd, số GPĐKKD: 201229688K. Số Giấy phép kinh doanh đại lý du lịch của Singapore: 02495</a></li>
+                            <li><a >CheapAirline Japan Co., Ltd., số Giấy phép kinh doanh đại lý du lịch của Công ty CheapAirline Holidays K.K.: 1829</a></li>
+                        </ul>
+                    </div>
+                    <div class="col c3">
+                        <h2><span>Contact</span> us</h2>
 
-                <input type="hidden" name="type" value="<%=type%>">
-                <tr>
-                    <td><input type="radio" name="macb" value="<%= Cb.getMaCB()%>"></td>
-                    <!--Hang hang khong-->
-                    <td>
-                        <%if (Tb.getMaHHK().equals("VNA")) {%>
-                        <img src="./images/VietNamAirline.jpg " height="40px" >
-                        <%} else if (Tb.getMaHHK().equals("VJ")) {%>
-                        <img src="./images/VietJet.jpg " height="40px" >
-                        <%} else if (Tb.getMaHHK().equals("BL")) {%>
-                        <img src="./images/JetStar.jpg " height="40px" >
-                        <%} else {
-                                out.println(Tb.getMaHHK());
-                            }%>
-                    </td>
-                    <td>
-                        <%=di%>
-                    </td>
-                    <td>
-                        <%=ngaykhoihanh%><br>
-                        <%=Tb.getGioDi()%><br>
-                    </td>
-                    <td>
-                        <%=den%>
-                    </td>
-                    <td>
-                        <%=ngaykhoihanh%><br>
-                        <%=Tb.getGioDen()%><br>
-                    </td>
-                    <td>
-                        <%=Tb.getGiaThuong()%><br>
-                    </td>
-                    <td>
-                        <%if (Tb.getMaHHK().equals("VNA")) {%>
-                        <% tien = (Tb.getGiaThuong() + Tb.getGiaThuong() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
-                        <%=tien%>
-                        <%} else if (Tb.getMaHHK().equals("VJ")) {%>
-                        <% tien = (Tb.getGiaThuong() + Tb.getGiaThuong() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
-                        <%=tien%>
-                        <%} else if (Tb.getMaHHK().equals("BL")) {%>
+                        <p class="contact_info"> <span>Address:</span>97 Man Thiện, Phường Hiệp Phú Q9 TP.HCM<br />
+                            <span>Telephone:</span> +18001000<br />
+                            <span>FAX:</span> +458 4578<br />
+                            <span>Others:</span> +301  0125  01258<br />
+                            <span>E-mail:</span> <a href="mail.google.com">vemaybay@gmail.com</a> </p>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <% } else { %>
+    <form id="frm1" action="InformationForm.jsp" onsubmit=" return kiemtra()">
+        <table class="FormAvailable" border="3" style="margin-top:10px; margin-left:50px;margin-right: 20px; padding-left: 0px;">
+            <tr class="AFormHeader">
+                <th></th>
+                <th>Hãng</th>
+                <th>Khởi hành</th>
+                <th>Ngày đi</th>
+                <th>Đến</th>
+                <th>Ngày đến</th>
+                <th>Giá vé thường</th>
+                <th>Tổng tiền vé thường</th>
+                <th>Giá vé VIP</th>
+                <th>Tổng tiền Vé VIP</th>
+            </tr>
+            <% for (TuyenBay Tb : arrTuyenBay) {%>
+            <% for (ChuyenBay Cb : arrChuyenBay) {%>
+            <%if (Cb.getMaTB().equals(Tb.getMaTB())) {%>
 
-                        <% tien = (Tb.getGiaThuong() + Tb.getGiaThuong() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
-                        <%=tien%>
-                        <% }%>
-                        <input type="radio" value="0"name="loaivedi" required >
-                    </td>
-                    <td>
-                        <%=Tb.getGiaVIP()%><br>
-                    </td>
-                    <td>
-                        <%if (Tb.getMaHHK().equals("VNA")) {%>
-                        <% tien = (Tb.getGiaVIP() + Tb.getGiaVIP() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
-                        <%=tien%>
-                        <%} else if (Tb.getMaHHK().equals("VJ")) {%>
-                        <% tien = (Tb.getGiaVIP() + Tb.getGiaVIP() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
-                        <%=tien%>
-                        <%} else if (Tb.getMaHHK().equals("BL")) {%>
-
-                        <% tien = (Tb.getGiaVIP() + Tb.getGiaVIP() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
-                        <%=tien%>
-                        <% }%>
-                        <input type="radio" value="1"name="loaivedi" required >
-
-                    </td>
-                </tr>
-                <%}%>
-                <%}%>
-                <%}%>
-            </table>
-            <% if (type.equals("roundtrip")) {
-
-                    ArrayList<TuyenBay> arrTuyenBayVe = new ArrayList();
-                    TuyenBayDAOImpl apiTuyenBayVe = new TuyenBayDAOImpl();
-                    arrTuyenBayVe = apiTuyenBayVe.getListTuyenBay(diadiemden, diadiemdi);
-
-                    ArrayList<ChuyenBay> arrChuyenBayVe = new ArrayList();
-                    ChuyenBayDAOImpl apiChuyenBayVe = new ChuyenBayDAOImpl();
-                    arrChuyenBayVe = apiChuyenBayVe.getListChuyenBaybyNgayDi(ngayve); // ngay ve + ma chuyen bay ->
-
-                    if (arrTuyenBayVe.size() == 0) {
-                        out.println("<br><font family = 'Time New Romen' size='10' >");
-                        out.println("Chưa hỗ trợ tuyến bay từ " + den + " đến " + di + "</font>");
-                        out.println("<br>");
-                        out.println("<br>");
-                    } else {
-                        if (arrChuyenBayVe.size() == 0) {
-                            // khoi tao
-                            boolean khoitao = apiChuyenBay.AddChuyenBay(ngayve, ngayve, arrTuyenBayVe);
-                            if (khoitao) {
-                                arrChuyenBayVe = apiChuyenBay.getListChuyenBaybyNgayDi(ngayve);
-                                out.println("<br><font family = 'Time New Romen' size='5' >");
-                                out.println("Chuyến bay từ " + den + " đến " + di + "</font>");
-                                out.println("<br>");
-                                out.println("<br>");
-                            } else {
-                                // Thong Bao khong co chuyen bay
-                                out.println("<br><font family = 'Time New Romen' size='5' >");
-                                out.println("Không có chuyến bay từ " + den + " đến " + di + "</font>");
-                                out.println("<br>");
-                                out.println("<br>");
-                            }
-
-                        } else {
-                            arrChuyenBayVe = apiChuyenBay.getListChuyenBaybyNgayDi(ngayve);
-                            out.println("<br><font family = 'Time New Romen' size='5' >");
-                            out.println("Chuyến bay từ " + den + " đến " + di + "</font>");
-                            out.println("<br>");
-                            out.println("<br>");
-                        }
-                    }
-
-            %>
-            <h2 style="font-family: Times New Roman; margin-left: 50px; font-size: 50px;"></h2>
-            <table class="FormAvailable" border="3" style="margin-top:10px; margin-left:50px;margin-right: 20px; padding-left: 0px;">
-                <tr class="AFormHeader">
-                    <th>Hãng</th>
-                    <th>Khởi hành</th>
-                    <th>Ngày đi</th>
-                    <th>Đến</th>
-                    <th>Ngày đến</th>
-                    <th>Giá Vé Thường</th>
-                    <th>Tổng tiền</th>
-                    <th>Giá vé VIP</th>
-                    <th>Tổng tiền</th>
-
-                </tr>
-                <% for (TuyenBay Tbve : arrTuyenBayVe) {%>
-                <% for (ChuyenBay Cbve : arrChuyenBayVe) {%>
-                <%if (Cbve.getMaTB().equals(Tbve.getMaTB())) {%>
-                <input type="hidden" name="macbve" value="<%= Cbve.getMaCB()%>">
+            <input type="hidden" name="type" value="<%=type%>">
+            <tr>
+                <td><input type="radio" name="macb" value="<%= Cb.getMaCB()%>"></td>
+                <!--Hang hang khong-->
                 <td>
-                    <%if (Tbve.getMaHHK().equals("VNA")) {%>
+                    <%if (Tb.getMaHHK().equals("VNA")) {%>
                     <img src="./images/VietNamAirline.jpg " height="40px" >
-                    <%} else if (Tbve.getMaHHK().equals("VJ")) {%>
+                    <%} else if (Tb.getMaHHK().equals("VJ")) {%>
                     <img src="./images/VietJet.jpg " height="40px" >
-                    <%} else if (Tbve.getMaHHK().equals("BL")) {%>
+                    <%} else if (Tb.getMaHHK().equals("BL")) {%>
                     <img src="./images/JetStar.jpg " height="40px" >
                     <%} else {
-                            out.println(Tbve.getMaHHK());
+                            out.println(Tb.getMaHHK());
                         }%>
-
-                </td>
-                <td>
-                    <%=den%>;
-                </td>
-                <td>
-                    <%=ngayve%><br>
-                    <%=Tbve.getGioDi()%>
                 </td>
                 <td>
                     <%=di%>
                 </td>
                 <td>
-                    <%=Cbve.getNgayDen()%><br>
-                    <%=Tbve.getGioDen()%><br>
+                    <%=ngaykhoihanh%><br>
+                    <%=Tb.getGioDi()%><br>
                 </td>
                 <td>
-                    <%=Tbve.getGiaThuong()%><br>
+                    <%=den%>
                 </td>
                 <td>
-                    <%if (Tbve.getMaHHK().equals("VNA")) {%>
-                    <% tien = (Tbve.getGiaThuong() + Tbve.getGiaThuong() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
+                    <%=ngaykhoihanh%><br>
+                    <%=Tb.getGioDen()%><br>
+                </td>
+                <td>
+                    <%=Tb.getGiaThuong()%><br>
+                </td>
+                <td>
+                    <%if (Tb.getMaHHK().equals("VNA")) {%>
+                    <% tien = (Tb.getGiaThuong() + Tb.getGiaThuong() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
                     <%=tien%>
-                    <%} else if (Tbve.getMaHHK().equals("VJ")) {%>
-                    <% tien = (Tbve.getGiaThuong() + Tbve.getGiaThuong() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
+                    <%} else if (Tb.getMaHHK().equals("VJ")) {%>
+                    <% tien = (Tb.getGiaThuong() + Tb.getGiaThuong() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
                     <%=tien%>
-                    <%} else if (Tbve.getMaHHK().equals("BL")) {%>
+                    <%} else if (Tb.getMaHHK().equals("BL")) {%>
 
-                    <% tien = (Tbve.getGiaThuong() + Tbve.getGiaThuong() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
+                    <% tien = (Tb.getGiaThuong() + Tb.getGiaThuong() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
                     <%=tien%>
                     <% }%>
-                    <input type="radio" value="0"name="loaiveve" required >
+                    <input type="radio" value="0"name="loaivedi" required >
                 </td>
                 <td>
-                    <%=Tbve.getGiaVIP()%><br>
+                    <%=Tb.getGiaVIP()%><br>
                 </td>
                 <td>
-                    <%if (Tbve.getMaHHK().equals("VNA")) {%>
-                    <% tien = (Tbve.getGiaVIP() + Tbve.getGiaVIP() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
+                    <%if (Tb.getMaHHK().equals("VNA")) {%>
+                    <% tien = (Tb.getGiaVIP() + Tb.getGiaVIP() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
                     <%=tien%>
-                    <%} else if (Tbve.getMaHHK().equals("VJ")) {%>
-                    <% tien = (Tbve.getGiaVIP() + Tbve.getGiaVIP() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
+                    <%} else if (Tb.getMaHHK().equals("VJ")) {%>
+                    <% tien = (Tb.getGiaVIP() + Tb.getGiaVIP() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
                     <%=tien%>
-                    <%} else if (Tbve.getMaHHK().equals("BL")) {%>
+                    <%} else if (Tb.getMaHHK().equals("BL")) {%>
 
-                    <% tien = (Tbve.getGiaVIP() + Tbve.getGiaVIP() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
+                    <% tien = (Tb.getGiaVIP() + Tb.getGiaVIP() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
                     <%=tien%>
                     <% }%>
-                    <input type="radio" value="1"name="loaiveve" required 
+                    <input type="radio" value="1"name="loaivedi" required >
+
                 </td>
-                </tr>
-                <%}%>
-                <%}%>
-                <%}%>
-            </table>
+            </tr>
             <%}%>
-            <input type="hidden" name="soluong" value="<%= soluong%>"  >
-            <input class="AvailableFromBUTTON" type="submit"  value="Tiếp tục" />
-        </form>   
+            <%}%>
+            <%}%>
+        </table>
+        <% if (type.equals("roundtrip")) {
+
+                ArrayList<TuyenBay> arrTuyenBayVe = new ArrayList();
+                TuyenBayDAOImpl apiTuyenBayVe = new TuyenBayDAOImpl();
+                arrTuyenBayVe = apiTuyenBayVe.getListTuyenBay(diadiemden, diadiemdi);
+
+                ArrayList<ChuyenBay> arrChuyenBayVe = new ArrayList();
+                ChuyenBayDAOImpl apiChuyenBayVe = new ChuyenBayDAOImpl();
+                arrChuyenBayVe = apiChuyenBayVe.getListChuyenBaybyNgayDi(ngayve); // ngay ve + ma chuyen bay ->
+
+                if (arrTuyenBayVe.size() == 0) {
+                    out.println("<br><font family = 'Time New Romen' size='10' >");
+                    out.println("Chưa hỗ trợ tuyến bay từ " + den + " đến " + di + "</font>");
+                    out.println("<br>");
+                    out.println("<br>");
+                } else {
+                    if (arrChuyenBayVe.size() == 0) {
+                        // khoi tao
+                        boolean khoitao = apiChuyenBay.AddChuyenBay(ngayve, ngayve, arrTuyenBayVe);
+                        if (khoitao) {
+                            arrChuyenBayVe = apiChuyenBay.getListChuyenBaybyNgayDi(ngayve);
+                            out.println("<br><font family = 'Time New Romen' size='5' >");
+                            out.println("Chuyến bay từ " + den + " đến " + di + "</font>");
+                            out.println("<br>");
+                            out.println("<br>");
+                        } else {
+                            // Thong Bao khong co chuyen bay
+                            out.println("<br><font family = 'Time New Romen' size='5' >");
+                            out.println("Không có chuyến bay từ " + den + " đến " + di + "</font>");
+                            out.println("<br>");
+                            out.println("<br>");
+                        }
+
+                    } else {
+                        arrChuyenBayVe = apiChuyenBay.getListChuyenBaybyNgayDi(ngayve);
+                        out.println("<br><font family = 'Time New Romen' size='5' >");
+                        out.println("Chuyến bay từ " + den + " đến " + di + "</font>");
+                        out.println("<br>");
+                        out.println("<br>");
+                    }
+                }
+
+        %>
+        <h2 style="font-family: Times New Roman; margin-left: 50px; font-size: 50px;"></h2>
+        <table class="FormAvailable" border="3" style="margin-top:10px; margin-left:50px;margin-right: 20px; padding-left: 0px;">
+            <tr class="AFormHeader">
+                <th>Hãng</th>
+                <th>Khởi hành</th>
+                <th>Ngày đi</th>
+                <th>Đến</th>
+                <th>Ngày đến</th>
+                <th>Giá Vé Thường</th>
+                <th>Tổng tiền</th>
+                <th>Giá vé VIP</th>
+                <th>Tổng tiền</th>
+
+            </tr>
+            <% for (TuyenBay Tbve : arrTuyenBayVe) {%>
+            <% for (ChuyenBay Cbve : arrChuyenBayVe) {%>
+            <%if (Cbve.getMaTB().equals(Tbve.getMaTB())) {%>
+            <input type="hidden" name="macbve" value="<%= Cbve.getMaCB()%>">
+            <td>
+                <%if (Tbve.getMaHHK().equals("VNA")) {%>
+                <img src="./images/VietNamAirline.jpg " height="40px" >
+                <%} else if (Tbve.getMaHHK().equals("VJ")) {%>
+                <img src="./images/VietJet.jpg " height="40px" >
+                <%} else if (Tbve.getMaHHK().equals("BL")) {%>
+                <img src="./images/JetStar.jpg " height="40px" >
+                <%} else {
+                        out.println(Tbve.getMaHHK());
+                    }%>
+
+            </td>
+            <td>
+                <%=den%>;
+            </td>
+            <td>
+                <%=ngayve%><br>
+                <%=Tbve.getGioDi()%>
+            </td>
+            <td>
+                <%=di%>
+            </td>
+            <td>
+                <%=Cbve.getNgayDen()%><br>
+                <%=Tbve.getGioDen()%><br>
+            </td>
+            <td>
+                <%=Tbve.getGiaThuong()%><br>
+            </td>
+            <td>
+                <%if (Tbve.getMaHHK().equals("VNA")) {%>
+                <% tien = (Tbve.getGiaThuong() + Tbve.getGiaThuong() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
+                <%=tien%>
+                <%} else if (Tbve.getMaHHK().equals("VJ")) {%>
+                <% tien = (Tbve.getGiaThuong() + Tbve.getGiaThuong() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
+                <%=tien%>
+                <%} else if (Tbve.getMaHHK().equals("BL")) {%>
+
+                <% tien = (Tbve.getGiaThuong() + Tbve.getGiaThuong() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
+                <%=tien%>
+                <% }%>
+                <input type="radio" value="0"name="loaiveve" required >
+            </td>
+            <td>
+                <%=Tbve.getGiaVIP()%><br>
+            </td>
+            <td>
+                <%if (Tbve.getMaHHK().equals("VNA")) {%>
+                <% tien = (Tbve.getGiaVIP() + Tbve.getGiaVIP() * 10 / 100 + 50000 + 70000 + 10000) * sluong;%>
+                <%=tien%>
+                <%} else if (Tbve.getMaHHK().equals("VJ")) {%>
+                <% tien = (Tbve.getGiaVIP() + Tbve.getGiaVIP() * 10 / 100 + 60000 + 75000 + 33000) * sluong;%>
+                <%=tien%>
+                <%} else if (Tbve.getMaHHK().equals("BL")) {%>
+
+                <% tien = (Tbve.getGiaVIP() + Tbve.getGiaVIP() * 10 / 100 + 60000 + 33000 + 50000) * sluong;%>
+                <%=tien%>
+                <% }%>
+                <input type="radio" value="1"name="loaiveve" required 
+            </td>
+            </tr>
+            <%}%>
+            <%}%>
+            <%}%>
+        </table>
         <%}%>
-    </body>
+        <input type="hidden" name="soluong" value="<%= soluong%>"  >
+        <input class="AvailableFromBUTTON" type="submit"  value="Tiếp tục" />
+    </form>   
+    <%}%>
+</body>
 </html>
