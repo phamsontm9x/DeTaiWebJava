@@ -34,7 +34,6 @@
                                     if (ten.equals("") || ten == null) { %>
                     <li><a href="RegisterLogin.jsp"style="margin-bottom: 20px;">ĐĂNG NHẬP </a></li>
                         <%} else {%>
-                    <li><a href="XemDonHang.jsp"style="margin-bottom: 20px;">Xem Đơn Hàng</a></li>
                     <li class="dropdown">
                         <a href="Logout.jsp" style="margin-bottom: 20px;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ĐĂNG XUẤT <span class="caret"></span></a>
                     </li>
